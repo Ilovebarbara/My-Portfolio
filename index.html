@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jodeo Ira Luis D. Joson - Portfolio</title>
+    <style>        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: #ff6b47;
+        }
+
+        .nav-menu a.active {
+            color: #ff6b47;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            margin-top: 80px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .hero-content .subtitle .emoji {
+            font-size: 1.5rem;
+            margin-left: 0.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b47;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #e55a3f;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 71, 0.3);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }        .image-container {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #ff6b47, #ffa366);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .avatar {
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Fallback for when image doesn't load */
+        .avatar-fallback {
+            width: 360px;
+            height: 360px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 6rem;
+            color: #ff6b47;
+            font-weight: bold;
+            border: 8px solid white;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .job, .education-item, .project {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 1rem;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .image-container {
+                width: 300px;
+                height: 300px;
+            }
+
+            .avatar {
+                width: 220px;
+                height: 220px;
+                font-size: 4rem;
+            }
+
+            .header {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">        <nav class="nav-container">
+            <a href="#hero" class="logo">JODZ</a>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Hi there. I'm Jodeo, a<br>Web Developer.</h1>               
+                <a href="#contact" class="cta-button">Get in Touch</a>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="avatar.png" alt="Jodeo Joson" class="avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="avatar-fallback" style="display: none;">JJ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- ...existing code... -->        <section id="about">
+            <div class="content-section">
+                <h2>About Me</h2>
+                <p>Passionate IT professional specializing in web development and cloud infrastructure with hands-on experience in modern technologies.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="content-section">
+                <h2>Contact</h2>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> jodeoiraluisjoson@gmail.com</p>
+                    <p><strong>Phone:</strong> +639917638759</p>
+                    <p><strong>GitHub:</strong> jodeoiraluisjoson</p>
+                    <p><strong>LinkedIn:</strong> jodeoiraluisjoson</p>
+                    <p><strong>Salesforce:</strong> Salesforce</p>
+                    <p><strong>Address:</strong> 9863, Maunlad Homes Sta Rita Guiguinto Bulacan</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="content-section">
+                <h2>Professional Experience</h2>
+                
+                <div class="job">
+                    <h3>Capstone Project Team Member</h3>
+                    <p><strong>Duration:</strong> January 2023 - January 2025</p>
+                    <p><strong>Location:</strong> Bulacan State University, Malolos, Bulacan</p>
+                    <h4>Responsibilities:</h4>
+                    <ul>
+                        <li>Collaborated with a team of 5 to develop a comprehensive capstone project</li>
+                        <li>Designed the UI/UX, ensuring an intuitive user interface</li>
+                        <li>Utilized PHP, JavaScript, CSS, HTML and MySQL for the Project</li>
+                        <li>Created documentation for a web-based system to monitor and track student performance</li>
+                        <li>Conducted thorough testing and debugging to ensure the system's functionality and reliability</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <h3>Cloud Infrastructure Intern (ATA) - Accenture</h3>
+                    <p><strong>Duration:</strong> March 11 - May 2025</p>
+                    <p><strong>Location:</strong> Accenture, Gateway 2, General Roxas Avenue and General Aguina (Remote)</p>
+                    <h4>Responsibilities:</h4>
+                    <ul>
+                        <li>Performed hands-on tasks involving virtual machines, storage solutions, and network setup to ensure reliable cloud infrastructure</li>
+                        <li>Collaborated with fellow interns to troubleshoot system issues, apply necessary updates, and monitor cloud performance effectively</li>
+                        <li>Actively participated in Accenture's online learning platforms, completing technical modules focused on cloud computing and infrastructure management</li>
+                        <li>Explored various cloud services, including AWS, Azure, and Google Cloud, to deepen my understanding of cross-platform cloud operations</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="content-section">
+                <h2>Education</h2>
+                
+                <div class="education-item">
+                    <h3>Bachelor's Degree in Information and Communications Technology</h3>
+                    <p><strong>Institution:</strong> Bulacan State University, Malolos, Bulacan</p>
+                    <p><strong>Graduation Date:</strong> July 2025</p>
+                    <p><strong>Achievement:</strong> Cum Laude Graduate</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Senior High School - Academic Strand (STEM)</h3>
+                    <p><strong>Institution:</strong> St. Martin De Porres Catholic School of Guinguinto</p>
+                    <p><strong>Graduation Date:</strong> April 2021</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>High School Diploma</h3>
+                    <p><strong>Institution:</strong> LKBP Integrated School, Inc. Ligas, City of Malolos</p>
+                    <p><strong>Graduation Date:</strong> April 2019</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="content-section">
+                <h2>Technical Skills</h2>
+                
+                <div class="skill-category">
+                    <h3>Front End Development:</h3>
+                    <p>HTML, CSS, JavaScript, Bootstrap, React</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Backend Development:</h3>
+                    <p>Python, PHP</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>DevOps:</h3>
+                    <p>Docker, Bash Linux, Google Cloud SDK Shell, PowerShell</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Version Control:</h3>
+                    <p>Git, GitHub</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Software Testing:</h3>
+                    <p>Manual Testing, Automated Testing</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="software">
+            <div class="content-section">
+                <h2>Software Proficiency</h2>
+                <ul>
+                    <li>Visual Studio Code</li>
+                    <li>GitHub Desktop</li>
+                    <li>Android Studio</li>
+                    <li>NetBeans</li>
+                    <li>Google Cloud Platform</li>
+                    <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+                    <li>VirtualBox</li>
+                    <li>PyCharm</li>
+                    <li>Docker</li>
+                    <li>Firebase</li>
+                    <li>Selenium IDE</li>
+                    <li>Robot Framework</li>
+                    <li>Django</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="hobbies">
+            <div class="content-section">
+                <h2>Hobbies</h2>
+                <ul>
+                    <li>Playing Video Games</li>
+                    <li>Watching Movies and TV Shows</li>
+                    <li>Continuous Learning</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="languages">
+            <div class="content-section">
+                <h2>Languages</h2>
+                <ul>
+                    <li>English: Fluent</li>
+                    <li>Filipino: Fluent</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="content-section">
+                <h2>Projects</h2>
+                
+                <div class="project">
+                    <h3>Student Performance Monitoring System</h3>
+                    <p><strong>Technologies:</strong> PHP, JavaScript, CSS, HTML, MySQL</p>
+                    <p>Web-based system to monitor and track student performance developed as part of capstone project.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <div class="content-section">
+                <h2>Certifications</h2>
+                <ul>
+                    <li>Accenture Technology Academy: Cloud Infrastructure (March 11 - May 2025)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="accomplishments">
+            <div class="content-section">
+                <h2>Accomplishments</h2>
+                <ul>
+                    <li>Cum Laude Graduate - Bulacan State University</li>
+                    <li>Successfully completed Accenture Technology Academy Cloud Infrastructure Program</li>
+                    <li>Developed comprehensive capstone project with team collaboration</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jodeo Ira Luis D. Joson. All rights reserved.</p>
+    </footer>
+</body>
+</html>
