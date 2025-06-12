@@ -5,296 +5,511 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
 </head>
-<body>    <!-- Terminal Hacker Dark Theme Header -->
-    <header style="background: linear-gradient(135deg, #0d1117, #161b22, #21262d); color: #c9d1d9; padding: 20px; font-family: 'Courier New', monospace; border-bottom: 2px solid #30363d; position: relative; overflow: hidden;">
+<body>    <!-- Animated Terminal Theme Header -->
+    <header style="background: linear-gradient(45deg, #000000, #0a0a0a, #000000); color: #ffffff; padding: 20px; font-family: 'Courier New', monospace; border-bottom: 1px solid #333333; position: relative; overflow: hidden; animation: terminal-bootup 3s ease-in-out;">
         
-        <!-- Binary Rain Background -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0.2;">
-            <div style="position: absolute; top: -50px; left: 10%; color: #00ff41; font-size: 12px; animation: matrix-rain 6s linear infinite;">01001000 01100001 01100011 01101011</div>
-            <div style="position: absolute; top: -30px; left: 30%; color: #00ff41; font-size: 10px; animation: matrix-rain 8s linear infinite 1s;">11001001 10101010 01010101</div>
-            <div style="position: absolute; top: -60px; left: 50%; color: #00ff41; font-size: 14px; animation: matrix-rain 7s linear infinite 2s;">01010100 01100101 01110010 01101101</div>
-            <div style="position: absolute; top: -40px; left: 70%; color: #00ff41; font-size: 11px; animation: matrix-rain 9s linear infinite 3s;">10001001 11111111 00000000</div>
-            <div style="position: absolute; top: -20px; left: 85%; color: #00ff41; font-size: 13px; animation: matrix-rain 5s linear infinite 4s;">01001001 01010100</div>
+        <!-- Enhanced Matrix Rain Background -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0.15;">
+            <div style="position: absolute; top: -50px; left: 5%; color: #00ff00; font-size: 10px; animation: matrix-rain 8s linear infinite, code-glow 2s ease-in-out infinite;">01001000 01100001 01100011 01101011 01100101 01110010</div>
+            <div style="position: absolute; top: -80px; left: 15%; color: #00ff00; font-size: 12px; animation: matrix-rain 10s linear infinite 1s, code-glow 2.5s ease-in-out infinite;">11001001 10101010 01010101 01110100</div>
+            <div style="position: absolute; top: -30px; left: 25%; color: #00ff00; font-size: 8px; animation: matrix-rain 7s linear infinite 2s, code-glow 3s ease-in-out infinite;">01010100 01100101 01110010 01101101 01101001 01101110</div>
+            <div style="position: absolute; top: -60px; left: 35%; color: #00ff00; font-size: 11px; animation: matrix-rain 9s linear infinite 3s, code-glow 2.2s ease-in-out infinite;">10001001 11111111 00000000 01010000</div>
+            <div style="position: absolute; top: -40px; left: 45%; color: #00ff00; font-size: 9px; animation: matrix-rain 6s linear infinite 4s, code-glow 2.8s ease-in-out infinite;">01001001 01010100 01000011 01001000</div>
+            <div style="position: absolute; top: -70px; left: 55%; color: #00ff00; font-size: 13px; animation: matrix-rain 11s linear infinite 1.5s, code-glow 2.3s ease-in-out infinite;">01000011 01111001 01100010 01100101</div>
+            <div style="position: absolute; top: -20px; left: 65%; color: #00ff00; font-size: 10px; animation: matrix-rain 8s linear infinite 5s, code-glow 3.2s ease-in-out infinite;">01110010 01110011 01100101 01100011</div>
+            <div style="position: absolute; top: -90px; left: 75%; color: #00ff00; font-size: 12px; animation: matrix-rain 12s linear infinite 2.5s, code-glow 2.7s ease-in-out infinite;">01110101 01110010 01101001 01110100</div>
+            <div style="position: absolute; top: -50px; left: 85%; color: #00ff00; font-size: 8px; animation: matrix-rain 5s linear infinite 6s, code-glow 3.5s ease-in-out infinite;">01111001 00100000 01000001 01001001</div>
+            <div style="position: absolute; top: -35px; left: 95%; color: #00ff00; font-size: 11px; animation: matrix-rain 9s linear infinite 3.5s, code-glow 2.1s ease-in-out infinite;">01010000 01101111 01110010 01110100</div>
         </div>
+        
+        <!-- Additional Matrix Layers for Depth -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; opacity: 0.08;">
+            <div style="position: absolute; top: -100px; left: 3%; color: #00ff00; font-size: 6px; animation: digital-rain 15s linear infinite;">10011010 11001100 00110011</div>
+            <div style="position: absolute; top: -120px; left: 13%; color: #00ff00; font-size: 8px; animation: digital-rain 18s linear infinite 2s;">01010101 10101010 11110000</div>
+            <div style="position: absolute; top: -80px; left: 23%; color: #00ff00; font-size: 7px; animation: digital-rain 12s linear infinite 4s;">11111111 00000000 10101010</div>
+            <div style="position: absolute; top: -140px; left: 33%; color: #00ff00; font-size: 9px; animation: digital-rain 20s linear infinite 1s;">00110011 11001100 01010101</div>
+            <div style="position: absolute; top: -60px; left: 43%; color: #00ff00; font-size: 6px; animation: digital-rain 14s linear infinite 3s;">10101010 01010101 11110000</div>
+            <div style="position: absolute; top: -110px; left: 53%; color: #00ff00; font-size: 8px; animation: digital-rain 16s linear infinite 5s;">01100110 10011001 00110011</div>
+            <div style="position: absolute; top: -90px; left: 63%; color: #00ff00; font-size: 7px; animation: digital-rain 13s linear infinite 2.5s;">11001100 00110011 10101010</div>
+            <div style="position: absolute; top: -130px; left: 73%; color: #00ff00; font-size: 9px; animation: digital-rain 19s linear infinite 4.5s;">00001111 11110000 01010101</div>
+            <div style="position: absolute; top: -70px; left: 83%; color: #00ff00; font-size: 6px; animation: digital-rain 11s linear infinite 1.5s;">10101010 01010101 11001100</div>
+            <div style="position: absolute; top: -95px; left: 93%; color: #00ff00; font-size: 8px; animation: digital-rain 17s linear infinite 3.5s;">01010101 10101010 00110011</div>
+        </div>
+        
+        <!-- Floating Particles Background -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3; opacity: 0.3;">
+            <div style="position: absolute; top: 20%; left: 10%; width: 2px; height: 2px; background: #00ff00; border-radius: 50%; animation: float-particle 15s linear infinite;"></div>
+            <div style="position: absolute; top: 60%; left: 20%; width: 1px; height: 1px; background: #00ff00; border-radius: 50%; animation: float-particle 12s linear infinite 2s;"></div>
+            <div style="position: absolute; top: 40%; left: 80%; width: 2px; height: 2px; background: #00ff00; border-radius: 50%; animation: float-particle 18s linear infinite 4s;"></div>
+            <div style="position: absolute; top: 80%; left: 60%; width: 1px; height: 1px; background: #00ff00; border-radius: 50%; animation: float-particle 14s linear infinite 6s;"></div>
+            <div style="position: absolute; top: 30%; left: 90%; width: 2px; height: 2px; background: #00ff00; border-radius: 50%; animation: float-particle 16s linear infinite 8s;"></div>
+            <!-- Additional Particles -->
+            <div style="position: absolute; top: 15%; left: 50%; width: 1px; height: 1px; background: #00ff00; border-radius: 50%; animation: float-particle 20s linear infinite 1s;"></div>
+            <div style="position: absolute; top: 70%; left: 30%; width: 2px; height: 2px; background: #00ff00; border-radius: 50%; animation: float-particle 13s linear infinite 3s;"></div>
+            <div style="position: absolute; top: 25%; left: 70%; width: 1px; height: 1px; background: #00ff00; border-radius: 50%; animation: float-particle 17s linear infinite 5s;"></div>
+            <div style="position: absolute; top: 85%; left: 15%; width: 2px; height: 2px; background: #00ff00; border-radius: 50%; animation: float-particle 19s linear infinite 7s;"></div>
+            <div style="position: absolute; top: 45%; left: 85%; width: 1px; height: 1px; background: #00ff00; border-radius: 50%; animation: float-particle 11s linear infinite 9s;"></div>
+        </div>
+        
+        <!-- Enhanced Scanning Lines Effect -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #00ff00, transparent); animation: scan-line 4s linear infinite; z-index: 4;"></div>
+        <div style="position: absolute; top: 25%; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #00ff00, transparent); animation: scan-line 6s linear infinite 1s; z-index: 4; opacity: 0.6;"></div>
+        <div style="position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #00ff00, transparent); animation: scan-line 5s linear infinite 2s; z-index: 4; opacity: 0.4;"></div>
+        <div style="position: absolute; top: 75%; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #00ff00, transparent); animation: scan-line 7s linear infinite 3s; z-index: 4; opacity: 0.5;"></div>
+        
+        <!-- Grid Pattern Overlay -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 0, 0.03) 2px, rgba(0, 255, 0, 0.03) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 255, 0, 0.03) 2px, rgba(0, 255, 0, 0.03) 4px); z-index: 1; animation: terminal-scan 10s linear infinite;"></div>
 
         <!-- Main Terminal Container -->
         <div style="position: relative; z-index: 10; max-width: 1000px; margin: 0 auto;">
-            
-            <!-- Terminal Window -->
-            <div style="background: #161b22; border: 2px solid #00ff41; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 255, 65, 0.3); overflow: hidden;">
+              <!-- Animated Terminal Window -->
+            <div style="background: #000000; border: 1px solid #333333; border-radius: 8px; overflow: hidden; box-shadow: 0 0 30px rgba(0, 255, 0, 0.2), inset 0 0 50px rgba(0, 255, 0, 0.1); animation: terminal-glow 3s ease-in-out infinite;">
                 
-                <!-- Terminal Header Bar -->
-                <div style="background: #21262d; padding: 10px 15px; border-bottom: 1px solid #00ff41; display: flex; align-items: center; gap: 8px;">
-                    <div style="width: 12px; height: 12px; background: #ff5f56; border-radius: 50%; animation: terminal-pulse 2s infinite;"></div>
-                    <div style="width: 12px; height: 12px; background: #ffbd2e; border-radius: 50%; animation: terminal-pulse 2s infinite 0.5s;"></div>
-                    <div style="width: 12px; height: 12px; background: #27ca3f; border-radius: 50%; animation: terminal-pulse 2s infinite 1s;"></div>
-                    <div style="flex: 1; text-align: center; color: #00ff41; font-weight: bold;">
-                        ● SECURE_TERMINAL_v2.1 - jodeo@cybersec-portfolio ●
+                <!-- Enhanced Terminal Header Bar -->
+                <div style="background: linear-gradient(90deg, #1a1a1a, #222222, #1a1a1a); padding: 12px 15px; border-bottom: 1px solid #333333; display: flex; align-items: center; gap: 8px; animation: header-pulse 4s ease-in-out infinite;">
+                    <div style="width: 12px; height: 12px; background: #666666; border-radius: 50%; animation: control-btn-pulse 2s ease-in-out infinite, control-btn-glow 3s ease-in-out infinite;"></div>
+                    <div style="width: 12px; height: 12px; background: #666666; border-radius: 50%; animation: control-btn-pulse 2s ease-in-out infinite 0.3s, control-btn-glow 3s ease-in-out infinite 0.5s;"></div>
+                    <div style="width: 12px; height: 12px; background: #666666; border-radius: 50%; animation: control-btn-pulse 2s ease-in-out infinite 0.6s, control-btn-glow 3s ease-in-out infinite 1s;"></div>
+                    <div style="flex: 1; text-align: center; color: #ffffff; font-weight: bold; animation: title-flicker 5s ease-in-out infinite;">
+                        Terminal - jodeo@portfolio [SECURE_CONNECTION_ESTABLISHED]
                     </div>
-                </div>
-
-                <!-- Terminal Content -->
-                <div style="padding: 25px; background: linear-gradient(145deg, #0d1117, #161b22);">
+                    <div style="color: #00ff00; font-size: 12px; animation: status-blink 2s ease-in-out infinite;">● ONLINE</div>
+                </div>                <!-- Enhanced Terminal Content -->
+                <div style="padding: 30px; background: #000000; position: relative;">
                     
-                    <!-- Command Prompt Line -->
-                    <div style="margin-bottom: 20px; font-size: 14px;">
-                        <span style="color: #ff6b6b;">root@cybersec</span><span style="color: #4ecdc4;">:</span><span style="color: #45b7d1;">~/portfolio</span><span style="color: #c9d1d9;">$ </span>
-                        <span style="color: #ffeca7; animation: typewriter 4s steps(20) infinite;">cat hacker_profile.txt</span>
-                        <span style="animation: cursor-blink 1s infinite; color: #00ff41;">█</span>
+                    <!-- Boot Sequence Animation -->
+                    <div style="margin-bottom: 25px; animation: boot-sequence 8s ease-in-out;">
+                        <div style="color: #00ff00; font-size: 12px; margin-bottom: 5px; animation: text-appear 1s ease-in-out;">BIOS v2.1.4 - System Check Complete</div>
+                        <div style="color: #00ff00; font-size: 12px; margin-bottom: 5px; animation: text-appear 1s ease-in-out 0.5s; opacity: 0; animation-fill-mode: forwards;">Loading Portfolio Kernel... OK</div>
+                        <div style="color: #00ff00; font-size: 12px; margin-bottom: 15px; animation: text-appear 1s ease-in-out 1s; opacity: 0; animation-fill-mode: forwards;">Security Protocols: ENABLED</div>
+                    </div>
+                    
+                    <!-- Animated Command Prompt Line -->                    <div style="margin-bottom: 25px; font-size: 14px; animation: prompt-slide-in 2s ease-out 2s; opacity: 0; animation-fill-mode: forwards;">
+                        <span style="color: #ffffff;">jodeo@portfolio</span><span style="color: #00ff00; animation: colon-pulse 1s ease-in-out infinite;">:</span><span style="color: #ffffff;">~/portfolio</span><span style="color: #ffffff;">$ </span>
+                        <span style="color: #00ff00;">cat personal_profile.txt</span>
+                        <span style="animation: enhanced-cursor-blink 1s infinite; color: #00ff00; text-shadow: 0 0 10px #00ff00;">█</span>
                     </div>
 
-                    <!-- Profile Display -->
-                    <div style="border: 1px solid #00ff41; border-radius: 8px; padding: 20px; background: rgba(0, 255, 65, 0.05); margin-bottom: 20px;">
+                    <!-- Animated Profile Display -->
+                    <div style="border: 1px solid #333333; border-radius: 6px; padding: 25px; background: linear-gradient(145deg, #111111, #0a0a0a); margin-bottom: 25px; animation: profile-fade-in 3s ease-out 4s; opacity: 0; animation-fill-mode: forwards; box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.1);">
                         
-                        <!-- Name Section -->
-                        <hgroup style="margin-bottom: 15px;">
-                            <h1 style="font-size: 2.2em; margin: 0; text-shadow: 0 0 10px #00ff41; animation: name-glow 3s ease-in-out infinite;">
-                                <span style="color: #ff6b6b;">&gt; </span>
-                                <span style="color: #00ff41;">JODEO</span>
-                                <span style="color: #4ecdc4;"> IRA</span>
-                                <span style="color: #45b7d1;"> LUIS</span>
-                                <span style="color: #ffeca7;"> D.</span>
-                                <span style="color: #ff9ff3;"> JOSON</span>
+                        <!-- Animated Name Section -->
+                        <hgroup style="margin-bottom: 20px;">                            <h1 style="font-size: 2.4em; margin: 0; text-shadow: 0 0 15px #00ff00;">
+                                <span style="color: #00ff00;">&gt; </span>
+                                <span style="color: #ffffff;">J</span>
+                                <span style="color: #ffffff;">O</span>
+                                <span style="color: #ffffff;">D</span>
+                                <span style="color: #ffffff;">E</span>
+                                <span style="color: #ffffff;">O</span>
+                                <span style="color: #00ff00;"> I</span>
+                                <span style="color: #ffffff;">R</span>
+                                <span style="color: #ffffff;">A</span>
+                                <span style="color: #00ff00;"> L</span>
+                                <span style="color: #ffffff;">U</span>
+                                <span style="color: #ffffff;">I</span>
+                                <span style="color: #ffffff;">S</span>
+                                <span style="color: #00ff00;"> D</span>
+                                <span style="color: #ffffff;">.</span>
+                                <span style="color: #00ff00;"> J</span>
+                                <span style="color: #ffffff;">O</span>
+                                <span style="color: #ffffff;">S</span>
+                                <span style="color: #ffffff;">O</span>
+                                <span style="color: #ffffff;">N</span>
                             </h1>
                             
-                            <h2 style="font-size: 1.3em; margin: 5px 0; color: #4ecdc4; text-shadow: 0 0 8px #4ecdc4;">
-                                <span style="color: #ff6b6b;">[</span>CYBERSECURITY SPECIALIST<span style="color: #ff6b6b;">]</span>
+                            <h2 style="font-size: 1.4em; margin: 8px 0; color: #00ff00; text-shadow: 0 0 10px #00ff00;">
+                                [CYBERSECURITY_SPECIALIST.EXE]
                             </h2>
                             
-                            <div style="color: #ffeca7; font-size: 1em; margin-top: 10px;">
-                                <span style="color: #ff6b6b;">●</span> Information Technology Professional 
-                                <span style="color: #00ff41;">●</span> Web Developer 
-                                <span style="color: #4ecdc4;">●</span> Cloud Infrastructure Expert
+                            <div style="color: #ffffff; font-size: 1.1em; margin-top: 15px;">
+                                <span style="color: #00ff00;">●</span> Information Technology Professional 
+                                <span style="color: #00ff00;">●</span> Web Developer 
+                                <span style="color: #00ff00;">●</span> Cloud Infrastructure Expert
                             </div>
                         </hgroup>
-                    </div>
-
-                    <!-- System Status Panel -->
-                    <div style="background: rgba(0, 0, 0, 0.7); border: 1px solid #4ecdc4; border-radius: 6px; padding: 15px; margin-bottom: 20px;">
-                        <div style="color: #4ecdc4; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #4ecdc4; padding-bottom: 5px;">
-                            ⚡ SYSTEM STATUS
+                    </div>                    <!-- Enhanced System Status Panel -->                    <div style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)); border: 1px solid #333333; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);">
+                        <div style="color: #00ff00; font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #333333; padding-bottom: 8px; display: flex; align-items: center; gap: 10px; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">
+                            <span>⚡</span>
+                            <span>SYSTEM STATUS</span>
+                            <div style="flex: 1; height: 1px; background: linear-gradient(90deg, #00ff00, transparent);"></div>
                         </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 14px;">
-                            <div>
-                                <span style="color: #ff6b6b;">STATUS:</span> 
-                                <span style="color: #00ff41; animation: status-blink 1.5s infinite;">● ONLINE</span>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 14px;">
+                            <div style="animation: text-appear 1s ease-out 0.5s; opacity: 0; animation-fill-mode: forwards;">
+                                <span style="color: #ffffff;">STATUS:</span> 
+                                <span style="color: #00ff00; animation: status-blink 1.5s infinite; text-shadow: 0 0 10px #00ff00;">● ONLINE</span>
+                            </div>                            <div style="animation: text-appear 1s ease-out 1s; opacity: 0; animation-fill-mode: forwards;">
+                                <span style="color: #ffffff;">SECURITY:</span> 
+                                <span style="color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">🔒 ENCRYPTED</span>
                             </div>
-                            <div>
-                                <span style="color: #ff6b6b;">SECURITY:</span> 
-                                <span style="color: #00ff41;">ENCRYPTED</span>
-                            </div>
-                            <div>
-                                <span style="color: #ff6b6b;">LOCATION:</span> 
-                                <span style="color: #ffeca7;">📍 Bulacan, Philippines</span>
-                            </div>
-                            <div>
-                                <span style="color: #ff6b6b;">ACCESS:</span> 
-                                <span style="color: #00ff41;">AUTHORIZED</span>
+                            <div style="animation: text-appear 1s ease-out 1.5s; opacity: 0; animation-fill-mode: forwards;">
+                                <span style="color: #ffffff;">LOCATION:</span> 
+                                <span style="color: #ffffff;">📍 Bulacan, Philippines</span>
+                            </div>                            <div style="animation: text-appear 1s ease-out 2s; opacity: 0; animation-fill-mode: forwards;">
+                                <span style="color: #ffffff;">ACCESS:</span> 
+                                <span style="color: #00ff00;">✓ AUTHORIZED</span>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Contact Terminal -->
-                    <div style="background: rgba(0, 0, 0, 0.8); border: 1px solid #ff6b6b; border-radius: 6px; padding: 15px; margin-bottom: 20px;">
-                        <div style="color: #ff6b6b; margin-bottom: 10px;">
-                            <span style="animation: cursor-blink 1s infinite;">█</span> ./contact_protocols.exe
-                        </div>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; font-size: 13px;">
-                            <div>
-                                <span style="color: #ffeca7;">📧 EMAIL:</span> 
-                                <a href="mailto:jodeoiraluisjoson@gmail.com" style="color: #4ecdc4; text-decoration: none;">jodeoiraluisjoson@gmail.com</a>
-                            </div>
-                            <div>
-                                <span style="color: #ffeca7;">📱 PHONE:</span> 
-                                <a href="tel:+639917638759" style="color: #4ecdc4; text-decoration: none;">+639917638759</a>
-                            </div>
-                            <div>
-                                <span style="color: #ffeca7;">🔗 GITHUB:</span> 
-                                <a href="https://github.com/Ilovebarbara" style="color: #4ecdc4; text-decoration: none;">@Ilovebarbara</a>
-                            </div>
-                            <div>
-                                <span style="color: #ffeca7;">💼 LINKEDIN:</span> 
-                                <a href="https://www.linkedin.com/in/jodeoiraluis-joson-737976346" style="color: #4ecdc4; text-decoration: none;">@jodeoiraluis-joson</a>
+                        <!-- System Metrics -->
+                        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #333333;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-size: 12px;">                                <div style="animation: text-appear 1s ease-out 2.5s; opacity: 0; animation-fill-mode: forwards;">
+                                    <span style="color: #ffffff;">CPU:</span>
+                                    <div style="background: #333333; height: 4px; border-radius: 2px; margin-top: 3px; overflow: hidden;">
+                                        <div style="background: linear-gradient(90deg, #00ff00, #88ff88); height: 100%; width: 75%;"></div>
+                                    </div>
+                                </div>
+                                <div style="animation: text-appear 1s ease-out 3s; opacity: 0; animation-fill-mode: forwards;">
+                                    <span style="color: #ffffff;">RAM:</span>
+                                    <div style="background: #333333; height: 4px; border-radius: 2px; margin-top: 3px; overflow: hidden;">
+                                        <div style="background: linear-gradient(90deg, #00ff00, #88ff88); height: 100%; width: 60%;"></div>
+                                    </div>
+                                </div>
+                                <div style="animation: text-appear 1s ease-out 3.5s; opacity: 0; animation-fill-mode: forwards;">
+                                    <span style="color: #ffffff;">NET:</span>
+                                    <div style="background: #333333; height: 4px; border-radius: 2px; margin-top: 3px; overflow: hidden;">
+                                        <div style="background: linear-gradient(90deg, #00ff00, #88ff88); height: 100%; width: 90%;"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>                    <!-- Interactive Terminal Navigation -->
+                    </div>                    <!-- Enhanced Contact Terminal -->
+                    <div style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.8)); border: 1px solid #333333; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 0 15px rgba(0, 255, 0, 0.2); animation: terminal-glow 5s ease-in-out infinite;">
+                        <div style="color: #00ff00; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; animation: prompt-slide-in 2s ease-out;">
+                            <span style="animation: enhanced-cursor-blink 1s infinite;">█</span> 
+                            <span style="animation: typewriter-effect 3s ease-in-out infinite;">./contact_protocols.exe</span>
+                            <div style="flex: 1; height: 1px; background: linear-gradient(90deg, #00ff00, transparent); margin-left: 10px; animation: loading-bar 2s ease-in-out infinite;"></div>
+                        </div>                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; font-size: 13px;">
+                            <div style="animation: text-appear 1s ease-out 0.5s; opacity: 0; animation-fill-mode: forwards; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(5px)'; this.style.textShadow='0 0 10px #00ff00'" onmouseout="this.style.transform='translateX(0)'; this.style.textShadow='none'">
+                                <span style="color: #ffffff;">📧 EMAIL:</span> 
+                                <a href="mailto:jodeoiraluisjoson@gmail.com" style="color: #00ff00; text-decoration: none; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">jodeoiraluisjoson@gmail.com</a>
+                            </div>
+                            <div style="animation: text-appear 1s ease-out 1s; opacity: 0; animation-fill-mode: forwards; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(5px)'; this.style.textShadow='0 0 10px #00ff00'" onmouseout="this.style.transform='translateX(0)'; this.style.textShadow='none'">
+                                <span style="color: #ffffff;">📱 PHONE:</span> 
+                                <a href="tel:+639917638759" style="color: #00ff00; text-decoration: none; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">+639917638759</a>
+                            </div>
+                            <div style="animation: text-appear 1s ease-out 1.5s; opacity: 0; animation-fill-mode: forwards; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(5px)'; this.style.textShadow='0 0 10px #00ff00'" onmouseout="this.style.transform='translateX(0)'; this.style.textShadow='none'">
+                                <span style="color: #ffffff;">🔗 GITHUB:</span> 
+                                <a href="https://github.com/Ilovebarbara" style="color: #00ff00; text-decoration: none; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">@Ilovebarbara</a>
+                            </div>
+                            <div style="animation: text-appear 1s ease-out 2s; opacity: 0; animation-fill-mode: forwards; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(5px)'; this.style.textShadow='0 0 10px #00ff00'" onmouseout="this.style.transform='translateX(0)'; this.style.textShadow='none'">
+                                <span style="color: #ffffff;">💼 LINKEDIN:</span> 
+                                <a href="https://www.linkedin.com/in/jodeoiraluis-joson-737976346" style="color: #00ff00; text-decoration: none; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">@jodeoiraluis-joson</a>
+                            </div>
+                        </div>
+                        <!-- Connection Status -->                        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #333333; font-size: 12px; animation: text-appear 1s ease-out 2.5s; opacity: 0; animation-fill-mode: forwards;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span style="color: #ffffff;">CONNECTION STATUS:</span>
+                                <span style="color: #00ff00; animation: status-blink 1s infinite;">● ACTIVE</span>
+                                <div style="flex: 1; height: 1px; background: linear-gradient(90deg, #00ff00, transparent); margin-left: 10px;"></div>
+                                <span style="color: #ffffff; font-size: 10px;">PING: 12ms</span>
+                            </div>
+                        </div>
+                    </div>                    <!-- Enhanced Interactive Terminal Navigation -->
                     <div>
-                        <!-- Terminal Command Input -->
-                        <div style="margin-bottom: 20px;">
-                            <div style="color: #45b7d1; margin-bottom: 10px; font-weight: bold; display: flex; align-items: center; gap: 10px;">
-                                <span style="color: #ff6b6b;">root@cybersec</span><span style="color: #4ecdc4;">:</span><span style="color: #45b7d1;">~/portfolio</span><span style="color: #c9d1d9;">$ </span>
+                        <!-- Enhanced Terminal Command Input -->
+                        <div style="margin-bottom: 25px;">                            <div style="color: #00ff00; margin-bottom: 15px; font-weight: bold; display: flex; align-items: center; gap: 10px; animation: prompt-slide-in 2s ease-out;">
+                                <span style="color: #ffffff;">root@cybersec</span>
+                                <span style="color: #00ff00; animation: colon-pulse 1s ease-in-out infinite;">:</span>
+                                <span style="color: #ffffff;">~/portfolio</span>
+                                <span style="color: #ffffff;">$ </span>
                                 <input type="text" id="terminalInput" placeholder="cd sections/about | ls | help" 
-                                       style="background: transparent; border: none; color: #ffeca7; font-family: 'Courier New', monospace; font-size: 14px; outline: none; width: 300px; border-bottom: 1px solid #4ecdc4;"
+                                       style="background: transparent; border: none; color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; outline: none; width: 300px; border-bottom: 1px solid #333333; transition: all 0.3s ease; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;"
                                        onkeypress="handleTerminalCommand(event)"
+                                       onfocus="this.style.borderBottomColor='#00ff00'; this.style.textShadow='0 0 10px #00ff00'"
+                                       onblur="this.style.borderBottomColor='#333333'; this.style.textShadow='0 0 5px #00ff00, 0 0 10px #00ff00'"
                                        autocomplete="off">
-                                <span style="color: #00ff41; animation: cursor-blink 1s infinite;">█</span>
+                                <span style="color: #00ff00; animation: enhanced-cursor-blink 1s infinite;">█</span>
                             </div>
                             
-                            <!-- Command Output -->
-                            <div id="commandOutput" style="background: rgba(0, 0, 0, 0.5); border-radius: 4px; padding: 10px; margin-bottom: 15px; min-height: 40px; border: 1px solid #30363d;">
-                                <div style="color: #8b949e; font-size: 12px;">
-                                    💡 <span style="color: #4ecdc4;">Available commands:</span> cd [directory] | ls | help | clear
+                            <!-- Enhanced Command Output -->                            <div id="commandOutput" style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(10, 10, 10, 0.9)); border-radius: 6px; padding: 15px; margin-bottom: 20px; min-height: 50px; border: 1px solid #333333; box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.1);">
+                                <div style="color: #ffffff; font-size: 12px; animation: text-appear 1s ease-out;">
+                                    <span style="color: #00ff00;">💡</span> 
+                                    <span style="color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">Available commands:</span> 
+                                    <span>cd [directory] | ls | help | clear</span>
                                 </div>
                             </div>
                         </div>
                         
-                        <div style="color: #45b7d1; margin-bottom: 15px; font-weight: bold; display: flex; align-items: center; gap: 10px;">
-                            <span style="color: #ff6b6b;">root@cybersec</span><span style="color: #4ecdc4;">:</span><span style="color: #45b7d1;">~/portfolio</span><span style="color: #c9d1d9;">$ </span>
-                            <span style="color: #ffeca7;">ls -la --explorer-mode</span>
+                        <!-- Enhanced Terminal Prompt -->
+                        <div style="color: #00ff00; margin-bottom: 20px; font-weight: bold; display: flex; align-items: center; gap: 10px; animation: prompt-slide-in 2s ease-out 0.5s; opacity: 0; animation-fill-mode: forwards;">
+                            <span style="color: #ffffff; animation: username-glow 3s ease-in-out infinite;">root@cybersec</span>
+                            <span style="color: #00ff00; animation: colon-pulse 1s ease-in-out infinite;">:</span>
+                            <span style="color: #ffffff; animation: path-highlight 4s ease-in-out infinite;">~/portfolio</span>
+                            <span style="color: #ffffff;">$ </span>
+                            <span style="color: #00ff00; animation: typewriter-effect 4s steps(25) infinite;">ls -la --explorer-mode</span>
+                            <div style="flex: 1; height: 1px; background: linear-gradient(90deg, #00ff00, transparent); margin-left: 10px; animation: loading-bar 3s ease-in-out infinite;"></div>
                         </div>
-                        
-                        <!-- File Explorer Container -->
-                        <div style="background: #0d1117; border: 2px solid #21262d; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);">
+                          <!-- Enhanced File Explorer Container -->                        <div style="background: linear-gradient(135deg, #000000, #0a0a0a); border: 2px solid #333333; border-radius: 12px; overflow: hidden; box-shadow: 0 0 30px rgba(0, 255, 0, 0.3), inset 0 0 30px rgba(0, 255, 0, 0.1);">
                             
-                            <!-- Explorer Header -->
-                            <div style="background: #21262d; padding: 10px 15px; border-bottom: 1px solid #30363d; display: flex; align-items: center; gap: 10px;">
-                                <div style="display: flex; gap: 6px;">
-                                    <div style="width: 8px; height: 8px; background: #ff5f56; border-radius: 50%;"></div>
-                                    <div style="width: 8px; height: 8px; background: #ffbd2e; border-radius: 50%;"></div>
-                                    <div style="width: 8px; height: 8px; background: #27ca3f; border-radius: 50%;"></div>
+                            <!-- Enhanced Explorer Header -->
+                            <div style="background: linear-gradient(90deg, #1a1a1a, #222222, #1a1a1a); padding: 15px 20px; border-bottom: 1px solid #333333; display: flex; align-items: center; gap: 12px;">
+                                <div style="display: flex; gap: 8px;">
+                                    <div style="width: 10px; height: 10px; background: #666666; border-radius: 50%; animation: control-btn-pulse 2s ease-in-out infinite;"></div>
+                                    <div style="width: 10px; height: 10px; background: #666666; border-radius: 50%; animation: control-btn-pulse 2s ease-in-out infinite;"></div>
+                                    <div style="width: 10px; height: 10px; background: #666666; border-radius: 50%; animation: control-btn-pulse 2s ease-in-out infinite;"></div>
                                 </div>
-                                <span style="color: #c9d1d9; font-size: 14px;">📁 /portfolio/sections/</span>
+                                <span style="color: #ffffff; font-size: 14px;">📁 /portfolio/sections/</span>
+                                <div style="flex: 1; height: 1px; background: linear-gradient(90deg, #00ff00, transparent);"></div>
+                                <div style="color: #00ff00; font-size: 12px; animation: status-blink 2s ease-in-out infinite;">● DIRECTORY_LOADED</div>
                             </div>
 
-                            <!-- File Explorer Content -->
-                            <nav style="padding: 15px;">
-                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
-                                    
-                                    <!-- File Item: About -->
-                                    <a href="about.html" class="file-item" style="color: #c9d1d9; text-decoration: none; padding: 12px; background: rgba(0, 255, 65, 0.05); border: 1px solid #30363d; border-radius: 6px; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer;" 
-                                       onmouseover="this.style.background='rgba(0, 255, 65, 0.1)'; this.style.borderColor='#00ff41'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0, 255, 65, 0.3)'"
-                                       onmouseout="this.style.background='rgba(0, 255, 65, 0.05)'; this.style.borderColor='#30363d'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                                        <span style="font-size: 16px;">📄</span>
+                            <!-- Enhanced File Explorer Content -->
+                            <nav style="padding: 20px;">
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
+                                      <!-- Enhanced File Item: About -->                                    <a href="about.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 0.2s; opacity: 0; animation-fill-mode: forwards;" 
+                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
+                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
+                                        <span style="font-size: 18px;">📄</span>
                                         <div>
-                                            <div style="font-weight: bold; color: #00ff41;">about.html</div>
-                                            <div style="font-size: 12px; color: #8b949e;">Personal Information</div>
+                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">about.html</div>
+                                            <div style="font-size: 12px; color: #cccccc;">Personal Information</div>
+                                        </div>
+                                    </a><!-- Enhanced File Item: Contact -->                                    <a href="contact.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 0.4s; opacity: 0; animation-fill-mode: forwards;"
+                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
+                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
+                                        <span style="font-size: 18px;">📞</span>
+                                        <div>
+                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">contact.html</div>
+                                            <div style="font-size: 12px; color: #cccccc;">Contact Information</div>
+                                        </div>
+                                    </a><!-- Enhanced File Item: Experience -->
+                                    <a href="experience.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 0.6s; opacity: 0; animation-fill-mode: forwards;"                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
+                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
+                                        <span style="font-size: 18px;">💼</span>
+                                        <div>
+                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">experience.html</div>
+                                            <div style="font-size: 12px; color: #cccccc;">Work Experience</div>
                                         </div>
                                     </a>
 
-                                    <!-- File Item: Contact -->
-                                    <a href="contact.html" class="file-item" style="color: #c9d1d9; text-decoration: none; padding: 12px; background: rgba(78, 205, 196, 0.05); border: 1px solid #30363d; border-radius: 6px; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer;"
-                                       onmouseover="this.style.background='rgba(78, 205, 196, 0.1)'; this.style.borderColor='#4ecdc4'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(78, 205, 196, 0.3)'"
-                                       onmouseout="this.style.background='rgba(78, 205, 196, 0.05)'; this.style.borderColor='#30363d'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                                        <span style="font-size: 16px;">📞</span>
+                                    <!-- Enhanced File Item: Education -->                                    <a href="education.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 0.8s; opacity: 0; animation-fill-mode: forwards;"
+                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
+                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
+                                        <span style="font-size: 18px;">🎓</span>
                                         <div>
-                                            <div style="font-weight: bold; color: #4ecdc4;">contact.html</div>
-                                            <div style="font-size: 12px; color: #8b949e;">Contact Information</div>
+                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">education.html</div>
+                                            <div style="font-size: 12px; color: #cccccc;">Educational Background</div>
                                         </div>
                                     </a>
 
-                                    <!-- File Item: Experience -->
-                                    <a href="experience.html" class="file-item" style="color: #c9d1d9; text-decoration: none; padding: 12px; background: rgba(255, 107, 107, 0.05); border: 1px solid #30363d; border-radius: 6px; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer;"
-                                       onmouseover="this.style.background='rgba(255, 107, 107, 0.1)'; this.style.borderColor='#ff6b6b'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(255, 107, 107, 0.3)'"
-                                       onmouseout="this.style.background='rgba(255, 107, 107, 0.05)'; this.style.borderColor='#30363d'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                                        <span style="font-size: 16px;">💼</span>
+                                    <!-- Enhanced File Item: Skills -->
+                                    <a href="skills.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 1s; opacity: 0; animation-fill-mode: forwards;"                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
+                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
+                                        <span style="font-size: 18px;">⚡</span>
                                         <div>
-                                            <div style="font-weight: bold; color: #ff6b6b;">experience.html</div>
-                                            <div style="font-size: 12px; color: #8b949e;">Work Experience</div>
+                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">skills.html</div>
+                                            <div style="font-size: 12px; color: #cccccc;">Technical Skills</div>
                                         </div>
                                     </a>
 
-                                    <!-- File Item: Education -->
-                                    <a href="education.html" class="file-item" style="color: #c9d1d9; text-decoration: none; padding: 12px; background: rgba(69, 183, 209, 0.05); border: 1px solid #30363d; border-radius: 6px; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer;"
-                                       onmouseover="this.style.background='rgba(69, 183, 209, 0.1)'; this.style.borderColor='#45b7d1'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(69, 183, 209, 0.3)'"
-                                       onmouseout="this.style.background='rgba(69, 183, 209, 0.05)'; this.style.borderColor='#30363d'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                                        <span style="font-size: 16px;">🎓</span>
+                                    <!-- Enhanced File Item: Projects -->
+                                    <a href="projects.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 1.2s; opacity: 0; animation-fill-mode: forwards;"
+                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
+                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
+                                        <span style="font-size: 18px;">🚀</span>
                                         <div>
-                                            <div style="font-weight: bold; color: #45b7d1;">education.html</div>
-                                            <div style="font-size: 12px; color: #8b949e;">Educational Background</div>
+                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">projects.html</div>
+                                            <div style="font-size: 12px; color: #cccccc;">Personal Projects</div>
                                         </div>
                                     </a>
 
-                                    <!-- File Item: Skills -->
-                                    <a href="skills.html" class="file-item" style="color: #c9d1d9; text-decoration: none; padding: 12px; background: rgba(255, 236, 167, 0.05); border: 1px solid #30363d; border-radius: 6px; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer;"
-                                       onmouseover="this.style.background='rgba(255, 236, 167, 0.1)'; this.style.borderColor='#ffeca7'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(255, 236, 167, 0.3)'"
-                                       onmouseout="this.style.background='rgba(255, 236, 167, 0.05)'; this.style.borderColor='#30363d'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                                        <span style="font-size: 16px;">⚡</span>
+                                    <!-- Enhanced File Item: Software -->
+                                    <a href="software.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 1.4s; opacity: 0; animation-fill-mode: forwards;"
+                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
+                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
+                                        <span style="font-size: 18px;">💻</span>
                                         <div>
-                                            <div style="font-weight: bold; color: #ffeca7;">skills.html</div>
-                                            <div style="font-size: 12px; color: #8b949e;">Technical Skills</div>
+                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">software.html</div>
+                                            <div style="font-size: 12px; color: #cccccc;">Software Proficiency</div>
                                         </div>
                                     </a>
 
-                                    <!-- File Item: Projects -->
-                                    <a href="projects.html" class="file-item" style="color: #c9d1d9; text-decoration: none; padding: 12px; background: rgba(255, 159, 243, 0.05); border: 1px solid #30363d; border-radius: 6px; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer;"
-                                       onmouseover="this.style.background='rgba(255, 159, 243, 0.1)'; this.style.borderColor='#ff9ff3'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(255, 159, 243, 0.3)'"
-                                       onmouseout="this.style.background='rgba(255, 159, 243, 0.05)'; this.style.borderColor='#30363d'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                                        <span style="font-size: 16px;">🚀</span>
+                                    <!-- Enhanced File Item: Certifications -->
+                                    <a href="certifications.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 1.6s; opacity: 0; animation-fill-mode: forwards;"
+                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
+                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
+                                        <span style="font-size: 18px;">🏆</span>
                                         <div>
-                                            <div style="font-weight: bold; color: #ff9ff3;">projects.html</div>
-                                            <div style="font-size: 12px; color: #8b949e;">Personal Projects</div>
+                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">certifications.html</div>
+                                            <div style="font-size: 12px; color: #cccccc;">Certificates & Awards</div>
                                         </div>
                                     </a>
 
-                                    <!-- File Item: Software -->
-                                    <a href="software.html" class="file-item" style="color: #c9d1d9; text-decoration: none; padding: 12px; background: rgba(150, 206, 180, 0.05); border: 1px solid #30363d; border-radius: 6px; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer;"
-                                       onmouseover="this.style.background='rgba(150, 206, 180, 0.1)'; this.style.borderColor='#96ceb4'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(150, 206, 180, 0.3)'"
-                                       onmouseout="this.style.background='rgba(150, 206, 180, 0.05)'; this.style.borderColor='#30363d'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                                        <span style="font-size: 16px;">💻</span>
+                                    <!-- Enhanced File Item: Languages -->
+                                    <a href="languages.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 1.8s; opacity: 0; animation-fill-mode: forwards;"
+                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
+                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
+                                        <span style="font-size: 18px;">🌐</span>
                                         <div>
-                                            <div style="font-weight: bold; color: #96ceb4;">software.html</div>
-                                            <div style="font-size: 12px; color: #8b949e;">Software Proficiency</div>
+                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">languages.html</div>
+                                            <div style="font-size: 12px; color: #cccccc;">Language Skills</div>
                                         </div>
                                     </a>
 
-                                    <!-- File Item: Certifications -->
-                                    <a href="certifications.html" class="file-item" style="color: #c9d1d9; text-decoration: none; padding: 12px; background: rgba(116, 185, 255, 0.05); border: 1px solid #30363d; border-radius: 6px; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer;"
-                                       onmouseover="this.style.background='rgba(116, 185, 255, 0.1)'; this.style.borderColor='#74b9ff'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(116, 185, 255, 0.3)'"
-                                       onmouseout="this.style.background='rgba(116, 185, 255, 0.05)'; this.style.borderColor='#30363d'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                                        <span style="font-size: 16px;">🏆</span>
+                                    <!-- Enhanced File Item: Hobbies -->
+                                    <a href="hobbies.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 2s; opacity: 0; animation-fill-mode: forwards;"
+                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
+                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
+                                        <span style="font-size: 18px; animation: data-stream 3s ease-in-out infinite 4.5s;">🎮</span>
                                         <div>
-                                            <div style="font-weight: bold; color: #74b9ff;">certifications.html</div>
-                                            <div style="font-size: 12px; color: #8b949e;">Certificates & Awards</div>
-                                        </div>
-                                    </a>
-
-                                    <!-- File Item: Languages -->
-                                    <a href="languages.html" class="file-item" style="color: #c9d1d9; text-decoration: none; padding: 12px; background: rgba(254, 202, 87, 0.05); border: 1px solid #30363d; border-radius: 6px; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer;"
-                                       onmouseover="this.style.background='rgba(254, 202, 87, 0.1)'; this.style.borderColor='#feca57'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(254, 202, 87, 0.3)'"
-                                       onmouseout="this.style.background='rgba(254, 202, 87, 0.05)'; this.style.borderColor='#30363d'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                                        <span style="font-size: 16px;">🌐</span>
-                                        <div>
-                                            <div style="font-weight: bold; color: #feca57;">languages.html</div>
-                                            <div style="font-size: 12px; color: #8b949e;">Language Skills</div>
-                                        </div>
-                                    </a>
-
-                                    <!-- File Item: Hobbies -->
-                                    <a href="hobbies.html" class="file-item" style="color: #c9d1d9; text-decoration: none; padding: 12px; background: rgba(253, 121, 168, 0.05); border: 1px solid #30363d; border-radius: 6px; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer;"
-                                       onmouseover="this.style.background='rgba(253, 121, 168, 0.1)'; this.style.borderColor='#fd79a8'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(253, 121, 168, 0.3)'"
-                                       onmouseout="this.style.background='rgba(253, 121, 168, 0.05)'; this.style.borderColor='#30363d'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                                        <span style="font-size: 16px;">🎮</span>
-                                        <div>
-                                            <div style="font-weight: bold; color: #fd79a8;">hobbies.html</div>
-                                            <div style="font-size: 12px; color: #8b949e;">Personal Interests</div>
+                                            <div style="font-weight: bold; color: #00ff00; animation: hologram 3s ease-in-out infinite 2.7s;">hobbies.html</div>
+                                            <div style="font-size: 12px; color: #cccccc; animation: description-scroll 4s ease-in-out infinite 4.5s;">Personal Interests</div>
                                         </div>
                                     </a>
                                 </div>
                                 
-                                <!-- Back to Home Button -->
-                                <div style="margin-top: 20px; text-align: center;">
-                                    <div style="color: #8b949e; font-size: 12px; margin-bottom: 8px;">📁 Current Directory: /portfolio/sections/</div>
-                                    <div style="color: #8b949e; font-size: 12px;">Total Files: 10 | Last Modified: June 2025</div>
+                                <!-- Enhanced Directory Info -->
+                                <div style="margin-top: 25px; text-align: center; animation: text-appear 1s ease-out 2.5s; opacity: 0; animation-fill-mode: forwards;">
+                                    <div style="color: #ffffff; font-size: 12px; margin-bottom: 8px; animation: hologram 3s ease-in-out infinite;">📁 Current Directory: /portfolio/sections/</div>
+                                    <div style="color: #ffffff; font-size: 12px; animation: data-stream 2s ease-in-out infinite;">Total Files: 10 | Last Modified: June 2025 | Status: ● READY</div>
                                 </div>
                             </nav>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- CSS Animations (placed in body, not head) -->
+        </div>        <!-- CSS Animations (placed in body, not head) -->
         <style>
+            /* Matrix Rain Effects - Keep these infinite for background effect */
             @keyframes matrix-rain {
                 0% { transform: translateY(-100px); opacity: 0; }
-                10% { opacity: 0.3; }
-                90% { opacity: 0.3; }
-                100% { transform: translateY(400px); opacity: 0; }
+                10% { opacity: 0.6; }
+                90% { opacity: 0.6; }
+                100% { transform: translateY(500px); opacity: 0; }
             }
             
-            @keyframes name-glow {
-                0%, 100% { text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41; }
-                50% { text-shadow: 0 0 20px #00ff41, 0 0 30px #00ff41, 0 0 40px #00ff41; }
+            @keyframes code-glow {
+                0%, 100% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; }
+                50% { text-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00, 0 0 35px #00ff00; }
+            }
+            
+            /* Enhanced Terminal Animations - Make these run once */
+            @keyframes terminal-bootup {
+                0% { opacity: 0; transform: scale(0.8); }
+                30% { opacity: 0.5; transform: scale(0.9); }
+                60% { opacity: 0.8; transform: scale(1.05); }
+                100% { opacity: 1; transform: scale(1); }
+            }
+            
+            @keyframes terminal-glow {
+                0% { box-shadow: 0 0 30px rgba(0, 255, 0, 0.2), inset 0 0 50px rgba(0, 255, 0, 0.1); }
+                100% { box-shadow: 0 0 30px rgba(0, 255, 0, 0.2), inset 0 0 50px rgba(0, 255, 0, 0.1); }
+            }
+            
+            @keyframes header-pulse {
+                0% { background: linear-gradient(90deg, #1a1a1a, #222222, #1a1a1a); }
+                100% { background: linear-gradient(90deg, #1a1a1a, #222222, #1a1a1a); }
+            }
+            
+            /* Control Button Animations - Keep subtle infinite for terminal feel */
+            @keyframes control-btn-pulse {
+                0%, 100% { transform: scale(1); background: #666666; }
+                50% { transform: scale(1.05); background: #777777; }
+            }
+            
+            @keyframes control-btn-glow {
+                0%, 100% { box-shadow: none; }
+                50% { box-shadow: 0 0 5px rgba(102, 102, 102, 0.5); }
+            }
+            
+            /* Text Animation Effects - Make these run once */
+            @keyframes title-flicker {
+                0% { opacity: 1; }
+                100% { opacity: 1; }
+            }
+            
+            @keyframes text-appear {
+                0% { opacity: 0; transform: translateX(-20px); }
+                100% { opacity: 1; transform: translateX(0); }
+            }
+            
+            @keyframes boot-sequence {
+                0% { opacity: 0; }
+                25% { opacity: 0.3; }
+                75% { opacity: 0.8; }
+                100% { opacity: 1; }
+            }
+            
+            /* Terminal Prompt Animations - Make these run once */
+            @keyframes prompt-slide-in {
+                0% { opacity: 0; transform: translateX(-30px); }
+                100% { opacity: 1; transform: translateX(0); }
+            }
+            
+            @keyframes username-glow {
+                0% { text-shadow: 0 0 5px #ffffff; }
+                100% { text-shadow: 0 0 5px #ffffff; }
+            }
+            
+            @keyframes colon-pulse {
+                0%, 100% { color: #00ff00; transform: scale(1); }
+                50% { color: #00ff88; transform: scale(1.1); }
+            }
+            
+            @keyframes path-highlight {
+                0% { color: #ffffff; }
+                100% { color: #ffffff; }
+            }
+            
+            @keyframes typewriter-effect {
+                0% { width: 0; }
+                100% { width: 100%; }
+            }
+            
+            @keyframes enhanced-cursor-blink {
+                0%, 45% { opacity: 1; text-shadow: 0 0 10px #00ff00; }
+                50%, 95% { opacity: 0; text-shadow: none; }
+                100% { opacity: 1; text-shadow: 0 0 10px #00ff00; }
+            }
+            
+            /* Profile and Name Animations - Make these run once */
+            @keyframes profile-fade-in {
+                0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+                100% { opacity: 1; transform: translateY(0) scale(1); }
+            }
+            
+            @keyframes name-matrix-effect {
+                0% { transform: scale(1); filter: brightness(1); }
+                100% { transform: scale(1); filter: brightness(1); }
+            }
+            
+            @keyframes letter-flicker {
+                0% { opacity: 1; text-shadow: none; }
+                100% { opacity: 1; text-shadow: none; }
+            }
+            
+            @keyframes title-wave {
+                0% { transform: translateY(0) scale(1); }
+                100% { transform: translateY(0) scale(1); }
+            }
+            
+            @keyframes description-scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(0); }
+            }
+            
+            @keyframes dot-pulse {
+                0%, 100% { transform: scale(1); opacity: 1; }
+                50% { transform: scale(1.2); opacity: 0.8; }
+            }
+            
+            /* Floating Particles - Keep infinite for background effect */
+            @keyframes float-particle {
+                0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+                10% { opacity: 1; }
+                90% { opacity: 1; }
+                100% { transform: translateY(-300px) translateX(50px) rotate(360deg); opacity: 0; }
+            }
+            
+            /* Scanning Line Effect - Keep infinite for terminal feel */
+            @keyframes scan-line {
+                0% { transform: translateX(-100%); }
+                100% { transform: translateX(100vw); }
+            }
+            
+            /* Status and System Animations - Keep minimal infinite for status indicators */
+            @keyframes status-blink {
+                0%, 70% { opacity: 1; }
+                71%, 100% { opacity: 0.7; }
             }
             
             @keyframes cursor-blink {
@@ -302,17 +517,219 @@
                 51%, 100% { opacity: 0; }
             }
             
+            /* File Explorer Hover Animations */
+            .file-item {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .file-item::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+                transition: left 0.5s ease;
+            }
+            
+            .file-item:hover::before {
+                left: 100%;
+            }
+            
+            /* Additional Terminal Effects - Make these run once */
+            @keyframes terminal-scan {
+                0% { background-position: 0% 0%; }
+                100% { background-position: 0% 0%; }
+            }
+            
+            @keyframes data-stream {
+                0% { transform: translateY(0); opacity: 1; }
+                100% { transform: translateY(0); opacity: 1; }
+            }
+            
+            @keyframes pulse-glow {
+                0% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); }
+                100% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); }
+            }
+            
+            /* Screen Flicker Effect - Remove this */
+            @keyframes screen-flicker {
+                0% { opacity: 1; }
+                100% { opacity: 1; }
+            }
+            
+            /* Enhanced Matrix Digital Rain - Keep infinite for background */
+            @keyframes digital-rain {
+                0% { transform: translateY(-100vh) scaleY(0); opacity: 0; }
+                10% { opacity: 1; transform: translateY(-90vh) scaleY(1); }
+                90% { opacity: 1; transform: translateY(90vh) scaleY(1); }
+                100% { opacity: 0; transform: translateY(100vh) scaleY(0); }
+            }
+            
+            /* Holographic Text Effect - Make this stable */
+            @keyframes hologram {
+                0% { 
+                    text-shadow: 
+                        0 0 5px #00ff00,
+                        0 0 10px #00ff00;
+                }
+                100% { 
+                    text-shadow: 
+                        0 0 5px #00ff00,
+                        0 0 10px #00ff00;
+                }
+            }
+            
+            /* Terminal Loading Bar Animation - Make this run once */
+            @keyframes loading-bar {
+                0% { width: 0%; }
+                100% { width: 100%; }
+            }
+            
+            /* Remove Glitch Effect */
+            @keyframes glitch {
+                0% { transform: translate(0); }
+                100% { transform: translate(0); }
+            }
+        </style>
+              @keyframes letter-flicker {
+                0% { opacity: 1; text-shadow: none; }
+                100% { opacity: 1; text-shadow: none; }
+            }
+            
+            @keyframes title-wave {
+                0% { transform: translateY(0) scale(1); }
+                100% { transform: translateY(0) scale(1); }
+            }
+            
+            @keyframes description-scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(0); }
+            }
+            
+            @keyframes dot-pulse {
+                0%, 100% { transform: scale(1); opacity: 1; }
+                50% { transform: scale(1.2); opacity: 0.8; }
+            }
+            
+            /* Floating Particles */
+            @keyframes float-particle {
+                0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+                10% { opacity: 1; }
+                90% { opacity: 1; }
+                100% { transform: translateY(-300px) translateX(50px) rotate(360deg); opacity: 0; }
+            }
+            
+            /* Scanning Line Effect */
+            @keyframes scan-line {
+                0% { transform: translateX(-100%); }
+                100% { transform: translateX(100vw); }
+            }
+            
+            /* Status and System Animations */
             @keyframes status-blink {
                 0%, 70% { opacity: 1; }
                 71%, 100% { opacity: 0.5; }
             }
             
-            @keyframes terminal-pulse {
-                0%, 100% { opacity: 1; transform: scale(1); }
-                50% { opacity: 0.7; transform: scale(0.95); }
-            }            @keyframes typewriter {
-                0%, 90% { opacity: 1; }
-                95%, 100% { opacity: 0.3; }
+            @keyframes cursor-blink {
+                0%, 50% { opacity: 1; }
+                51%, 100% { opacity: 0; }
+            }
+            
+            /* File Explorer Hover Animations */
+            .file-item {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .file-item::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+                transition: left 0.5s ease;
+            }
+            
+            .file-item:hover::before {
+                left: 100%;
+            }
+            
+            /* Additional Terminal Effects */
+            @keyframes terminal-scan {
+                0% { background-position: 0% 0%; }
+                100% { background-position: 100% 100%; }
+            }
+            
+            @keyframes data-stream {
+                0% { transform: translateY(-10px); opacity: 0; }
+                50% { opacity: 1; }
+                100% { transform: translateY(10px); opacity: 0; }
+            }
+            
+            @keyframes pulse-glow {
+                0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); }
+                50% { box-shadow: 0 0 25px rgba(0, 255, 0, 0.8), 0 0 50px rgba(0, 255, 0, 0.3); }
+            }
+            
+            /* Screen Flicker Effect */
+            body {
+                animation: screen-flicker 0.15s infinite linear alternate;
+            }
+            
+            @keyframes screen-flicker {
+                0% { opacity: 1; }
+                98% { opacity: 1; }
+                99% { opacity: 0.98; }
+                100% { opacity: 1; }
+            }
+            
+            /* Enhanced Matrix Digital Rain */
+            @keyframes digital-rain {
+                0% { transform: translateY(-100vh) scaleY(0); opacity: 0; }
+                10% { opacity: 1; transform: translateY(-90vh) scaleY(1); }
+                90% { opacity: 1; transform: translateY(90vh) scaleY(1); }
+                100% { opacity: 0; transform: translateY(100vh) scaleY(0); }
+            }
+            
+            /* Holographic Text Effect */
+            @keyframes hologram {
+                0%, 100% { 
+                    text-shadow: 
+                        0 0 5px #00ff00,
+                        0 0 10px #00ff00,
+                        0 0 15px #00ff00,
+                        0 0 20px #00ff00;
+                }
+                50% { 
+                    text-shadow: 
+                        0 0 2px #00ff00,
+                        0 0 5px #00ff00,
+                        0 0 8px #00ff00,
+                        0 0 12px #00ff00,
+                        0 0 18px #00ff00,
+                        0 0 25px #00ff00;
+                }
+            }
+            
+            /* Terminal Loading Bar Animation */
+            @keyframes loading-bar {
+                0% { width: 0%; }
+                100% { width: 100%; }
+            }
+            
+            /* Glitch Effect */
+            @keyframes glitch {
+                0%, 100% { transform: translate(0); }
+                20% { transform: translate(-2px, 2px); }
+                40% { transform: translate(-2px, -2px); }
+                60% { transform: translate(2px, 2px); }
+                80% { transform: translate(2px, -2px); }
             }
         </style>
 
