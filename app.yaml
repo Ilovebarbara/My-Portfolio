@@ -1,10 +1,40 @@
 runtime: python39
 
+# Basic scaling for cost optimization
+automatic_scaling:
+  min_instances: 0
+  max_instances: 10
+
+# Handlers for static files
 handlers:
+# Serve the main index page
 - url: /
   static_files: index.html
   upload: index.html
+  secure: always
+  redirect_http_response_code: 301
 
+# Serve avatar image
+- url: /avatar\.png
+  static_files: avatar.png
+  upload: avatar\.png
+  secure: always
+  expiration: "30d"
+
+# Serve favicon if you add one
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+  secure: always
+  expiration: "30d"
+
+# Serve any other static files
 - url: /(.*)
   static_files: \1
   upload: (.*)
+  secure: always
+
+# Environment variables
+env_variables:
+  PORTFOLIO_VERSION: "2.0"
+  AUTHOR: "Jodeo Ira Luis D. Joson"
