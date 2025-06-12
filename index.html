@@ -2,835 +2,595 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>    <!-- Animated Terminal Theme Header -->
-    <header style="background: linear-gradient(45deg, #000000, #0a0a0a, #000000); color: #ffffff; padding: 20px; font-family: 'Courier New', monospace; border-bottom: 1px solid #333333; position: relative; overflow: hidden; animation: terminal-bootup 3s ease-in-out;">
-        
-        <!-- Enhanced Matrix Rain Background -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0.15;">
-            <div style="position: absolute; top: -50px; left: 5%; color: #00ff00; font-size: 10px; animation: matrix-rain 8s linear infinite, code-glow 2s ease-in-out infinite;">01001000 01100001 01100011 01101011 01100101 01110010</div>
-            <div style="position: absolute; top: -80px; left: 15%; color: #00ff00; font-size: 12px; animation: matrix-rain 10s linear infinite 1s, code-glow 2.5s ease-in-out infinite;">11001001 10101010 01010101 01110100</div>
-            <div style="position: absolute; top: -30px; left: 25%; color: #00ff00; font-size: 8px; animation: matrix-rain 7s linear infinite 2s, code-glow 3s ease-in-out infinite;">01010100 01100101 01110010 01101101 01101001 01101110</div>
-            <div style="position: absolute; top: -60px; left: 35%; color: #00ff00; font-size: 11px; animation: matrix-rain 9s linear infinite 3s, code-glow 2.2s ease-in-out infinite;">10001001 11111111 00000000 01010000</div>
-            <div style="position: absolute; top: -40px; left: 45%; color: #00ff00; font-size: 9px; animation: matrix-rain 6s linear infinite 4s, code-glow 2.8s ease-in-out infinite;">01001001 01010100 01000011 01001000</div>
-            <div style="position: absolute; top: -70px; left: 55%; color: #00ff00; font-size: 13px; animation: matrix-rain 11s linear infinite 1.5s, code-glow 2.3s ease-in-out infinite;">01000011 01111001 01100010 01100101</div>
-            <div style="position: absolute; top: -20px; left: 65%; color: #00ff00; font-size: 10px; animation: matrix-rain 8s linear infinite 5s, code-glow 3.2s ease-in-out infinite;">01110010 01110011 01100101 01100011</div>
-            <div style="position: absolute; top: -90px; left: 75%; color: #00ff00; font-size: 12px; animation: matrix-rain 12s linear infinite 2.5s, code-glow 2.7s ease-in-out infinite;">01110101 01110010 01101001 01110100</div>
-            <div style="position: absolute; top: -50px; left: 85%; color: #00ff00; font-size: 8px; animation: matrix-rain 5s linear infinite 6s, code-glow 3.5s ease-in-out infinite;">01111001 00100000 01000001 01001001</div>
-            <div style="position: absolute; top: -35px; left: 95%; color: #00ff00; font-size: 11px; animation: matrix-rain 9s linear infinite 3.5s, code-glow 2.1s ease-in-out infinite;">01010000 01101111 01110010 01110100</div>
-        </div>
-        
-        <!-- Additional Matrix Layers for Depth -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; opacity: 0.08;">
-            <div style="position: absolute; top: -100px; left: 3%; color: #00ff00; font-size: 6px; animation: digital-rain 15s linear infinite;">10011010 11001100 00110011</div>
-            <div style="position: absolute; top: -120px; left: 13%; color: #00ff00; font-size: 8px; animation: digital-rain 18s linear infinite 2s;">01010101 10101010 11110000</div>
-            <div style="position: absolute; top: -80px; left: 23%; color: #00ff00; font-size: 7px; animation: digital-rain 12s linear infinite 4s;">11111111 00000000 10101010</div>
-            <div style="position: absolute; top: -140px; left: 33%; color: #00ff00; font-size: 9px; animation: digital-rain 20s linear infinite 1s;">00110011 11001100 01010101</div>
-            <div style="position: absolute; top: -60px; left: 43%; color: #00ff00; font-size: 6px; animation: digital-rain 14s linear infinite 3s;">10101010 01010101 11110000</div>
-            <div style="position: absolute; top: -110px; left: 53%; color: #00ff00; font-size: 8px; animation: digital-rain 16s linear infinite 5s;">01100110 10011001 00110011</div>
-            <div style="position: absolute; top: -90px; left: 63%; color: #00ff00; font-size: 7px; animation: digital-rain 13s linear infinite 2.5s;">11001100 00110011 10101010</div>
-            <div style="position: absolute; top: -130px; left: 73%; color: #00ff00; font-size: 9px; animation: digital-rain 19s linear infinite 4.5s;">00001111 11110000 01010101</div>
-            <div style="position: absolute; top: -70px; left: 83%; color: #00ff00; font-size: 6px; animation: digital-rain 11s linear infinite 1.5s;">10101010 01010101 11001100</div>
-            <div style="position: absolute; top: -95px; left: 93%; color: #00ff00; font-size: 8px; animation: digital-rain 17s linear infinite 3.5s;">01010101 10101010 00110011</div>
-        </div>
-        
-        <!-- Floating Particles Background -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3; opacity: 0.3;">
-            <div style="position: absolute; top: 20%; left: 10%; width: 2px; height: 2px; background: #00ff00; border-radius: 50%; animation: float-particle 15s linear infinite;"></div>
-            <div style="position: absolute; top: 60%; left: 20%; width: 1px; height: 1px; background: #00ff00; border-radius: 50%; animation: float-particle 12s linear infinite 2s;"></div>
-            <div style="position: absolute; top: 40%; left: 80%; width: 2px; height: 2px; background: #00ff00; border-radius: 50%; animation: float-particle 18s linear infinite 4s;"></div>
-            <div style="position: absolute; top: 80%; left: 60%; width: 1px; height: 1px; background: #00ff00; border-radius: 50%; animation: float-particle 14s linear infinite 6s;"></div>
-            <div style="position: absolute; top: 30%; left: 90%; width: 2px; height: 2px; background: #00ff00; border-radius: 50%; animation: float-particle 16s linear infinite 8s;"></div>
-            <!-- Additional Particles -->
-            <div style="position: absolute; top: 15%; left: 50%; width: 1px; height: 1px; background: #00ff00; border-radius: 50%; animation: float-particle 20s linear infinite 1s;"></div>
-            <div style="position: absolute; top: 70%; left: 30%; width: 2px; height: 2px; background: #00ff00; border-radius: 50%; animation: float-particle 13s linear infinite 3s;"></div>
-            <div style="position: absolute; top: 25%; left: 70%; width: 1px; height: 1px; background: #00ff00; border-radius: 50%; animation: float-particle 17s linear infinite 5s;"></div>
-            <div style="position: absolute; top: 85%; left: 15%; width: 2px; height: 2px; background: #00ff00; border-radius: 50%; animation: float-particle 19s linear infinite 7s;"></div>
-            <div style="position: absolute; top: 45%; left: 85%; width: 1px; height: 1px; background: #00ff00; border-radius: 50%; animation: float-particle 11s linear infinite 9s;"></div>
-        </div>
-        
-        <!-- Enhanced Scanning Lines Effect -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #00ff00, transparent); animation: scan-line 4s linear infinite; z-index: 4;"></div>
-        <div style="position: absolute; top: 25%; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #00ff00, transparent); animation: scan-line 6s linear infinite 1s; z-index: 4; opacity: 0.6;"></div>
-        <div style="position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #00ff00, transparent); animation: scan-line 5s linear infinite 2s; z-index: 4; opacity: 0.4;"></div>
-        <div style="position: absolute; top: 75%; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #00ff00, transparent); animation: scan-line 7s linear infinite 3s; z-index: 4; opacity: 0.5;"></div>
-        
-        <!-- Grid Pattern Overlay -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 0, 0.03) 2px, rgba(0, 255, 0, 0.03) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 255, 0, 0.03) 2px, rgba(0, 255, 0, 0.03) 4px); z-index: 1; animation: terminal-scan 10s linear infinite;"></div>
-
-        <!-- Main Terminal Container -->
-        <div style="position: relative; z-index: 10; max-width: 1000px; margin: 0 auto;">
-              <!-- Animated Terminal Window -->
-            <div style="background: #000000; border: 1px solid #333333; border-radius: 8px; overflow: hidden; box-shadow: 0 0 30px rgba(0, 255, 0, 0.2), inset 0 0 50px rgba(0, 255, 0, 0.1); animation: terminal-glow 3s ease-in-out infinite;">
-                
-                <!-- Enhanced Terminal Header Bar -->
-                <div style="background: linear-gradient(90deg, #1a1a1a, #222222, #1a1a1a); padding: 12px 15px; border-bottom: 1px solid #333333; display: flex; align-items: center; gap: 8px; animation: header-pulse 4s ease-in-out infinite;">
-                    <div style="width: 12px; height: 12px; background: #666666; border-radius: 50%; animation: control-btn-pulse 2s ease-in-out infinite, control-btn-glow 3s ease-in-out infinite;"></div>
-                    <div style="width: 12px; height: 12px; background: #666666; border-radius: 50%; animation: control-btn-pulse 2s ease-in-out infinite 0.3s, control-btn-glow 3s ease-in-out infinite 0.5s;"></div>
-                    <div style="width: 12px; height: 12px; background: #666666; border-radius: 50%; animation: control-btn-pulse 2s ease-in-out infinite 0.6s, control-btn-glow 3s ease-in-out infinite 1s;"></div>
-                    <div style="flex: 1; text-align: center; color: #ffffff; font-weight: bold; animation: title-flicker 5s ease-in-out infinite;">
-                        Terminal - jodeo@portfolio [SECURE_CONNECTION_ESTABLISHED]
-                    </div>
-                    <div style="color: #00ff00; font-size: 12px; animation: status-blink 2s ease-in-out infinite;">● ONLINE</div>
-                </div>                <!-- Enhanced Terminal Content -->
-                <div style="padding: 30px; background: #000000; position: relative;">
-                    
-                    <!-- Boot Sequence Animation -->
-                    <div style="margin-bottom: 25px; animation: boot-sequence 8s ease-in-out;">
-                        <div style="color: #00ff00; font-size: 12px; margin-bottom: 5px; animation: text-appear 1s ease-in-out;">BIOS v2.1.4 - System Check Complete</div>
-                        <div style="color: #00ff00; font-size: 12px; margin-bottom: 5px; animation: text-appear 1s ease-in-out 0.5s; opacity: 0; animation-fill-mode: forwards;">Loading Portfolio Kernel... OK</div>
-                        <div style="color: #00ff00; font-size: 12px; margin-bottom: 15px; animation: text-appear 1s ease-in-out 1s; opacity: 0; animation-fill-mode: forwards;">Security Protocols: ENABLED</div>
-                    </div>
-                    
-                    <!-- Animated Command Prompt Line -->                    <div style="margin-bottom: 25px; font-size: 14px; animation: prompt-slide-in 2s ease-out 2s; opacity: 0; animation-fill-mode: forwards;">
-                        <span style="color: #ffffff;">jodeo@portfolio</span><span style="color: #00ff00; animation: colon-pulse 1s ease-in-out infinite;">:</span><span style="color: #ffffff;">~/portfolio</span><span style="color: #ffffff;">$ </span>
-                        <span style="color: #00ff00;">cat personal_profile.txt</span>
-                        <span style="animation: enhanced-cursor-blink 1s infinite; color: #00ff00; text-shadow: 0 0 10px #00ff00;">█</span>
-                    </div>
-
-                    <!-- Animated Profile Display -->
-                    <div style="border: 1px solid #333333; border-radius: 6px; padding: 25px; background: linear-gradient(145deg, #111111, #0a0a0a); margin-bottom: 25px; animation: profile-fade-in 3s ease-out 4s; opacity: 0; animation-fill-mode: forwards; box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.1);">
-                        
-                        <!-- Animated Name Section -->
-                        <hgroup style="margin-bottom: 20px;">                            <h1 style="font-size: 2.4em; margin: 0; text-shadow: 0 0 15px #00ff00;">
-                                <span style="color: #00ff00;">&gt; </span>
-                                <span style="color: #ffffff;">J</span>
-                                <span style="color: #ffffff;">O</span>
-                                <span style="color: #ffffff;">D</span>
-                                <span style="color: #ffffff;">E</span>
-                                <span style="color: #ffffff;">O</span>
-                                <span style="color: #00ff00;"> I</span>
-                                <span style="color: #ffffff;">R</span>
-                                <span style="color: #ffffff;">A</span>
-                                <span style="color: #00ff00;"> L</span>
-                                <span style="color: #ffffff;">U</span>
-                                <span style="color: #ffffff;">I</span>
-                                <span style="color: #ffffff;">S</span>
-                                <span style="color: #00ff00;"> D</span>
-                                <span style="color: #ffffff;">.</span>
-                                <span style="color: #00ff00;"> J</span>
-                                <span style="color: #ffffff;">O</span>
-                                <span style="color: #ffffff;">S</span>
-                                <span style="color: #ffffff;">O</span>
-                                <span style="color: #ffffff;">N</span>
-                            </h1>
-                            
-                            <h2 style="font-size: 1.4em; margin: 8px 0; color: #00ff00; text-shadow: 0 0 10px #00ff00;">
-                                [CYBERSECURITY_SPECIALIST.EXE]
-                            </h2>
-                            
-                            <div style="color: #ffffff; font-size: 1.1em; margin-top: 15px;">
-                                <span style="color: #00ff00;">●</span> Information Technology Professional 
-                                <span style="color: #00ff00;">●</span> Web Developer 
-                                <span style="color: #00ff00;">●</span> Cloud Infrastructure Expert
-                            </div>
-                        </hgroup>
-                    </div>                    <!-- Enhanced System Status Panel -->                    <div style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)); border: 1px solid #333333; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);">
-                        <div style="color: #00ff00; font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #333333; padding-bottom: 8px; display: flex; align-items: center; gap: 10px; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">
-                            <span>⚡</span>
-                            <span>SYSTEM STATUS</span>
-                            <div style="flex: 1; height: 1px; background: linear-gradient(90deg, #00ff00, transparent);"></div>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 14px;">
-                            <div style="animation: text-appear 1s ease-out 0.5s; opacity: 0; animation-fill-mode: forwards;">
-                                <span style="color: #ffffff;">STATUS:</span> 
-                                <span style="color: #00ff00; animation: status-blink 1.5s infinite; text-shadow: 0 0 10px #00ff00;">● ONLINE</span>
-                            </div>                            <div style="animation: text-appear 1s ease-out 1s; opacity: 0; animation-fill-mode: forwards;">
-                                <span style="color: #ffffff;">SECURITY:</span> 
-                                <span style="color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">🔒 ENCRYPTED</span>
-                            </div>
-                            <div style="animation: text-appear 1s ease-out 1.5s; opacity: 0; animation-fill-mode: forwards;">
-                                <span style="color: #ffffff;">LOCATION:</span> 
-                                <span style="color: #ffffff;">📍 Bulacan, Philippines</span>
-                            </div>                            <div style="animation: text-appear 1s ease-out 2s; opacity: 0; animation-fill-mode: forwards;">
-                                <span style="color: #ffffff;">ACCESS:</span> 
-                                <span style="color: #00ff00;">✓ AUTHORIZED</span>
-                            </div>
-                        </div>
-                        <!-- System Metrics -->
-                        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #333333;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-size: 12px;">                                <div style="animation: text-appear 1s ease-out 2.5s; opacity: 0; animation-fill-mode: forwards;">
-                                    <span style="color: #ffffff;">CPU:</span>
-                                    <div style="background: #333333; height: 4px; border-radius: 2px; margin-top: 3px; overflow: hidden;">
-                                        <div style="background: linear-gradient(90deg, #00ff00, #88ff88); height: 100%; width: 75%;"></div>
-                                    </div>
-                                </div>
-                                <div style="animation: text-appear 1s ease-out 3s; opacity: 0; animation-fill-mode: forwards;">
-                                    <span style="color: #ffffff;">RAM:</span>
-                                    <div style="background: #333333; height: 4px; border-radius: 2px; margin-top: 3px; overflow: hidden;">
-                                        <div style="background: linear-gradient(90deg, #00ff00, #88ff88); height: 100%; width: 60%;"></div>
-                                    </div>
-                                </div>
-                                <div style="animation: text-appear 1s ease-out 3.5s; opacity: 0; animation-fill-mode: forwards;">
-                                    <span style="color: #ffffff;">NET:</span>
-                                    <div style="background: #333333; height: 4px; border-radius: 2px; margin-top: 3px; overflow: hidden;">
-                                        <div style="background: linear-gradient(90deg, #00ff00, #88ff88); height: 100%; width: 90%;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                    <!-- Enhanced Contact Terminal -->
-                    <div style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.8)); border: 1px solid #333333; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 0 15px rgba(0, 255, 0, 0.2); animation: terminal-glow 5s ease-in-out infinite;">
-                        <div style="color: #00ff00; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; animation: prompt-slide-in 2s ease-out;">
-                            <span style="animation: enhanced-cursor-blink 1s infinite;">█</span> 
-                            <span style="animation: typewriter-effect 3s ease-in-out infinite;">./contact_protocols.exe</span>
-                            <div style="flex: 1; height: 1px; background: linear-gradient(90deg, #00ff00, transparent); margin-left: 10px; animation: loading-bar 2s ease-in-out infinite;"></div>
-                        </div>                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; font-size: 13px;">
-                            <div style="animation: text-appear 1s ease-out 0.5s; opacity: 0; animation-fill-mode: forwards; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(5px)'; this.style.textShadow='0 0 10px #00ff00'" onmouseout="this.style.transform='translateX(0)'; this.style.textShadow='none'">
-                                <span style="color: #ffffff;">📧 EMAIL:</span> 
-                                <a href="mailto:jodeoiraluisjoson@gmail.com" style="color: #00ff00; text-decoration: none; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">jodeoiraluisjoson@gmail.com</a>
-                            </div>
-                            <div style="animation: text-appear 1s ease-out 1s; opacity: 0; animation-fill-mode: forwards; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(5px)'; this.style.textShadow='0 0 10px #00ff00'" onmouseout="this.style.transform='translateX(0)'; this.style.textShadow='none'">
-                                <span style="color: #ffffff;">📱 PHONE:</span> 
-                                <a href="tel:+639917638759" style="color: #00ff00; text-decoration: none; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">+639917638759</a>
-                            </div>
-                            <div style="animation: text-appear 1s ease-out 1.5s; opacity: 0; animation-fill-mode: forwards; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(5px)'; this.style.textShadow='0 0 10px #00ff00'" onmouseout="this.style.transform='translateX(0)'; this.style.textShadow='none'">
-                                <span style="color: #ffffff;">🔗 GITHUB:</span> 
-                                <a href="https://github.com/Ilovebarbara" style="color: #00ff00; text-decoration: none; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">@Ilovebarbara</a>
-                            </div>
-                            <div style="animation: text-appear 1s ease-out 2s; opacity: 0; animation-fill-mode: forwards; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(5px)'; this.style.textShadow='0 0 10px #00ff00'" onmouseout="this.style.transform='translateX(0)'; this.style.textShadow='none'">
-                                <span style="color: #ffffff;">💼 LINKEDIN:</span> 
-                                <a href="https://www.linkedin.com/in/jodeoiraluis-joson-737976346" style="color: #00ff00; text-decoration: none; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">@jodeoiraluis-joson</a>
-                            </div>
-                        </div>
-                        <!-- Connection Status -->                        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #333333; font-size: 12px; animation: text-appear 1s ease-out 2.5s; opacity: 0; animation-fill-mode: forwards;">
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <span style="color: #ffffff;">CONNECTION STATUS:</span>
-                                <span style="color: #00ff00; animation: status-blink 1s infinite;">● ACTIVE</span>
-                                <div style="flex: 1; height: 1px; background: linear-gradient(90deg, #00ff00, transparent); margin-left: 10px;"></div>
-                                <span style="color: #ffffff; font-size: 10px;">PING: 12ms</span>
-                            </div>
-                        </div>
-                    </div>                    <!-- Enhanced Interactive Terminal Navigation -->
-                    <div>
-                        <!-- Enhanced Terminal Command Input -->
-                        <div style="margin-bottom: 25px;">                            <div style="color: #00ff00; margin-bottom: 15px; font-weight: bold; display: flex; align-items: center; gap: 10px; animation: prompt-slide-in 2s ease-out;">
-                                <span style="color: #ffffff;">root@cybersec</span>
-                                <span style="color: #00ff00; animation: colon-pulse 1s ease-in-out infinite;">:</span>
-                                <span style="color: #ffffff;">~/portfolio</span>
-                                <span style="color: #ffffff;">$ </span>
-                                <input type="text" id="terminalInput" placeholder="cd sections/about | ls | help" 
-                                       style="background: transparent; border: none; color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; outline: none; width: 300px; border-bottom: 1px solid #333333; transition: all 0.3s ease; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;"
-                                       onkeypress="handleTerminalCommand(event)"
-                                       onfocus="this.style.borderBottomColor='#00ff00'; this.style.textShadow='0 0 10px #00ff00'"
-                                       onblur="this.style.borderBottomColor='#333333'; this.style.textShadow='0 0 5px #00ff00, 0 0 10px #00ff00'"
-                                       autocomplete="off">
-                                <span style="color: #00ff00; animation: enhanced-cursor-blink 1s infinite;">█</span>
-                            </div>
-                            
-                            <!-- Enhanced Command Output -->                            <div id="commandOutput" style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(10, 10, 10, 0.9)); border-radius: 6px; padding: 15px; margin-bottom: 20px; min-height: 50px; border: 1px solid #333333; box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.1);">
-                                <div style="color: #ffffff; font-size: 12px; animation: text-appear 1s ease-out;">
-                                    <span style="color: #00ff00;">💡</span> 
-                                    <span style="color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">Available commands:</span> 
-                                    <span>cd [directory] | ls | help | clear</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Enhanced Terminal Prompt -->
-                        <div style="color: #00ff00; margin-bottom: 20px; font-weight: bold; display: flex; align-items: center; gap: 10px; animation: prompt-slide-in 2s ease-out 0.5s; opacity: 0; animation-fill-mode: forwards;">
-                            <span style="color: #ffffff; animation: username-glow 3s ease-in-out infinite;">root@cybersec</span>
-                            <span style="color: #00ff00; animation: colon-pulse 1s ease-in-out infinite;">:</span>
-                            <span style="color: #ffffff; animation: path-highlight 4s ease-in-out infinite;">~/portfolio</span>
-                            <span style="color: #ffffff;">$ </span>
-                            <span style="color: #00ff00; animation: typewriter-effect 4s steps(25) infinite;">ls -la --explorer-mode</span>
-                            <div style="flex: 1; height: 1px; background: linear-gradient(90deg, #00ff00, transparent); margin-left: 10px; animation: loading-bar 3s ease-in-out infinite;"></div>
-                        </div>
-                          <!-- Enhanced File Explorer Container -->                        <div style="background: linear-gradient(135deg, #000000, #0a0a0a); border: 2px solid #333333; border-radius: 12px; overflow: hidden; box-shadow: 0 0 30px rgba(0, 255, 0, 0.3), inset 0 0 30px rgba(0, 255, 0, 0.1);">
-                            
-                            <!-- Enhanced Explorer Header -->
-                            <div style="background: linear-gradient(90deg, #1a1a1a, #222222, #1a1a1a); padding: 15px 20px; border-bottom: 1px solid #333333; display: flex; align-items: center; gap: 12px;">
-                                <div style="display: flex; gap: 8px;">
-                                    <div style="width: 10px; height: 10px; background: #666666; border-radius: 50%; animation: control-btn-pulse 2s ease-in-out infinite;"></div>
-                                    <div style="width: 10px; height: 10px; background: #666666; border-radius: 50%; animation: control-btn-pulse 2s ease-in-out infinite;"></div>
-                                    <div style="width: 10px; height: 10px; background: #666666; border-radius: 50%; animation: control-btn-pulse 2s ease-in-out infinite;"></div>
-                                </div>
-                                <span style="color: #ffffff; font-size: 14px;">📁 /portfolio/sections/</span>
-                                <div style="flex: 1; height: 1px; background: linear-gradient(90deg, #00ff00, transparent);"></div>
-                                <div style="color: #00ff00; font-size: 12px; animation: status-blink 2s ease-in-out infinite;">● DIRECTORY_LOADED</div>
-                            </div>
-
-                            <!-- Enhanced File Explorer Content -->
-                            <nav style="padding: 20px;">
-                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
-                                      <!-- Enhanced File Item: About -->                                    <a href="about.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 0.2s; opacity: 0; animation-fill-mode: forwards;" 
-                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
-                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
-                                        <span style="font-size: 18px;">📄</span>
-                                        <div>
-                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">about.html</div>
-                                            <div style="font-size: 12px; color: #cccccc;">Personal Information</div>
-                                        </div>
-                                    </a><!-- Enhanced File Item: Contact -->                                    <a href="contact.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 0.4s; opacity: 0; animation-fill-mode: forwards;"
-                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
-                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
-                                        <span style="font-size: 18px;">📞</span>
-                                        <div>
-                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">contact.html</div>
-                                            <div style="font-size: 12px; color: #cccccc;">Contact Information</div>
-                                        </div>
-                                    </a><!-- Enhanced File Item: Experience -->
-                                    <a href="experience.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 0.6s; opacity: 0; animation-fill-mode: forwards;"                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
-                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
-                                        <span style="font-size: 18px;">💼</span>
-                                        <div>
-                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">experience.html</div>
-                                            <div style="font-size: 12px; color: #cccccc;">Work Experience</div>
-                                        </div>
-                                    </a>
-
-                                    <!-- Enhanced File Item: Education -->                                    <a href="education.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 0.8s; opacity: 0; animation-fill-mode: forwards;"
-                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
-                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
-                                        <span style="font-size: 18px;">🎓</span>
-                                        <div>
-                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">education.html</div>
-                                            <div style="font-size: 12px; color: #cccccc;">Educational Background</div>
-                                        </div>
-                                    </a>
-
-                                    <!-- Enhanced File Item: Skills -->
-                                    <a href="skills.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 1s; opacity: 0; animation-fill-mode: forwards;"                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
-                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
-                                        <span style="font-size: 18px;">⚡</span>
-                                        <div>
-                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">skills.html</div>
-                                            <div style="font-size: 12px; color: #cccccc;">Technical Skills</div>
-                                        </div>
-                                    </a>
-
-                                    <!-- Enhanced File Item: Projects -->
-                                    <a href="projects.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 1.2s; opacity: 0; animation-fill-mode: forwards;"
-                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
-                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
-                                        <span style="font-size: 18px;">🚀</span>
-                                        <div>
-                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">projects.html</div>
-                                            <div style="font-size: 12px; color: #cccccc;">Personal Projects</div>
-                                        </div>
-                                    </a>
-
-                                    <!-- Enhanced File Item: Software -->
-                                    <a href="software.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 1.4s; opacity: 0; animation-fill-mode: forwards;"
-                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
-                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
-                                        <span style="font-size: 18px;">💻</span>
-                                        <div>
-                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">software.html</div>
-                                            <div style="font-size: 12px; color: #cccccc;">Software Proficiency</div>
-                                        </div>
-                                    </a>
-
-                                    <!-- Enhanced File Item: Certifications -->
-                                    <a href="certifications.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 1.6s; opacity: 0; animation-fill-mode: forwards;"
-                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
-                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
-                                        <span style="font-size: 18px;">🏆</span>
-                                        <div>
-                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">certifications.html</div>
-                                            <div style="font-size: 12px; color: #cccccc;">Certificates & Awards</div>
-                                        </div>
-                                    </a>
-
-                                    <!-- Enhanced File Item: Languages -->
-                                    <a href="languages.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 1.8s; opacity: 0; animation-fill-mode: forwards;"
-                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
-                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
-                                        <span style="font-size: 18px;">🌐</span>
-                                        <div>
-                                            <div style="font-weight: bold; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;">languages.html</div>
-                                            <div style="font-size: 12px; color: #cccccc;">Language Skills</div>
-                                        </div>
-                                    </a>
-
-                                    <!-- Enhanced File Item: Hobbies -->
-                                    <a href="hobbies.html" class="file-item" style="color: #ffffff; text-decoration: none; padding: 15px; background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1)); border: 1px solid #333333; border-radius: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; overflow: hidden; animation: text-appear 1s ease-out 2s; opacity: 0; animation-fill-mode: forwards;"
-                                       onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3))'; this.style.borderColor='#00ff00'"
-                                       onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.1))'; this.style.borderColor='#333333'">
-                                        <span style="font-size: 18px; animation: data-stream 3s ease-in-out infinite 4.5s;">🎮</span>
-                                        <div>
-                                            <div style="font-weight: bold; color: #00ff00; animation: hologram 3s ease-in-out infinite 2.7s;">hobbies.html</div>
-                                            <div style="font-size: 12px; color: #cccccc; animation: description-scroll 4s ease-in-out infinite 4.5s;">Personal Interests</div>
-                                        </div>
-                                    </a>
-                                </div>
-                                
-                                <!-- Enhanced Directory Info -->
-                                <div style="margin-top: 25px; text-align: center; animation: text-appear 1s ease-out 2.5s; opacity: 0; animation-fill-mode: forwards;">
-                                    <div style="color: #ffffff; font-size: 12px; margin-bottom: 8px; animation: hologram 3s ease-in-out infinite;">📁 Current Directory: /portfolio/sections/</div>
-                                    <div style="color: #ffffff; font-size: 12px; animation: data-stream 2s ease-in-out infinite;">Total Files: 10 | Last Modified: June 2025 | Status: ● READY</div>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
+<body>    <!-- Desktop Icons - Software Tools -->
+    <div class="desktop-icons">
+        <!-- Development Tools -->        <div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <img src="https://code.visualstudio.com/assets/images/code-stable.png" alt="VS Code" width="48" height="48">
             </div>
-        </div>        <!-- CSS Animations (placed in body, not head) -->
-        <style>
-            /* Matrix Rain Effects - Keep these infinite for background effect */
-            @keyframes matrix-rain {
-                0% { transform: translateY(-100px); opacity: 0; }
-                10% { opacity: 0.6; }
-                90% { opacity: 0.6; }
-                100% { transform: translateY(500px); opacity: 0; }
-            }
+            <div class="desktop-icon-label">VS Code</div>
+        </div>
+        <div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <rect width="48" height="48" rx="4" fill="#24292e"/>
+                    <path d="M24 4c-11.046 0-20 8.954-20 20 0 8.837 5.729 16.331 13.676 18.976.999.183 1.365-.434 1.365-.963 0-.476-.017-1.74-.027-3.415-5.564 1.209-6.74-2.681-6.74-2.681-.91-2.311-2.221-2.926-2.221-2.926-1.817-1.242.137-1.217.137-1.217 2.009.141 3.065 2.063 3.065 2.063 1.785 3.058 4.683 2.175 5.824 1.664.181-1.295.7-2.175 1.273-2.674-4.449-.506-9.126-2.224-9.126-9.9 0-2.187.78-3.974 2.06-5.374-.206-.507-.893-2.543.195-5.3 0 0 1.68-.538 5.5 2.051a19.088 19.088 0 0 1 5-.673c1.696.008 3.407.229 5 .673 3.818-2.589 5.497-2.051 5.497-2.051 1.089 2.757.402 4.793.196 5.3 1.282 1.4 2.058 3.187 2.058 5.374 0 7.693-4.686 9.388-9.148 9.885.719.62 1.359 1.841 1.359 3.71 0 2.68-.024 4.837-.024 5.495 0 .535.36 1.155 1.374.96C38.276 40.324 44 32.834 44 24c0-11.046-8.954-20-20-20z" fill="white"/>
+                </svg>
+            </div>
+            <div class="desktop-icon-label">GitHub Desktop</div>
+        </div>        <div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <img src="https://pnghq.com/wp-content/uploads/2023/02/android-studio-icon-png-8279-768x828.png" alt="Android Studio" width="48" height="48">
+            </div>
+            <div class="desktop-icon-label">Android Studio</div>
+        </div>        <div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <img src="https://www.wizcase.com/wp-content/uploads/2022/02/NetBeans-logo.png" alt="NetBeans" width="48" height="48">
+            </div>
+            <div class="desktop-icon-label">NetBeans</div>
+        </div>        <div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <img src="https://intellij-support.jetbrains.com/hc/user_images/5l0fLOoDkFwpjU_ZKu7Ofg.png" alt="PyCharm" width="48" height="48">
+            </div>
+            <div class="desktop-icon-label">PyCharm</div>
+        </div>        <div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <img src="https://logos-world.net/wp-content/uploads/2021/02/Docker-Emblem.png" alt="Docker" width="48" height="48">
+            </div>
+            <div class="desktop-icon-label">Docker</div>
+        </div>        <div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3253833/google-cloud-icon-md.png" alt="Google Cloud" width="48" height="48">
+            </div>
+            <div class="desktop-icon-label">Google Cloud</div>
+        </div>
+        
+        <!-- Additional Row - Office & Testing Tools -->        <div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <img src="https://vectorified.com/images/office-logo-icon-25.png" alt="Microsoft Office" width="48" height="48">
+            </div>
+            <div class="desktop-icon-label">MS Office</div>
+        </div>        <div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <img src="https://1000logos.net/wp-content/uploads/2020/08/VirtualBox-Logo.png" alt="VirtualBox" width="48" height="48">
+            </div>
+            <div class="desktop-icon-label">VirtualBox</div>
+        </div>        <div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <img src="https://pluspng.com/img-png/firebase-logo-png-firebase-logo-png-transparent-amp-svg-vector-pluspng-2400x3291.png" alt="Firebase" width="48" height="48">
+            </div>
+            <div class="desktop-icon-label">Firebase</div>
+        </div>        <div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <img src="https://static-00.iconduck.com/assets.00/selenium-icon-2048x1986-3fr2ikf8.png" alt="Selenium" width="48" height="48">
+            </div>
+            <div class="desktop-icon-label">Selenium</div>
+        </div>        <div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3244414/robotframework-icon-sm.png" alt="Robot Framework" width="48" height="48">
+            </div>
+            <div class="desktop-icon-label">Robot Framework</div>
+        </div><div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <rect width="48" height="48" rx="4" fill="#092E20"/>
+                    <!-- Django Logo -->
+                    <g transform="translate(8, 12)">
+                        <!-- Main Django text -->
+                        <text x="16" y="18" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#44B78B">Django</text>
+                        <!-- Decorative elements -->
+                        <rect x="2" y="2" width="28" height="2" rx="1" fill="#44B78B"/>
+                        <rect x="2" y="20" width="28" height="2" rx="1" fill="#44B78B"/>
+                        <!-- Django pony representation -->
+                        <ellipse cx="16" cy="8" rx="12" ry="3" fill="#44B78B" opacity="0.6"/>
+                        <circle cx="12" cy="8" r="1.5" fill="#0C4B33"/>
+                        <circle cx="20" cy="8" r="1.5" fill="#0C4B33"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="desktop-icon-label">Django</div>
+        </div>
+        
+        <!-- System Icons -->
+        <div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <rect width="48" height="48" rx="4" fill="#0078D4"/>
+                    <path d="M12 16h24v20H12V16z" fill="white"/>
+                    <rect x="14" y="18" width="20" height="2" fill="#0078D4"/>
+                    <rect x="14" y="22" width="8" height="2" fill="#666666"/>
+                    <rect x="14" y="26" width="12" height="2" fill="#666666"/>
+                    <rect x="14" y="30" width="16" height="2" fill="#666666"/>
+                </svg>
+            </div>
+            <div class="desktop-icon-label">My Computer</div>
+        </div>
+        <div class="desktop-icon">
+            <div class="desktop-icon-image">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <rect width="48" height="48" rx="4" fill="#606060"/>
+                    <path d="M16 12h16l4 8v16H12V20l4-8z" fill="#E0E0E0"/>
+                    <path d="M14 22h20v12H14V22z" fill="#BDBDBD"/>
+                    <rect x="18" y="26" width="12" height="2" fill="#757575"/>
+                    <rect x="18" y="30" width="8" height="2" fill="#757575"/>
+                </svg>
+            </div>
+            <div class="desktop-icon-label">Recycle Bin</div>
+        </div>
+    </div><!-- Windows Taskbar -->
+    <div class="windows-taskbar">        <button class="start-button">
+            <span class="windows-logo"></span>
+            <span>Start</span>
+        </button>
+        
+        <div class="taskbar-items">
+            <div class="taskbar-item active">📁</div>
+            <div class="taskbar-item">🌐</div>
+            <div class="taskbar-item">💻</div>
+            <div class="taskbar-item">📧</div>
+        </div>
+        
+        <div class="system-tray">
+            <div class="system-icon">🔊</div>
+            <div class="system-icon">📶</div>
+            <div class="system-icon">🔋</div>
+            <div class="time-display">
+                <div class="date-line">6/12/2025</div>
+                <div class="time-line">9:57 AM</div>
+            </div>
+        </div>
+    </div>
+    <div class="explorer-window">
+        <!-- Title Bar -->
+        <div class="title-bar">
+            <div class="window-controls">
+                <div class="control-btn close"></div>
+                <div class="control-btn minimize"></div>
+                <div class="control-btn maximize"></div>
+            </div>
+            <div class="window-title">
+                <span>📁</span>
+                <span>Portfolio Explorer - Jodeo Ira Luis D. Joson</span>
+            </div>
+            <div></div>
+        </div>
+        
+        <!-- Address Bar -->
+        <div class="address-bar">
+            <div class="nav-buttons">
+                <button class="nav-btn">←</button>
+                <button class="nav-btn">→</button>
+                <button class="nav-btn">↑</button>
+            </div>
+            <div class="address-path">C:\Users\Portfolio\JodeoIraLuisD.Joson\About_Me\</div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="explorer-content">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar">
+                <div class="sidebar-title">
+                    <span>📂</span>
+                    Portfolio Folders
+                </div>                <ul class="folder-tree">
+                    <li><a href="#" class="folder-item active" data-section="about">
+                        <span class="folder-icon">📁</span>
+                        <span class="folder-name">About Me</span>
+                    </a></li>
+                    <li><a href="#" class="folder-item" data-section="contact">
+                        <span class="folder-icon">📁</span>
+                        <span class="folder-name">Contact Info</span>
+                    </a></li>
+                    <li><a href="#" class="folder-item" data-section="experience">
+                        <span class="folder-icon">📁</span>
+                        <span class="folder-name">Work Experience</span>
+                    </a></li>
+                    <li><a href="#" class="folder-item" data-section="education">
+                        <span class="folder-icon">📁</span>
+                        <span class="folder-name">Education</span>
+                    </a></li>
+                    <li><a href="#" class="folder-item" data-section="skills">
+                        <span class="folder-icon">📁</span>
+                        <span class="folder-name">Technical Skills</span>
+                    </a></li>
+                    <li><a href="#" class="folder-item" data-section="software">
+                        <span class="folder-icon">📁</span>
+                        <span class="folder-name">Software Tools</span>
+                    </a></li>
+                    <li><a href="#" class="folder-item" data-section="projects">
+                        <span class="folder-icon">📁</span>
+                        <span class="folder-name">Projects</span>
+                    </a></li>
+                    <li><a href="#" class="folder-item" data-section="hobbies">
+                        <span class="folder-icon">📁</span>
+                        <span class="folder-name">Hobbies</span>
+                    </a></li>
+                    <li><a href="#" class="folder-item" data-section="languages">
+                        <span class="folder-icon">📁</span>
+                        <span class="folder-name">Languages</span>
+                    </a></li>
+                    <li><a href="#" class="folder-item" data-section="certifications">
+                        <span class="folder-icon">📁</span>
+                        <span class="folder-name">Certifications</span>
+                    </a></li>
+                    <li><a href="#" class="folder-item" data-section="accomplishments">
+                        <span class="folder-icon">📁</span>
+                        <span class="folder-name">Accomplishments</span>
+                    </a></li>
+                </ul>
+            </div>
             
-            @keyframes code-glow {
-                0%, 100% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; }
-                50% { text-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00, 0 0 35px #00ff00; }
-            }
-            
-            /* Enhanced Terminal Animations - Make these run once */
-            @keyframes terminal-bootup {
-                0% { opacity: 0; transform: scale(0.8); }
-                30% { opacity: 0.5; transform: scale(0.9); }
-                60% { opacity: 0.8; transform: scale(1.05); }
-                100% { opacity: 1; transform: scale(1); }
-            }
-            
-            @keyframes terminal-glow {
-                0% { box-shadow: 0 0 30px rgba(0, 255, 0, 0.2), inset 0 0 50px rgba(0, 255, 0, 0.1); }
-                100% { box-shadow: 0 0 30px rgba(0, 255, 0, 0.2), inset 0 0 50px rgba(0, 255, 0, 0.1); }
-            }
-            
-            @keyframes header-pulse {
-                0% { background: linear-gradient(90deg, #1a1a1a, #222222, #1a1a1a); }
-                100% { background: linear-gradient(90deg, #1a1a1a, #222222, #1a1a1a); }
-            }
-            
-            /* Control Button Animations - Keep subtle infinite for terminal feel */
-            @keyframes control-btn-pulse {
-                0%, 100% { transform: scale(1); background: #666666; }
-                50% { transform: scale(1.05); background: #777777; }
-            }
-            
-            @keyframes control-btn-glow {
-                0%, 100% { box-shadow: none; }
-                50% { box-shadow: 0 0 5px rgba(102, 102, 102, 0.5); }
-            }
-            
-            /* Text Animation Effects - Make these run once */
-            @keyframes title-flicker {
-                0% { opacity: 1; }
-                100% { opacity: 1; }
-            }
-            
-            @keyframes text-appear {
-                0% { opacity: 0; transform: translateX(-20px); }
-                100% { opacity: 1; transform: translateX(0); }
-            }
-            
-            @keyframes boot-sequence {
-                0% { opacity: 0; }
-                25% { opacity: 0.3; }
-                75% { opacity: 0.8; }
-                100% { opacity: 1; }
-            }
-            
-            /* Terminal Prompt Animations - Make these run once */
-            @keyframes prompt-slide-in {
-                0% { opacity: 0; transform: translateX(-30px); }
-                100% { opacity: 1; transform: translateX(0); }
-            }
-            
-            @keyframes username-glow {
-                0% { text-shadow: 0 0 5px #ffffff; }
-                100% { text-shadow: 0 0 5px #ffffff; }
-            }
-            
-            @keyframes colon-pulse {
-                0%, 100% { color: #00ff00; transform: scale(1); }
-                50% { color: #00ff88; transform: scale(1.1); }
-            }
-            
-            @keyframes path-highlight {
-                0% { color: #ffffff; }
-                100% { color: #ffffff; }
-            }
-            
-            @keyframes typewriter-effect {
-                0% { width: 0; }
-                100% { width: 100%; }
-            }
-            
-            @keyframes enhanced-cursor-blink {
-                0%, 45% { opacity: 1; text-shadow: 0 0 10px #00ff00; }
-                50%, 95% { opacity: 0; text-shadow: none; }
-                100% { opacity: 1; text-shadow: 0 0 10px #00ff00; }
-            }
-            
-            /* Profile and Name Animations - Make these run once */
-            @keyframes profile-fade-in {
-                0% { opacity: 0; transform: translateY(20px) scale(0.95); }
-                100% { opacity: 1; transform: translateY(0) scale(1); }
-            }
-            
-            @keyframes name-matrix-effect {
-                0% { transform: scale(1); filter: brightness(1); }
-                100% { transform: scale(1); filter: brightness(1); }
-            }
-            
-            @keyframes letter-flicker {
-                0% { opacity: 1; text-shadow: none; }
-                100% { opacity: 1; text-shadow: none; }
-            }
-            
-            @keyframes title-wave {
-                0% { transform: translateY(0) scale(1); }
-                100% { transform: translateY(0) scale(1); }
-            }
-            
-            @keyframes description-scroll {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(0); }
-            }
-            
-            @keyframes dot-pulse {
-                0%, 100% { transform: scale(1); opacity: 1; }
-                50% { transform: scale(1.2); opacity: 0.8; }
-            }
-            
-            /* Floating Particles - Keep infinite for background effect */
-            @keyframes float-particle {
-                0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
-                10% { opacity: 1; }
-                90% { opacity: 1; }
-                100% { transform: translateY(-300px) translateX(50px) rotate(360deg); opacity: 0; }
-            }
-            
-            /* Scanning Line Effect - Keep infinite for terminal feel */
-            @keyframes scan-line {
-                0% { transform: translateX(-100%); }
-                100% { transform: translateX(100vw); }
-            }
-            
-            /* Status and System Animations - Keep minimal infinite for status indicators */
-            @keyframes status-blink {
-                0%, 70% { opacity: 1; }
-                71%, 100% { opacity: 0.7; }
-            }
-            
-            @keyframes cursor-blink {
-                0%, 50% { opacity: 1; }
-                51%, 100% { opacity: 0; }
-            }
-            
-            /* File Explorer Hover Animations */
-            .file-item {
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .file-item::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-                transition: left 0.5s ease;
-            }
-            
-            .file-item:hover::before {
-                left: 100%;
-            }
-            
-            /* Additional Terminal Effects - Make these run once */
-            @keyframes terminal-scan {
-                0% { background-position: 0% 0%; }
-                100% { background-position: 0% 0%; }
-            }
-            
-            @keyframes data-stream {
-                0% { transform: translateY(0); opacity: 1; }
-                100% { transform: translateY(0); opacity: 1; }
-            }
-            
-            @keyframes pulse-glow {
-                0% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); }
-                100% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); }
-            }
-            
-            /* Screen Flicker Effect - Remove this */
-            @keyframes screen-flicker {
-                0% { opacity: 1; }
-                100% { opacity: 1; }
-            }
-            
-            /* Enhanced Matrix Digital Rain - Keep infinite for background */
-            @keyframes digital-rain {
-                0% { transform: translateY(-100vh) scaleY(0); opacity: 0; }
-                10% { opacity: 1; transform: translateY(-90vh) scaleY(1); }
-                90% { opacity: 1; transform: translateY(90vh) scaleY(1); }
-                100% { opacity: 0; transform: translateY(100vh) scaleY(0); }
-            }
-            
-            /* Holographic Text Effect - Make this stable */
-            @keyframes hologram {
-                0% { 
-                    text-shadow: 
-                        0 0 5px #00ff00,
-                        0 0 10px #00ff00;
-                }
-                100% { 
-                    text-shadow: 
-                        0 0 5px #00ff00,
-                        0 0 10px #00ff00;
-                }
-            }
-            
-            /* Terminal Loading Bar Animation - Make this run once */
-            @keyframes loading-bar {
-                0% { width: 0%; }
-                100% { width: 100%; }
-            }
-            
-            /* Remove Glitch Effect */
-            @keyframes glitch {
-                0% { transform: translate(0); }
-                100% { transform: translate(0); }
-            }
-        </style>
-              @keyframes letter-flicker {
-                0% { opacity: 1; text-shadow: none; }
-                100% { opacity: 1; text-shadow: none; }
-            }
-            
-            @keyframes title-wave {
-                0% { transform: translateY(0) scale(1); }
-                100% { transform: translateY(0) scale(1); }
-            }
-            
-            @keyframes description-scroll {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(0); }
-            }
-            
-            @keyframes dot-pulse {
-                0%, 100% { transform: scale(1); opacity: 1; }
-                50% { transform: scale(1.2); opacity: 0.8; }
-            }
-            
-            /* Floating Particles */
-            @keyframes float-particle {
-                0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
-                10% { opacity: 1; }
-                90% { opacity: 1; }
-                100% { transform: translateY(-300px) translateX(50px) rotate(360deg); opacity: 0; }
-            }
-            
-            /* Scanning Line Effect */
-            @keyframes scan-line {
-                0% { transform: translateX(-100%); }
-                100% { transform: translateX(100vw); }
-            }
-            
-            /* Status and System Animations */
-            @keyframes status-blink {
-                0%, 70% { opacity: 1; }
-                71%, 100% { opacity: 0.5; }
-            }
-            
-            @keyframes cursor-blink {
-                0%, 50% { opacity: 1; }
-                51%, 100% { opacity: 0; }
-            }
-            
-            /* File Explorer Hover Animations */
-            .file-item {
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .file-item::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-                transition: left 0.5s ease;
-            }
-            
-            .file-item:hover::before {
-                left: 100%;
-            }
-            
-            /* Additional Terminal Effects */
-            @keyframes terminal-scan {
-                0% { background-position: 0% 0%; }
-                100% { background-position: 100% 100%; }
-            }
-            
-            @keyframes data-stream {
-                0% { transform: translateY(-10px); opacity: 0; }
-                50% { opacity: 1; }
-                100% { transform: translateY(10px); opacity: 0; }
-            }
-            
-            @keyframes pulse-glow {
-                0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); }
-                50% { box-shadow: 0 0 25px rgba(0, 255, 0, 0.8), 0 0 50px rgba(0, 255, 0, 0.3); }
-            }
-            
-            /* Screen Flicker Effect */
-            body {
-                animation: screen-flicker 0.15s infinite linear alternate;
-            }
-            
-            @keyframes screen-flicker {
-                0% { opacity: 1; }
-                98% { opacity: 1; }
-                99% { opacity: 0.98; }
-                100% { opacity: 1; }
-            }
-            
-            /* Enhanced Matrix Digital Rain */
-            @keyframes digital-rain {
-                0% { transform: translateY(-100vh) scaleY(0); opacity: 0; }
-                10% { opacity: 1; transform: translateY(-90vh) scaleY(1); }
-                90% { opacity: 1; transform: translateY(90vh) scaleY(1); }
-                100% { opacity: 0; transform: translateY(100vh) scaleY(0); }
-            }
-            
-            /* Holographic Text Effect */
-            @keyframes hologram {
-                0%, 100% { 
-                    text-shadow: 
-                        0 0 5px #00ff00,
-                        0 0 10px #00ff00,
-                        0 0 15px #00ff00,
-                        0 0 20px #00ff00;
-                }
-                50% { 
-                    text-shadow: 
-                        0 0 2px #00ff00,
-                        0 0 5px #00ff00,
-                        0 0 8px #00ff00,
-                        0 0 12px #00ff00,
-                        0 0 18px #00ff00,
-                        0 0 25px #00ff00;
-                }
-            }
-            
-            /* Terminal Loading Bar Animation */
-            @keyframes loading-bar {
-                0% { width: 0%; }
-                100% { width: 100%; }
-            }
-            
-            /* Glitch Effect */
-            @keyframes glitch {
-                0%, 100% { transform: translate(0); }
-                20% { transform: translate(-2px, 2px); }
-                40% { transform: translate(-2px, -2px); }
-                60% { transform: translate(2px, 2px); }
-                80% { transform: translate(2px, -2px); }
-            }
-        </style>
+            <!-- Content Area -->
+            <div class="content-area">                <div class="content-header">
+                    <span class="content-icon">📁</span>
+                    <h1 class="content-title">About Me</h1>
+                </div>
+                
+                <!-- About Section -->
+                <div id="about" class="section active">
+                    <h2>Personal Information</h2>
+                    <p><strong>Name:</strong> Jodeo Ira Luis D. Joson</p>
+                    <p><strong>Title:</strong> Information Technology Professional</p>
+                    <p><strong>Summary:</strong> Passionate IT professional specializing in web development and cloud infrastructure with hands-on experience in modern technologies.</p>
+                </div>
+                  <!-- Contact Section -->
+                <div id="contact" class="section">
+                    <h2>Contact Information</h2>
+                    <p><strong>Email:</strong> jodeoiraluisjoson@gmail.com</p>
+                    <p><strong>Phone:</strong> +639917638759</p>
+                    <p><strong>GitHub:</strong> jodeoiraluisjoson</p>
+                    <p><strong>LinkedIn:</strong> jodeoiraluisjoson</p>
+                    <p><strong>Salesforce:</strong> Salesforce</p>
+                    <p><strong>Address:</strong> 9863, Maunlad Homes Sta Rita Guiguinto Bulacan</p>
+                </div>
 
-        <!-- Terminal Command JavaScript -->
-        <script>
-            // File system structure
-            const fileSystem = {
-                'about': { file: 'about.html', description: 'Personal Information', icon: '📄' },
-                'contact': { file: 'contact.html', description: 'Contact Information', icon: '📞' },
-                'experience': { file: 'experience.html', description: 'Work Experience', icon: '💼' },
-                'education': { file: 'education.html', description: 'Educational Background', icon: '🎓' },
-                'skills': { file: 'skills.html', description: 'Technical Skills', icon: '⚡' },
-                'projects': { file: 'projects.html', description: 'Personal Projects', icon: '🚀' },
-                'software': { file: 'software.html', description: 'Software Proficiency', icon: '💻' },
-                'certifications': { file: 'certifications.html', description: 'Certificates & Awards', icon: '🏆' },
-                'languages': { file: 'languages.html', description: 'Language Skills', icon: '🌐' },
-                'hobbies': { file: 'hobbies.html', description: 'Personal Interests', icon: '🎮' }
+                <!-- Experience Section -->
+                <div id="experience" class="section">
+                    <h2>Work Experience</h2>
+                    <h3>Capstone Project Team Member</h3>
+                    <p><strong>Duration:</strong> January 2023 - January 2025</p>
+                    <p><strong>Location:</strong> Bulacan State University, Malolos, Bulacan</p>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Collaborated with a team of 5 to develop a comprehensive capstone project</li>
+                        <li>Designed the UI/UX, ensuring an intuitive user interface</li>
+                        <li>Utilized PHP, JavaScript, CSS, HTML and MySQL for the Project</li>
+                        <li>Created documentation for a web-based system to monitor and track student performance</li>
+                        <li>Conducted thorough testing and debugging to ensure the system's functionality and reliability</li>
+                    </ul>
+                    
+                    <h3>Cloud Infrastructure Intern (ATA) - Accenture</h3>
+                    <p><strong>Duration:</strong> March 11 - May 2025</p>
+                    <p><strong>Location:</strong> Accenture, Gateway 2, General Roxas Avenue and General Aguina (Remote)</p>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Performed hands-on tasks involving virtual machines, storage solutions, and network setup to ensure reliable cloud infrastructure</li>
+                        <li>Collaborated with fellow interns to troubleshoot system issues, apply necessary updates, and monitor cloud performance effectively</li>
+                        <li>Actively participated in Accenture's online learning platforms, completing technical modules focused on cloud computing and infrastructure management</li>
+                        <li>Explored various cloud services, including AWS, Azure, and Google Cloud, to deepen my understanding of cross-platform cloud operations</li>
+                    </ul>
+                </div>
+
+                <!-- Education Section -->
+                <div id="education" class="section">
+                    <h2>Education</h2>
+                    <h3>Bachelor's Degree in Information and Communications Technology</h3>
+                    <p><strong>Institution:</strong> Bulacan State University, Malolos, Bulacan</p>
+                    <p><strong>Graduation Date:</strong> July 2025</p>
+                    <p><strong>Achievement:</strong> Cum Laude Graduate</p>
+                    
+                    <h3>Senior High School - Academic Strand (STEM)</h3>
+                    <p><strong>Institution:</strong> St. Martin De Porres Catholic School of Guinguinto</p>
+                    <p><strong>Graduation Date:</strong> April 2021</p>
+                    
+                    <h3>High School Diploma</h3>
+                    <p><strong>Institution:</strong> LKBP Integrated School, Inc. Ligas, City of Malolos</p>
+                    <p><strong>Graduation Date:</strong> April 2019</p>
+                </div>
+
+                <!-- Skills Section -->
+                <div id="skills" class="section">
+                    <h2>Technical Skills</h2>
+                    <ul>
+                        <li><strong>Front End Development:</strong> HTML, CSS, JavaScript, Bootstrap, React</li>
+                        <li><strong>Backend Development:</strong> Python, PHP</li>
+                        <li><strong>DevOps:</strong> Docker, Bash Linux, Google Cloud SDK Shell, PowerShell</li>
+                        <li><strong>Version Control:</strong> Git, GitHub</li>
+                        <li><strong>Software Testing:</strong> Manual Testing, Automated Testing</li>
+                    </ul>
+                </div>
+
+                <!-- Software Section -->
+                <div id="software" class="section">
+                    <h2>Software Tools</h2>
+                    <ul>
+                        <li>Visual Studio Code</li>
+                        <li>GitHub Desktop</li>
+                        <li>Android Studio</li>
+                        <li>NetBeans</li>
+                        <li>Google Cloud Platform</li>
+                        <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+                        <li>VirtualBox</li>
+                        <li>PyCharm</li>
+                        <li>Docker</li>
+                        <li>Firebase</li>
+                        <li>Selenium IDE</li>
+                        <li>Robot Framework</li>
+                        <li>Django</li>
+                    </ul>
+                </div>
+
+                <!-- Projects Section -->
+                <div id="projects" class="section">
+                    <h2>Projects</h2>
+                    <h3>Student Performance Monitoring System</h3>
+                    <p><strong>Technologies:</strong> PHP, JavaScript, CSS, HTML, MySQL</p>
+                    <p>Web-based system to monitor and track student performance developed as part of capstone project.</p>
+                </div>
+
+                <!-- Hobbies Section -->
+                <div id="hobbies" class="section">
+                    <h2>Hobbies & Interests</h2>
+                    <ul>
+                        <li>Playing Video Games</li>
+                        <li>Watching Movies and TV Shows</li>
+                        <li>Continuous Learning</li>
+                    </ul>
+                </div>
+
+                <!-- Languages Section -->
+                <div id="languages" class="section">
+                    <h2>Languages</h2>
+                    <ul>
+                        <li><strong>English:</strong> Fluent</li>
+                        <li><strong>Filipino:</strong> Fluent</li>
+                    </ul>
+                </div>
+
+                <!-- Certifications Section -->
+                <div id="certifications" class="section">
+                    <h2>Certifications</h2>
+                    <ul>
+                        <li>Accenture Technology Academy: Cloud Infrastructure (March 11 - May 2025)</li>
+                    </ul>
+                </div>
+
+                <!-- Accomplishments Section -->
+                <div id="accomplishments" class="section">
+                    <h2>Accomplishments</h2>
+                    <ul>
+                        <li>Cum Laude Graduate - Bulacan State University</li>
+                        <li>Successfully completed Accenture Technology Academy Cloud Infrastructure Program</li>
+                        <li>Developed comprehensive capstone project with team collaboration</li>
+                    </ul>                </div>
+            </div>
+        </div>
+        
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div>Ready</div>
+            <div id="status-info">About Me | 1 of 11 folders</div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const folderItems = document.querySelectorAll('.folder-item');
+            const sections = document.querySelectorAll('.section');            const contentTitle = document.querySelector('.content-title');
+            const contentIcon = document.querySelector('.content-icon');
+            const statusInfo = document.getElementById('status-info');
+            const addressPath = document.querySelector('.address-path');
+            
+            // Section data with icons, titles, and paths
+            const sectionData = {
+                about: { icon: '📁', title: 'About Me', name: 'About Me', path: 'C:\\Users\\Portfolio\\JodeoIraLuisD.Joson\\About_Me\\' },
+                contact: { icon: '📁', title: 'Contact Information', name: 'Contact Info', path: 'C:\\Users\\Portfolio\\JodeoIraLuisD.Joson\\Contact_Info\\' },
+                experience: { icon: '📁', title: 'Work Experience', name: 'Work Experience', path: 'C:\\Users\\Portfolio\\JodeoIraLuisD.Joson\\Work_Experience\\' },
+                education: { icon: '📁', title: 'Education', name: 'Education', path: 'C:\\Users\\Portfolio\\JodeoIraLuisD.Joson\\Education\\' },
+                skills: { icon: '📁', title: 'Technical Skills', name: 'Technical Skills', path: 'C:\\Users\\Portfolio\\JodeoIraLuisD.Joson\\Technical_Skills\\' },
+                software: { icon: '📁', title: 'Software Tools', name: 'Software Tools', path: 'C:\\Users\\Portfolio\\JodeoIraLuisD.Joson\\Software_Tools\\' },
+                projects: { icon: '📁', title: 'Projects', name: 'Projects', path: 'C:\\Users\\Portfolio\\JodeoIraLuisD.Joson\\Projects\\' },
+                hobbies: { icon: '📁', title: 'Hobbies & Interests', name: 'Hobbies', path: 'C:\\Users\\Portfolio\\JodeoIraLuisD.Joson\\Hobbies\\' },
+                languages: { icon: '📁', title: 'Languages', name: 'Languages', path: 'C:\\Users\\Portfolio\\JodeoIraLuisD.Joson\\Languages\\' },
+                certifications: { icon: '📁', title: 'Certifications', name: 'Certifications', path: 'C:\\Users\\Portfolio\\JodeoIraLuisD.Joson\\Certifications\\' },
+                accomplishments: { icon: '📁', title: 'Accomplishments', name: 'Accomplishments', path: 'C:\\Users\\Portfolio\\JodeoIraLuisD.Joson\\Accomplishments\\' }
             };
-
-            function handleTerminalCommand(event) {
-                if (event.key === 'Enter') {
-                    const input = event.target.value.trim().toLowerCase();
-                    const output = document.getElementById('commandOutput');
+            
+            folderItems.forEach((item, index) => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
                     
-                    if (input === '') return;
+                    // Remove active class from all items and sections
+                    folderItems.forEach(fi => fi.classList.remove('active'));
+                    sections.forEach(section => section.classList.remove('active'));
                     
-                    // Clear previous output
-                    output.innerHTML = '';
+                    // Add active class to clicked item
+                    this.classList.add('active');
                     
-                    // Parse command
-                    const parts = input.split(' ');
-                    const command = parts[0];
-                    const args = parts.slice(1);
-                    
-                    let outputText = '';
-                    
-                    switch (command) {
-                        case 'cd':
-                            if (args.length === 0) {
-                                outputText = '<span style="color: #ff6b6b;">Error:</span> cd requires a directory name';
-                            } else {
-                                const dir = args[0].replace('sections/', '').replace('/', '');
-                                if (fileSystem[dir]) {
-                                    outputText = `<span style="color: #00ff41;">✓ Navigating to:</span> sections/${dir}/`;
-                                    setTimeout(() => {
-                                        window.location.href = fileSystem[dir].file;
-                                    }, 1000);
-                                } else {
-                                    outputText = `<span style="color: #ff6b6b;">Error:</span> Directory '${dir}' not found`;
-                                }
-                            }
-                            break;
-                            
-                        case 'ls':
-                            outputText = '<span style="color: #4ecdc4;">📁 Available directories:</span><br>';
-                            Object.keys(fileSystem).forEach(key => {
-                                const item = fileSystem[key];
-                                outputText += `<span style="color: #8b949e;">drwxr-xr-x</span> <span style="color: #00ff41;">${item.icon} ${key}/</span> - ${item.description}<br>`;
-                            });
-                            break;
-                            
-                        case 'help':
-                            outputText = `
-                                <span style="color: #ffeca7;">📖 Terminal Commands:</span><br>
-                                <span style="color: #4ecdc4;">cd [directory]</span> - Navigate to section (e.g., cd about)<br>
-                                <span style="color: #4ecdc4;">ls</span> - List all available sections<br>
-                                <span style="color: #4ecdc4;">help</span> - Show this help message<br>
-                                <span style="color: #4ecdc4;">clear</span> - Clear terminal output<br>
-                                <span style="color: #8b949e;">Tip: You can also click on files in the explorer below</span>
-                            `;
-                            break;
-                            
-                        case 'clear':
-                            outputText = '<span style="color: #8b949e;">Terminal cleared</span>';
-                            break;
-                            
-                        default:
-                            outputText = `<span style="color: #ff6b6b;">Command not found:</span> ${command}<br><span style="color: #8b949e;">Type 'help' for available commands</span>`;
+                    // Get target section
+                    const targetSection = this.getAttribute('data-section');
+                    const targetElement = document.getElementById(targetSection);
+                      if (targetElement) {
+                        targetElement.classList.add('active');
+                        
+                        // Update header and address path
+                        const data = sectionData[targetSection];
+                        if (data) {
+                            contentIcon.textContent = data.icon;
+                            contentTitle.textContent = data.title;
+                            addressPath.textContent = data.path;
+                            statusInfo.textContent = `${data.name} | ${index + 1} of ${folderItems.length} folders`;
+                        }
                     }
+                });
+            });
+            
+            // Window controls functionality (just for show)
+            document.querySelector('.close').addEventListener('click', () => {
+                alert('Thanks for visiting my portfolio!');
+            });
+            
+            document.querySelector('.minimize').addEventListener('click', () => {
+                document.querySelector('.explorer-window').style.transform = 'scale(0.1)';
+                setTimeout(() => {
+                    document.querySelector('.explorer-window').style.transform = 'scale(1)';
+                }, 1000);
+            });
+            
+            document.querySelector('.maximize').addEventListener('click', () => {
+                const window = document.querySelector('.explorer-window');
+                window.style.maxWidth = window.style.maxWidth === '100%' ? '1200px' : '100%';
+                window.style.margin = window.style.maxWidth === '100%' ? '0' : '20px auto';
+            });            // Navigation buttons with enhanced functionality
+            document.querySelectorAll('.nav-btn').forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    // Visual feedback
+                    btn.style.background = '#28a745';
+                    btn.style.transform = 'scale(0.95)';
                     
-                    output.innerHTML = outputText;
-                    event.target.value = '';
-                }
+                    setTimeout(() => {
+                        btn.style.background = '#6c757d';
+                        btn.style.transform = 'scale(1)';
+                    }, 150);
+                    
+                    // Functional behavior
+                    if (index === 0) { // Back button
+                        // Create a simple notification
+                        showNotification('◀ Navigation: Going back...');
+                    } else if (index === 1) { // Forward button
+                        showNotification('▶ Navigation: Going forward...');
+                    } else if (index === 2) { // Up button
+                        // Go to parent directory
+                        addressPath.textContent = 'C:\\Users\\Portfolio\\JodeoIraLuisD.Joson\\';
+                        showNotification('⬆ Navigation: Moving to parent directory');
+                    }
+                });
+            });
+            
+            // Helper function to show notifications
+            function showNotification(message) {
+                const notification = document.createElement('div');
+                notification.textContent = message;
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 80px;
+                    right: 20px;
+                    background: rgba(0,0,0,0.9);
+                    color: white;
+                    padding: 8px 12px;
+                    border-radius: 4px;
+                    font-size: 12px;
+                    z-index: 10000;
+                    animation: slideInFade 2s ease-in-out forwards;
+                `;
+                
+                // Add notification animation
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes slideInFade {
+                        0% { transform: translateX(100%); opacity: 0; }
+                        15%, 85% { transform: translateX(0); opacity: 1; }
+                        100% { transform: translateX(100%); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.remove();
+                    style.remove();
+                }, 2000);
             }
-
-            // Auto-focus terminal input
-            document.addEventListener('DOMContentLoaded', function() {
-                const terminalInput = document.getElementById('terminalInput');
-                if (terminalInput) {
-                    terminalInput.focus();
-                }
+            
+            // Start button functionality
+            document.querySelector('.start-button').addEventListener('click', () => {
+                alert('🚀 Welcome to Jodeo\'s Portfolio!\n\nExplore different sections using the folder navigation on the left.\n\nBuilt with ❤️ using modern web technologies!');
             });
-
-            // Add click event to focus terminal when clicking anywhere on the terminal area
-            document.addEventListener('click', function(event) {
-                const terminalInput = document.getElementById('terminalInput');
-                if (terminalInput && !event.target.closest('a')) {
-                    terminalInput.focus();
-                }
+            
+            // Desktop icon interactions
+            document.querySelectorAll('.desktop-icon').forEach(icon => {
+                icon.addEventListener('mouseenter', () => {
+                    icon.style.transform = 'scale(1.1)';
+                    icon.style.opacity = '1';
+                });
+                
+                icon.addEventListener('mouseleave', () => {
+                    icon.style.transform = 'scale(1)';
+                    icon.style.opacity = '0.7';
+                });
             });
-        </script>
-    </header>
+            
+            // Taskbar item interactions
+            document.querySelectorAll('.taskbar-item').forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    // Remove active from all items
+                    document.querySelectorAll('.taskbar-item').forEach(i => i.classList.remove('active'));
+                    // Add active to clicked item
+                    item.classList.add('active');
+                    
+                    // Simple notifications for taskbar items
+                    const messages = [
+                        '📁 File Explorer - You\'re already here!',
+                        '🌐 Browser - Opening portfolio view...',
+                        '💻 Terminal - System running smoothly!',
+                        '📧 Mail - Contact info available in the portfolio!'
+                    ];
+                    
+                    if (messages[index]) {
+                        // Create a simple notification
+                        const notification = document.createElement('div');
+                        notification.textContent = messages[index];
+                        notification.style.cssText = `
+                            position: fixed;
+                            bottom: 60px;
+                            right: 20px;
+                            background: rgba(0,0,0,0.9);
+                            color: white;
+                            padding: 10px 15px;
+                            border-radius: 5px;
+                            font-size: 12px;
+                            z-index: 10000;
+                            animation: slideInOut 3s ease-in-out forwards;
+                        `;
+                        
+                        // Add notification animation
+                        const style = document.createElement('style');
+                        style.textContent = `
+                            @keyframes slideInOut {
+                                0% { transform: translateX(100%); opacity: 0; }
+                                20%, 80% { transform: translateX(0); opacity: 1; }
+                                100% { transform: translateX(100%); opacity: 0; }
+                            }
+                        `;
+                        document.head.appendChild(style);
+                        document.body.appendChild(notification);
+                        
+                        setTimeout(() => {
+                            notification.remove();
+                            style.remove();
+                        }, 3000);
+                    }
+                });
+            });
+            
+            // Update time display
+            function updateTime() {
+                const now = new Date();
+                const dateOptions = { month: 'numeric', day: 'numeric', year: 'numeric' };
+                const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true };
+                
+                document.querySelector('.date-line').textContent = now.toLocaleDateString('en-US', dateOptions);
+                document.querySelector('.time-line').textContent = now.toLocaleTimeString('en-US', timeOptions);
+            }
+            
+            // Update time every minute
+            updateTime();
+            setInterval(updateTime, 60000);
+        });
+    </script>
 </body>
 </html>
