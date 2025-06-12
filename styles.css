@@ -12,41 +12,9 @@ body {
     color: #333;
     position: relative;
     overflow-x: hidden;
-    /* Enhanced Desktop background with multiple layers */
-    background: 
-        /* Moving sun rays */
-        linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.03) 42%, transparent 44%),
-        linear-gradient(-45deg, transparent 60%, rgba(255,255,255,0.02) 62%, transparent 64%),
-        /* Atmospheric layers */
-        radial-gradient(ellipse 1200px 800px at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 40%),
-        radial-gradient(ellipse 1000px 600px at 30% 70%, rgba(173,216,230,0.15) 0%, transparent 50%),
-        /* Sky gradient with enhanced colors */
-        linear-gradient(180deg, #87CEEB 0%, #98D8E8 20%, #B0E0E6 40%, #F0F8FF 70%, #E6F3FF 100%),
-        /* Dynamic cloud layers */
-        radial-gradient(ellipse 1000px 400px at 15% 65%, rgba(255,255,255,0.9) 0%, transparent 60%),
-        radial-gradient(ellipse 800px 300px at 85% 55%, rgba(255,255,255,0.7) 0%, transparent 55%),
-        radial-gradient(ellipse 600px 250px at 45% 75%, rgba(255,255,255,0.8) 0%, transparent 50%),
-        radial-gradient(ellipse 500px 200px at 70% 80%, rgba(255,255,255,0.6) 0%, transparent 45%);
-    background-size: 
-        200% 200%,
-        200% 200%,
-        120% 120%,
-        110% 110%,
-        100% 100%,
-        150% 150%,
-        140% 140%,
-        130% 130%,
-        120% 120%;
-    background-position:
-        0% 0%,
-        100% 100%,
-        30% 20%,
-        70% 80%,
-        0% 0%,
-        -10% -10%,
-        110% 10%,
-        50% -5%,
-        80% 15%;
+    /* Background image */
+    background: url('https://4kwallpapers.com/images/walls/thumbs_3t/20792.png') no-repeat center center fixed;
+    background-size: cover;
     animation: 
         skyAnimation 25s ease-in-out infinite,
         cloudDrift 60s linear infinite,
@@ -198,7 +166,7 @@ body::before {
     }
     100% {
         background-position: 
-            0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%,
+            0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%,
             0% 0%, 100% 100%,
             8% 15%, 85% 25%, 12% 65%, 92% 75%, 15% 45%, 75% 55%;
     }
@@ -275,23 +243,24 @@ body::after {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Left side - 8 icons (single column) */
 .desktop-icon:nth-child(1) { top: 50px; left: 50px; animation-delay: 0s, 0s; }
 .desktop-icon:nth-child(2) { top: 160px; left: 50px; animation-delay: 1s, 0.5s; }
 .desktop-icon:nth-child(3) { top: 270px; left: 50px; animation-delay: 2s, 1s; }
 .desktop-icon:nth-child(4) { top: 380px; left: 50px; animation-delay: 3s, 1.5s; }
 .desktop-icon:nth-child(5) { top: 490px; left: 50px; animation-delay: 4s, 2s; }
 .desktop-icon:nth-child(6) { top: 600px; left: 50px; animation-delay: 5s, 2.5s; }
-.desktop-icon:nth-child(7) { top: 50px; left: 170px; animation-delay: 6s, 3s; }
-.desktop-icon:nth-child(8) { top: 160px; left: 170px; animation-delay: 7s, 3.5s; }
+.desktop-icon:nth-child(7) { top: 710px; left: 50px; animation-delay: 6s, 3s; }
+.desktop-icon:nth-child(8) { top: 820px; left: 50px; animation-delay: 7s, 3.5s; }
 
-/* Right side icons */
+/* Right side - 7 icons */
 .desktop-icon:nth-child(9) { top: 50px; right: 50px; animation-delay: 8s, 4s; }
 .desktop-icon:nth-child(10) { top: 160px; right: 50px; animation-delay: 9s, 4.5s; }
 .desktop-icon:nth-child(11) { top: 270px; right: 50px; animation-delay: 10s, 5s; }
 .desktop-icon:nth-child(12) { top: 380px; right: 50px; animation-delay: 11s, 5.5s; }
 .desktop-icon:nth-child(13) { top: 490px; right: 50px; animation-delay: 12s, 6s; }
 .desktop-icon:nth-child(14) { top: 600px; right: 50px; animation-delay: 13s, 6.5s; }
-.desktop-icon:nth-child(15) { top: 50px; right: 170px; animation-delay: 14s, 7s; }
+.desktop-icon:nth-child(15) { top: 710px; right: 50px; animation-delay: 14s, 7s; }
 
 .desktop-icon-image {
     width: 48px;
@@ -594,6 +563,8 @@ body::after {
 
 /* File Explorer Window with Enhanced Animations */
 .explorer-window {
+    position: fixed;
+    top: 60px; /* Adjusted to account for taskbar height */
     max-width: 1200px;
     width: 95%;
     height: 700px;
@@ -1154,406 +1125,285 @@ strong {
     background: rgba(100, 100, 100, 0.9);
 }
 
-/* Responsive Design */
-/* Desktop First - Default styles above are for desktop */
+/* App Information Modal */
+.app-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 10000;
+    animation: modalFadeIn 0.2s ease-out;
+}
 
-/* Large Desktop */
-@media (min-width: 1200px) {
-    .explorer-window {
-        max-width: 1400px;
-        height: 750px;
+.app-modal.show {
+    display: block;
+}
+
+@keyframes modalFadeIn {
+    0% {
+        opacity: 0;
     }
-    
-    .sidebar {
-        width: 320px;
-    }
-    
-    .content-area {
-        padding: 40px 50px;
+    100% {
+        opacity: 1;
     }
 }
 
-/* Tablet Landscape */
-@media (max-width: 1199px) and (min-width: 992px) {
-    .explorer-window {
-        max-width: 95%;
-        height: 700px;
-        margin: 15px auto 68px auto;
+.app-modal-content {
+    background: rgba(248, 249, 250, 0.95);
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 
+        0 25px 80px rgba(0,0,0,0.4),
+        0 10px 30px rgba(0,0,0,0.2),
+        inset 0 1px 0 rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(15px);
+    animation: modalSlideIn 0.3s ease-out, windowGlow 8s ease-in-out infinite 1s;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+@keyframes modalSlideIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
     }
-    
-    .sidebar {
-        width: 300px;
-    }
-    
-    .content-area {
-        padding: 35px 40px;
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
-/* Tablet Portrait */
-@media (max-width: 991px) and (min-width: 769px) {
-    .explorer-window {
-        width: 95%;
-        height: 650px;
-        margin: 10px auto 68px auto;
-    }
-    
-    .sidebar {
-        width: 280px;
-    }
-    
-    .content-area {
-        padding: 30px 35px;
-    }
-    
-    .folder-item {
-        padding: 12px 14px;
-        font-size: 14px;
-    }
-    
-    .content-title {
-        font-size: 26px;
-    }
+.app-modal-header {
+    background: linear-gradient(135deg, #2c3e50, #3498db, #5dade2);
+    color: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    animation: titleBarGlow 4s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Mobile Landscape and Portrait */
+.app-modal-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: titleBarSweep 3s ease-in-out infinite;
+}
+
+.app-modal-icon {
+    flex-shrink: 0;
+}
+
+.app-modal-icon img {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+}
+
+.app-modal-title {
+    flex: 1;
+}
+
+.app-modal-title h2 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.app-modal-version {
+    font-size: 12px;
+    color: #999999;
+    background: #404040;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.app-modal-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.2s ease;    backdrop-filter: blur(5px);
+}
+
+.app-modal-close:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.app-modal-body {
+    padding: 16px;
+    max-height: 300px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.app-modal-description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+    margin-bottom: 16px;    padding: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+    border-left: 3px solid #0078d4;
+}
+
+.app-modal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detail-item {
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.detail-item strong {
+    color: #0078d4;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.detail-item span {
+    color: #333333;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.app-modal-footer {
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.app-modal-btn {
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.2);
+    color: #333333;
+    backdrop-filter: blur(5px);
+}
+
+.app-modal-btn.primary {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    border: 1px solid rgba(52, 152, 219, 0.5);
+}
+
+.app-modal-btn.primary:hover {
+    background: linear-gradient(135deg, #34495e, #5dade2);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.app-modal-btn.secondary {
+    background: rgba(255, 255, 255, 0.6);
+    color: #333333;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.app-modal-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal scrollbar styling */
+.app-modal-body::-webkit-scrollbar {
+    width: 4px;
+}
+
+.app-modal-body::-webkit-scrollbar-track {
+    background: #404040;
+}
+
+.app-modal-body::-webkit-scrollbar-thumb {
+    background: #666666;
+    border-radius: 2px;
+}
+
+.app-modal-body::-webkit-scrollbar-thumb:hover {
+    background: #777777;
+}
+
+/* Mobile responsive modal */
 @media (max-width: 768px) {
-    /* Hide desktop elements */
-    .desktop-icons {
-        display: none !important;
+    .app-modal-content {
+        width: 95%;
+        margin: 20px;
+        max-height: 85vh;
     }
     
-    body::before {
-        display: none;
-    }
-    
-    /* Mobile background */
-    body {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-        animation: mobileBackground 15s ease-in-out infinite;
-    }
-    
-    @keyframes mobileBackground {
-        0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); }
-        50% { background: linear-gradient(135deg, #f093fb 0%, #667eea 50%, #764ba2 100%); }
-    }
-    
-    /* Mobile window design */
-    .explorer-window {
-        width: 100%;
-        height: calc(100vh - 58px);
-        margin: 0 0 58px 0;
-        border-radius: 0;
-        border: none;
-        box-shadow: none;
-    }
-    
-    /* Mobile title bar */
-    .title-bar {
-        padding: 10px 15px;
-        background: linear-gradient(135deg, #2c3e50, #3498db);
-    }
-    
-    .window-title {
-        font-size: 14px;
-    }
-    
-    .window-title span:last-child {
-        display: none;
-    }
-    
-    .control-btn {
-        width: 10px;
-        height: 10px;
-    }
-    
-    /* Mobile address bar */
-    .address-bar {
-        padding: 8px 15px;
-        gap: 10px;
-    }
-    
-    .nav-btn {
-        padding: 4px 8px;
-        font-size: 11px;
-    }
-    
-    .address-path {
-        font-size: 12px;
-        padding: 6px 10px;
-    }
-    
-    /* Mobile layout - Stack vertically */
-    .explorer-content {
-        flex-direction: column;
-        height: calc(100% - 120px);
-    }
-    
-    /* Mobile sidebar */
-    .sidebar {
-        width: 100%;
-        height: auto;
-        max-height: 150px;
-        border-right: none;
-        border-bottom: 2px solid #dee2e6;
-        padding: 15px;
-        overflow-y: auto;
-        flex-shrink: 0;
-    }
-    
-    .sidebar-title {
-        font-size: 14px;
-        margin-bottom: 15px;
-    }
-    
-    /* Mobile folder grid */
-    .folder-tree {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        margin: 0;
-    }
-    
-    .folder-item {
-        padding: 8px 6px;
-        margin-bottom: 0;
-        border-radius: 6px;
+    .app-modal-header {
+        padding: 20px;
         flex-direction: column;
         text-align: center;
-        font-size: 11px;
-        gap: 4px;
-        min-height: 60px;
-        justify-content: center;
-    }
-    
-    .folder-icon {
-        font-size: 20px;
-        width: auto;
-    }
-    
-    .folder-name {
-        font-size: 10px;
-        font-weight: 500;
-        line-height: 1.2;
-    }
-    
-    /* Mobile content area */
-    .content-area {
-        flex: 1;
-        padding: 20px 15px;
-        overflow-y: auto;
-    }
-    
-    .content-header {
-        padding: 15px;
-        margin-bottom: 20px;
         gap: 12px;
     }
     
-    .content-icon {
-        font-size: 24px;
-    }
-    
-    .content-title {
-        font-size: 20px;
-    }
-    
-    /* Mobile typography */
-    h2 {
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
-    
-    h3 {
-        font-size: 16px;
-        margin: 15px 0 10px 0;
-    }
-    
-    p {
-        font-size: 14px;
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-    
-    ul {
-        margin-left: 20px;
-        font-size: 14px;
-    }
-    
-    li {
-        margin-bottom: 8px;
-    }
-    
-    /* Mobile status bar */
-    .status-bar {
-        padding: 8px 15px;
-        font-size: 11px;
-    }
-    
-    /* Mobile taskbar */
-    .windows-taskbar {
-        height: 48px;
-        padding: 0 10px;
-    }
-    
-    .start-button {
-        height: 36px;
-        font-size: 12px;
-        padding: 6px 10px;
-    }
-    
-    .taskbar-item {
-        width: 36px;
-        height: 36px;
-        font-size: 16px;
-    }
-    
-    .system-tray {
-        gap: 6px;
-        padding: 0 6px;
-    }
-    
-    .system-icon {
-        font-size: 12px;
-        padding: 4px;
-        min-width: 20px;
-    }
-    
-    .time-display {
-        font-size: 11px;
-        min-width: 50px;
-        padding: 2px 6px;
-    }
-    
-    .date-line {
-        font-size: 11px;
-    }
-    
-    .time-line {
-        font-size: 10px;
-    }
-}
-
-/* Small Mobile Phones */
-@media (max-width: 480px) {
-    .explorer-window {
-        height: calc(100vh - 54px);
-        margin: 0 0 54px 0;
-    }
-    
-    .title-bar {
-        padding: 8px 12px;
-    }
-    
-    .window-title {
-        font-size: 12px;
-    }
-    
-    .address-bar {
-        padding: 6px 12px;
-    }
-    
-    .sidebar {
-        max-height: 120px;
-        padding: 12px;
-    }
-    
-    .folder-tree {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 6px;
-    }
-    
-    .folder-item {
-        padding: 6px 4px;
-        min-height: 55px;
-        font-size: 10px;
-    }
-    
-    .folder-icon {
-        font-size: 18px;
-    }
-    
-    .folder-name {
-        font-size: 9px;
-    }
-    
-    .content-area {
-        padding: 15px 12px;
-    }
-    
-    .content-header {
-        padding: 12px;
-        gap: 10px;
-    }
-    
-    .content-icon {
-        font-size: 20px;
-    }
-    
-    .content-title {
-        font-size: 18px;
-    }
-    
-    h2 {
-        font-size: 16px;
-    }
-    
-    h3 {
-        font-size: 14px;
-    }
-    
-    p, ul {
-        font-size: 13px;
-    }
-    
-    .windows-taskbar {
-        height: 44px;
-        padding: 0 8px;
-    }
-    
-    .start-button {
-        height: 32px;
-        font-size: 11px;
-        padding: 4px 8px;
-    }
-    
-    .taskbar-item {
+    .app-modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
         width: 32px;
         height: 32px;
-        font-size: 14px;
+        font-size: 18px;
     }
     
-    .system-icon {
-        font-size: 11px;
-        min-width: 18px;
+    .app-modal-title h2 {
+        font-size: 20px;
     }
     
-    .time-display {
-        font-size: 10px;
-        min-width: 45px;
-    }
-}
-
-/* Large Mobile Phones in Landscape */
-@media (max-width: 896px) and (orientation: landscape) and (max-height: 414px) {
-    .sidebar {
-        max-height: 100px;
+    .app-modal-body {
+        padding: 20px;
     }
     
-    .folder-tree {
-        grid-template-columns: repeat(4, 1fr);
+    .app-modal-footer {
+        padding: 16px 20px;
+        flex-direction: column;
     }
     
-    .folder-item {
-        min-height: 45px;
-        padding: 4px 2px;
-    }
-    
-    .folder-icon {
-        font-size: 16px;
-    }
-    
-    .folder-name {
-        font-size: 8px;
+    .app-modal-btn {
+        width: 100%;
+        padding: 12px;
     }
 }
