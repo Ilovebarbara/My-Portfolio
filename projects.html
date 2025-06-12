@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - JODEO Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0d1117, #161b22, #21262d);
+            color: #c9d1d9;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .terminal-window {
+            background: #161b22;
+            border: 2px solid #ff9ff3;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 159, 243, 0.3);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .terminal-header {
+            background: #21262d;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ff9ff3;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .control-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: terminal-pulse 2s infinite;
+        }
+        
+        .control-btn.red { background: #ff5f56; }
+        .control-btn.yellow { background: #ffbd2e; animation-delay: 0.5s; }
+        .control-btn.green { background: #27ca3f; animation-delay: 1s; }
+        
+        .terminal-title {
+            flex: 1;
+            text-align: center;
+            color: #ff9ff3;
+            font-weight: bold;
+        }
+        
+        .content {
+            padding: 30px;
+            background: linear-gradient(145deg, #0d1117, #161b22);
+        }
+        
+        .breadcrumb {
+            color: #8b949e;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb a {
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+        
+        .section-title {
+            color: #ff9ff3;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ff9ff3;
+        }
+        
+        .project-item {
+            background: rgba(255, 159, 243, 0.05);
+            border: 1px solid #ff9ff3;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .project-item:hover {
+            background: rgba(255, 159, 243, 0.1);
+            box-shadow: 0 4px 12px rgba(255, 159, 243, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .project-title {
+            color: #ff9ff3;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .project-description {
+            color: #c9d1d9;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .tech-stack {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 15px;
+        }
+        
+        .tech-title {
+            color: #00ff41;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tech-tag {
+            background: rgba(255, 159, 243, 0.2);
+            border: 1px solid #ff9ff3;
+            border-radius: 4px;
+            padding: 4px 8px;
+            color: #ff9ff3;
+            font-size: 0.8em;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255, 159, 243, 0.1);
+            border: 2px solid #ff9ff3;
+            border-radius: 6px;
+            color: #ff9ff3;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-btn:hover {
+            background: #ff9ff3;
+            color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 159, 243, 0.4);
+        }
+        
+        @keyframes terminal-pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.95); }
+        }
+        
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        
+        .matrix-column {
+            position: absolute;
+            color: #ff9ff3;
+            font-size: 12px;
+            animation: matrix-rain 8s linear infinite;
+        }
+        
+        @keyframes matrix-rain {
+            0% { transform: translateY(-100px); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(400px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix Background -->
+    <div class="matrix-bg">
+        <div class="matrix-column" style="left: 6%; animation-delay: 0s;">01010000 01010010 01001111 01001010</div>
+        <div class="matrix-column" style="left: 26%; animation-delay: 2s;">11100111 10101111 01010011</div>
+        <div class="matrix-column" style="left: 46%; animation-delay: 4s;">01000011 01001111 01000100 01000101</div>
+        <div class="matrix-column" style="left: 66%; animation-delay: 6s;">10001111 11111100 00001100</div>
+        <div class="matrix-column" style="left: 83%; animation-delay: 8s;">01000001 01010000 01010000</div>
+    </div>
+
+    <div class="container">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="control-btn red"></div>
+                <div class="control-btn yellow"></div>
+                <div class="control-btn green"></div>
+                <div class="terminal-title">● PROJECTS_MODULE_v2.1 - /portfolio/sections/projects.html ●</div>
+            </div>
+            
+            <div class="content">
+                <div class="breadcrumb">
+                    <a href="index.html">📁 /portfolio</a> > <span style="color: #ff9ff3;">🚀 projects.html</span>
+                </div>
+                
+                <h1 class="section-title">🚀 Personal Projects</h1>
+                
+                <div class="project-item">
+                    <div class="project-title">📊 Student Performance Monitoring System</div>
+                    <div class="project-description">
+                        A comprehensive web-based system designed to monitor and track student performance in real-time. This capstone project features a responsive interface, data visualization, and administrative controls for educational institutions.
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0;">
+                        <div>
+                            <span style="color: #4ecdc4; font-weight: bold;">Role:</span>
+                            <span style="color: #c9d1d9;">Full-Stack Developer</span>
+                        </div>
+                        <div>
+                            <span style="color: #ff6b6b; font-weight: bold;">Team Size:</span>
+                            <span style="color: #c9d1d9;">5 Members</span>
+                        </div>
+                        <div>
+                            <span style="color: #ffeca7; font-weight: bold;">Duration:</span>
+                            <span style="color: #c9d1d9;">2 Years</span>
+                        </div>
+                        <div>
+                            <span style="color: #45b7d1; font-weight: bold;">Status:</span>
+                            <span style="color: #00ff41;">Completed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <div class="tech-title">🔧 Technologies Used:</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-title">🌐 Portfolio Website (Current)</div>
+                    <div class="project-description">
+                        A cybersecurity-themed portfolio website featuring a terminal hacker dark theme with matrix animations, file explorer navigation, and deployment on Google Cloud Platform with custom domain mapping.
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0;">
+                        <div>
+                            <span style="color: #4ecdc4; font-weight: bold;">Role:</span>
+                            <span style="color: #c9d1d9;">Solo Developer</span>
+                        </div>
+                        <div>
+                            <span style="color: #ff6b6b; font-weight: bold;">Deployment:</span>
+                            <span style="color: #c9d1d9;">Google Cloud Platform</span>
+                        </div>
+                        <div>
+                            <span style="color: #ffeca7; font-weight: bold;">Domain:</span>
+                            <span style="color: #c9d1d9;">portfolio.quiz-app.info</span>
+                        </div>
+                        <div>
+                            <span style="color: #45b7d1; font-weight: bold;">Status:</span>
+                            <span style="color: #00ff41;">Live & Active</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <div class="tech-title">🔧 Technologies Used:</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Google Cloud</span>
+                            <span class="tech-tag">App Engine</span>
+                            <span class="tech-tag">Custom Animations</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-title">🧪 Automated Testing Framework</div>
+                    <div class="project-description">
+                        Developed automated testing solutions using Selenium IDE and Robot Framework for web application testing. Implemented comprehensive test suites for regression testing and quality assurance processes.
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0;">
+                        <div>
+                            <span style="color: #4ecdc4; font-weight: bold;">Role:</span>
+                            <span style="color: #c9d1d9;">QA Engineer</span>
+                        </div>
+                        <div>
+                            <span style="color: #ff6b6b; font-weight: bold;">Focus:</span>
+                            <span style="color: #c9d1d9;">Test Automation</span>
+                        </div>
+                        <div>
+                            <span style="color: #ffeca7; font-weight: bold;">Testing Type:</span>
+                            <span style="color: #c9d1d9;">Functional & Regression</span>
+                        </div>
+                        <div>
+                            <span style="color: #45b7d1; font-weight: bold;">Status:</span>
+                            <span style="color: #00ff41;">Ongoing</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <div class="tech-title">🔧 Technologies Used:</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Selenium IDE</span>
+                            <span class="tech-tag">Robot Framework</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Test Automation</span>
+                            <span class="tech-tag">Quality Assurance</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(255, 159, 243, 0.05); border: 1px solid #ff9ff3; border-radius: 8px; padding: 20px; margin-top: 30px;">
+                    <h3 style="color: #ff9ff3; margin-bottom: 15px;">📊 Project Statistics</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <div>
+                            <div style="color: #ff6b6b; font-weight: bold;">Total Projects:</div>
+                            <div style="color: #c9d1d9;">3+ Major Projects</div>
+                        </div>
+                        <div>
+                            <div style="color: #4ecdc4; font-weight: bold;">Technologies:</div>
+                            <div style="color: #c9d1d9;">10+ Different Tools</div>
+                        </div>
+                        <div>
+                            <div style="color: #ffeca7; font-weight: bold;">Team Experience:</div>
+                            <div style="color: #c9d1d9;">Collaborative & Solo</div>
+                        </div>
+                        <div>
+                            <div style="color: #45b7d1; font-weight: bold;">Focus Areas:</div>
+                            <div style="color: #c9d1d9;">Web Dev & Testing</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="index.html" class="back-btn">
+                    ⬅️ BACK TO FILE EXPLORER
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

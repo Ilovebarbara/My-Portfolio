@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications - JODEO Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0d1117, #161b22, #21262d);
+            color: #c9d1d9;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .terminal-window {
+            background: #161b22;
+            border: 2px solid #74b9ff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(116, 185, 255, 0.3);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .terminal-header {
+            background: #21262d;
+            padding: 10px 15px;
+            border-bottom: 1px solid #74b9ff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .control-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: terminal-pulse 2s infinite;
+        }
+        
+        .control-btn.red { background: #ff5f56; }
+        .control-btn.yellow { background: #ffbd2e; animation-delay: 0.5s; }
+        .control-btn.green { background: #27ca3f; animation-delay: 1s; }
+        
+        .terminal-title {
+            flex: 1;
+            text-align: center;
+            color: #74b9ff;
+            font-weight: bold;
+        }
+        
+        .content {
+            padding: 30px;
+            background: linear-gradient(145deg, #0d1117, #161b22);
+        }
+        
+        .section-title {
+            color: #74b9ff;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #74b9ff;
+        }
+        
+        .cert-item {
+            background: rgba(116, 185, 255, 0.05);
+            border: 1px solid #74b9ff;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .cert-item:hover {
+            background: rgba(116, 185, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(116, 185, 255, 0.2);
+        }
+        
+        .cert-title {
+            color: #74b9ff;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .cert-provider {
+            color: #ffeca7;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+        
+        .cert-duration {
+            color: #4ecdc4;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .accomplishment-item {
+            background: rgba(253, 121, 168, 0.05);
+            border: 1px solid #fd79a8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .accomplishment-title {
+            color: #fd79a8;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(116, 185, 255, 0.1);
+            border: 2px solid #74b9ff;
+            border-radius: 6px;
+            color: #74b9ff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-btn:hover {
+            background: #74b9ff;
+            color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(116, 185, 255, 0.4);
+        }
+        
+        @keyframes terminal-pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.95); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="control-btn red"></div>
+                <div class="control-btn yellow"></div>
+                <div class="control-btn green"></div>
+                <div class="terminal-title">● CERTIFICATIONS_MODULE_v2.1 - /portfolio/sections/certifications.html ●</div>
+            </div>
+            
+            <div class="content">
+                <div style="color: #8b949e; margin-bottom: 20px; font-size: 14px;">
+                    <a href="index.html" style="color: #4ecdc4; text-decoration: none;">📁 /portfolio</a> > <span style="color: #74b9ff;">🏆 certifications.html</span>
+                </div>
+                
+                <h1 class="section-title">🏆 Certifications & Awards</h1>
+                
+                <div class="cert-item">
+                    <div class="cert-title">
+                        🌩️ Accenture Technology Academy
+                    </div>
+                    <div class="cert-provider">Cloud Infrastructure Specialization</div>
+                    <div class="cert-duration">📅 March 11, 2025 - May 2025</div>
+                    
+                    <div style="background: rgba(0, 0, 0, 0.3); border-radius: 4px; padding: 15px; margin-top: 15px;">
+                        <div style="color: #00ff41; font-weight: bold; margin-bottom: 10px;">🎯 Program Highlights:</div>
+                        <ul style="margin: 0; padding-left: 20px; color: #c9d1d9;">
+                            <li>Comprehensive cloud infrastructure training</li>
+                            <li>Hands-on experience with AWS, Azure, and Google Cloud</li>
+                            <li>Virtual machine and network configuration</li>
+                            <li>Cloud performance monitoring and optimization</li>
+                            <li>Industry-standard best practices and methodologies</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px;">
+                    <h2 style="color: #fd79a8; font-size: 1.8em; margin-bottom: 20px; text-shadow: 0 0 10px #fd79a8;">🎖️ Academic Accomplishments</h2>
+                    
+                    <div class="accomplishment-item">
+                        <div class="accomplishment-title">🌟 Cum Laude Graduate</div>
+                        <div style="color: #ffeca7; margin-bottom: 8px;">Bulacan State University</div>
+                        <div style="color: #c9d1d9; line-height: 1.6;">
+                            Achieved Cum Laude honors for outstanding academic performance in Information and Communications Technology program, demonstrating excellence in coursework, projects, and overall academic achievement.
+                        </div>
+                        
+                        <div style="background: rgba(0, 0, 0, 0.3); border-radius: 4px; padding: 10px; margin-top: 15px;">
+                            <span style="color: #00ff41; font-weight: bold;">🎯 Academic Excellence:</span>
+                            <span style="color: #ffeca7;">High GPA | Outstanding Project Work | Consistent Performance</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(116, 185, 255, 0.05); border: 1px solid #74b9ff; border-radius: 8px; padding: 20px; margin-top: 30px;">
+                    <h3 style="color: #74b9ff; margin-bottom: 15px;">📊 Certification Summary</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <div>
+                            <div style="color: #ff6b6b; font-weight: bold;">Professional Certs:</div>
+                            <div style="color: #c9d1d9;">1 Cloud Infrastructure</div>
+                        </div>
+                        <div>
+                            <div style="color: #4ecdc4; font-weight: bold;">Academic Honors:</div>
+                            <div style="color: #c9d1d9;">Cum Laude Graduate</div>
+                        </div>
+                        <div>
+                            <div style="color: #ffeca7; font-weight: bold;">Specialization:</div>
+                            <div style="color: #c9d1d9;">Cloud & ICT</div>
+                        </div>
+                        <div>
+                            <div style="color: #ff9ff3; font-weight: bold;">Institution:</div>
+                            <div style="color: #c9d1d9;">Accenture & BSU</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="index.html" class="back-btn">
+                    ⬅️ BACK TO FILE EXPLORER
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

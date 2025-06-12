@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - JODEO Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0d1117, #161b22, #21262d);
+            color: #c9d1d9;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .terminal-window {
+            background: #161b22;
+            border: 2px solid #4ecdc4;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .terminal-header {
+            background: #21262d;
+            padding: 10px 15px;
+            border-bottom: 1px solid #4ecdc4;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .control-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: terminal-pulse 2s infinite;
+        }
+        
+        .control-btn.red { background: #ff5f56; }
+        .control-btn.yellow { background: #ffbd2e; animation-delay: 0.5s; }
+        .control-btn.green { background: #27ca3f; animation-delay: 1s; }
+        
+        .terminal-title {
+            flex: 1;
+            text-align: center;
+            color: #4ecdc4;
+            font-weight: bold;
+        }
+        
+        .content {
+            padding: 30px;
+            background: linear-gradient(145deg, #0d1117, #161b22);
+        }
+        
+        .breadcrumb {
+            color: #8b949e;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb a {
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .section-title {
+            color: #4ecdc4;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #4ecdc4;
+        }
+        
+        .contact-card {
+            background: rgba(78, 205, 196, 0.05);
+            border: 1px solid #4ecdc4;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            background: rgba(78, 205, 196, 0.1);
+            box-shadow: 0 4px 12px rgba(78, 205, 196, 0.2);
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            border: 1px solid #30363d;
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-label {
+            color: #4ecdc4;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .contact-value {
+            color: #c9d1d9;
+            font-size: 16px;
+        }
+        
+        .contact-link {
+            color: #ffeca7;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            color: #4ecdc4;
+            text-shadow: 0 0 5px #4ecdc4;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(78, 205, 196, 0.1);
+            border: 2px solid #4ecdc4;
+            border-radius: 6px;
+            color: #4ecdc4;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-btn:hover {
+            background: #4ecdc4;
+            color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(78, 205, 196, 0.4);
+        }
+        
+        @keyframes terminal-pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.95); }
+        }
+        
+        @keyframes matrix-rain {
+            0% { transform: translateY(-100px); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(400px); opacity: 0; }
+        }
+        
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        
+        .matrix-column {
+            position: absolute;
+            color: #4ecdc4;
+            font-size: 12px;
+            animation: matrix-rain 8s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix Background -->
+    <div class="matrix-bg">
+        <div class="matrix-column" style="left: 15%; animation-delay: 1s;">01000011 01001111 01001110 01010100</div>
+        <div class="matrix-column" style="left: 35%; animation-delay: 3s;">11000001 10101110 01010001</div>
+        <div class="matrix-column" style="left: 55%; animation-delay: 5s;">01000101 01001101 01000001 01001001</div>
+        <div class="matrix-column" style="left: 75%; animation-delay: 7s;">10001101 11111011 00000010</div>
+    </div>
+
+    <div class="container">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="control-btn red"></div>
+                <div class="control-btn yellow"></div>
+                <div class="control-btn green"></div>
+                <div class="terminal-title">● CONTACT_MODULE_v2.1 - /portfolio/sections/contact.html ●</div>
+            </div>
+            
+            <div class="content">
+                <div class="breadcrumb">
+                    <a href="index.html">📁 /portfolio</a> > <span style="color: #4ecdc4;">📞 contact.html</span>
+                </div>
+                
+                <h1 class="section-title">📞 Contact Information</h1>
+                
+                <div class="contact-card">
+                    <div style="color: #4ecdc4; font-weight: bold; margin-bottom: 20px; border-bottom: 1px solid #4ecdc4; padding-bottom: 10px;">
+                        📡 COMMUNICATION_PROTOCOLS.EXE
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-info">
+                            <div class="contact-label">PRIMARY EMAIL</div>
+                            <div class="contact-value">
+                                <a href="mailto:jodeoiraluisjoson@gmail.com" class="contact-link">
+                                    jodeoiraluisjoson@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-info">
+                            <div class="contact-label">MOBILE PHONE</div>
+                            <div class="contact-value">
+                                <a href="tel:+639917638759" class="contact-link">
+                                    +63 991 763 8759
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">🔗</div>
+                        <div class="contact-info">
+                            <div class="contact-label">GITHUB REPOSITORY</div>
+                            <div class="contact-value">
+                                <a href="https://github.com/Ilovebarbara" target="_blank" class="contact-link">
+                                    github.com/Ilovebarbara
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-info">
+                            <div class="contact-label">LINKEDIN PROFILE</div>
+                            <div class="contact-value">
+                                <a href="https://www.linkedin.com/in/jodeoiraluis-joson-737976346" target="_blank" class="contact-link">
+                                    linkedin.com/in/jodeoiraluis-joson-737976346
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">☁️</div>
+                        <div class="contact-info">
+                            <div class="contact-label">SALESFORCE TRAILBLAZER</div>
+                            <div class="contact-value">
+                                <a href="https://www.salesforce.com/trailblazer/jiljoson" target="_blank" class="contact-link">
+                                    salesforce.com/trailblazer/jiljoson
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div style="color: #ff6b6b; font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #ff6b6b; padding-bottom: 10px;">
+                        📍 PHYSICAL_LOCATION.TXT
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">🏠</div>
+                        <div class="contact-info">
+                            <div class="contact-label">RESIDENCE ADDRESS</div>
+                            <div class="contact-value">
+                                9863, Maunlad Homes Sta Rita<br>
+                                Guiguinto, Bulacan, Philippines
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div style="color: #ffeca7; font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #ffeca7; padding-bottom: 10px;">
+                        ⚡ AVAILABILITY_STATUS.TXT
+                    </div>
+                    
+                    <div style="line-height: 1.6; color: #c9d1d9;">
+                        <p><span style="color: #00ff41;">● STATUS:</span> Available for new opportunities</p>
+                        <p><span style="color: #4ecdc4;">● RESPONSE TIME:</span> Within 24 hours</p>
+                        <p><span style="color: #ff6b6b;">● PREFERRED CONTACT:</span> Email or LinkedIn</p>
+                        <p><span style="color: #ffeca7;">● TIME ZONE:</span> Philippine Time (UTC+8)</p>
+                    </div>
+                </div>
+                
+                <a href="index.html" class="back-btn">
+                    ⬅️ BACK TO FILE EXPLORER
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

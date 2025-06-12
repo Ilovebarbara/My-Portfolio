@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - JODEO Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0d1117, #161b22, #21262d);
+            color: #c9d1d9;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .terminal-window {
+            background: #161b22;
+            border: 2px solid #00ff41;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .terminal-header {
+            background: #21262d;
+            padding: 10px 15px;
+            border-bottom: 1px solid #00ff41;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .control-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: terminal-pulse 2s infinite;
+        }
+        
+        .control-btn.red { background: #ff5f56; }
+        .control-btn.yellow { background: #ffbd2e; animation-delay: 0.5s; }
+        .control-btn.green { background: #27ca3f; animation-delay: 1s; }
+        
+        .terminal-title {
+            flex: 1;
+            text-align: center;
+            color: #00ff41;
+            font-weight: bold;
+        }
+        
+        .content {
+            padding: 30px;
+            background: linear-gradient(145deg, #0d1117, #161b22);
+        }
+        
+        .breadcrumb {
+            color: #8b949e;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb a {
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .section-title {
+            color: #00ff41;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #00ff41;
+        }
+        
+        .info-card {
+            background: rgba(0, 255, 65, 0.05);
+            border: 1px solid #00ff41;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .info-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        
+        .info-label {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+        
+        .info-value {
+            color: #c9d1d9;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(0, 255, 65, 0.1);
+            border: 2px solid #00ff41;
+            border-radius: 6px;
+            color: #00ff41;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-btn:hover {
+            background: #00ff41;
+            color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 255, 65, 0.4);
+        }
+        
+        @keyframes terminal-pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.95); }
+        }
+        
+        @keyframes matrix-rain {
+            0% { transform: translateY(-100px); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(400px); opacity: 0; }
+        }
+        
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        
+        .matrix-column {
+            position: absolute;
+            color: #00ff41;
+            font-size: 12px;
+            animation: matrix-rain 8s linear infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .info-row {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix Background -->
+    <div class="matrix-bg">
+        <div class="matrix-column" style="left: 10%; animation-delay: 0s;">01001000 01100001 01100011 01101011</div>
+        <div class="matrix-column" style="left: 30%; animation-delay: 2s;">11001001 10101010 01010101</div>
+        <div class="matrix-column" style="left: 50%; animation-delay: 4s;">01010100 01100101 01110010 01101101</div>
+        <div class="matrix-column" style="left: 70%; animation-delay: 6s;">10001001 11111111 00000000</div>
+        <div class="matrix-column" style="left: 85%; animation-delay: 8s;">01001001 01010100</div>
+    </div>
+
+    <div class="container">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="control-btn red"></div>
+                <div class="control-btn yellow"></div>
+                <div class="control-btn green"></div>
+                <div class="terminal-title">● ABOUT_MODULE_v2.1 - /portfolio/sections/about.html ●</div>
+            </div>
+            
+            <div class="content">
+                <div class="breadcrumb">
+                    <a href="index.html">📁 /portfolio</a> > <span style="color: #00ff41;">📄 about.html</span>
+                </div>
+                
+                <h1 class="section-title">📋 Personal Information</h1>
+                
+                <div class="info-card">
+                    <div style="color: #00ff41; font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #00ff41; padding-bottom: 10px;">
+                        🔍 PROFILE_DATA.TXT
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-label">FULL_NAME:</div>
+                        <div class="info-value">JODEO IRA LUIS D. JOSON</div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-label">PROFESSION:</div>
+                        <div class="info-value">Information Technology Professional | Cybersecurity Specialist</div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-label">SPECIALIZATION:</div>
+                        <div class="info-value">Web Development | Cloud Infrastructure | Software Testing</div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-label">LOCATION:</div>
+                        <div class="info-value">📍 Bulacan, Philippines</div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-label">STATUS:</div>
+                        <div class="info-value" style="color: #00ff41;">● ACTIVE | AVAILABLE FOR OPPORTUNITIES</div>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div style="color: #4ecdc4; font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #4ecdc4; padding-bottom: 10px;">
+                        💡 PROFESSIONAL_SUMMARY.TXT
+                    </div>
+                    
+                    <div style="line-height: 1.6; color: #c9d1d9;">
+                        <p>A dedicated and results-driven Information Technology professional with expertise in cybersecurity, web development, and cloud infrastructure. Currently completing a degree in Information and Communications Technology at Bulacan State University.</p>
+                        
+                        <p>Passionate about creating secure and efficient digital solutions, with hands-on experience in full-stack development, cloud platforms, and software testing methodologies.</p>
+                        
+                        <p>Demonstrated ability to work effectively in team environments, with strong problem-solving skills and a commitment to continuous learning and professional development.</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div style="color: #ff6b6b; font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #ff6b6b; padding-bottom: 10px;">
+                        🎯 CORE_COMPETENCIES.TXT
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                        <div>
+                            <div style="color: #ffeca7; font-weight: bold; margin-bottom: 8px;">Technical Skills:</div>
+                            <ul style="margin: 0; padding-left: 20px; color: #c9d1d9;">
+                                <li>Full-Stack Web Development</li>
+                                <li>Cloud Infrastructure Management</li>
+                                <li>Cybersecurity Implementation</li>
+                                <li>Software Testing & QA</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <div style="color: #ff9ff3; font-weight: bold; margin-bottom: 8px;">Soft Skills:</div>
+                            <ul style="margin: 0; padding-left: 20px; color: #c9d1d9;">
+                                <li>Team Collaboration</li>
+                                <li>Problem Solving</li>
+                                <li>Project Management</li>
+                                <li>Continuous Learning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="index.html" class="back-btn">
+                    ⬅️ BACK TO FILE EXPLORER
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
