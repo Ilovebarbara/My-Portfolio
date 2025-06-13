@@ -41,7 +41,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #fafafa;
+            background-color: #eae6e3;
         }        /* Incredible Morphing Header Design */
         .header {
             position: fixed;
@@ -282,35 +282,46 @@
             opacity: 0;
             transform: translateY(20px);
             animation: navItemReveal 0.6s ease-out forwards;
-        }
-
-        .nav-menu li:nth-child(1) { animation-delay: 0.1s; }
+        }        .nav-menu li:nth-child(1) { animation-delay: 0.1s; }
         .nav-menu li:nth-child(2) { animation-delay: 0.2s; }
         .nav-menu li:nth-child(3) { animation-delay: 0.3s; }
         .nav-menu li:nth-child(4) { animation-delay: 0.4s; }
         .nav-menu li:nth-child(5) { animation-delay: 0.5s; }
         .nav-menu li:nth-child(6) { animation-delay: 0.6s; }
+        .nav-menu li:nth-child(7) { animation-delay: 0.7s; }
+        .nav-menu li:nth-child(8) { animation-delay: 0.8s; }
+        .nav-menu li:nth-child(9) { animation-delay: 0.9s; }
+        .nav-menu li:nth-child(10) { animation-delay: 1.0s; }
+        .nav-menu li:nth-child(11) { animation-delay: 1.1s; }
 
         @keyframes navItemReveal {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        .nav-menu a {
+        }        .nav-menu a {
             text-decoration: none;
             color: #555;
             font-weight: 600;
-            font-size: 0.9rem;
-            padding: 0.8rem 1.5rem;
+            font-size: 0.8rem;
+            padding: 0.7rem 1.2rem;
             border-radius: 30px;
             position: relative;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             z-index: 1;
+            white-space: nowrap;
+        }
+
+        /* Compact styling for longer labels */
+        .nav-menu a[href="#resume"],
+        .nav-menu a[href="#certifications"], 
+        .nav-menu a[href="#accomplishments"] {
+            font-size: 0.75rem;
+            padding: 0.7rem 1rem;
+            letter-spacing: 0.1px;
         }
 
         .nav-menu a::before {
@@ -426,48 +437,598 @@
         .menu-toggle.active span:nth-child(2) {
             opacity: 0;
             transform: scale(0) rotate(180deg);
-        }
-
-        .menu-toggle.active span:nth-child(3) {
+        }        .menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
-        /* Hero Section */
+        /* 🚀 EPIC HERO SECTION - FUTURISTIC HOLOGRAPHIC DESIGN */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             padding: 0 2rem;
             margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+            background: 
+                radial-gradient(ellipse at top left, rgba(255, 107, 71, 0.02) 0%, transparent 50%),
+                radial-gradient(ellipse at top right, rgba(255, 163, 102, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom left, rgba(255, 138, 101, 0.02) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(250, 250, 250, 1) 0%, rgba(255, 253, 251, 1) 100%);
         }
 
-        .hero-container {
+        /* Animated Background Grid */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                linear-gradient(rgba(255, 107, 71, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 107, 71, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes gridMove {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(10px, 10px); }
+        }
+
+        /* Floating Orbs */
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 107, 71, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 20%;
+            right: 10%;
+            animation: floatOrb 8s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+            33% { transform: translate(30px, -30px) scale(1.1); opacity: 0.5; }
+            66% { transform: translate(-20px, 20px) scale(0.9); opacity: 0.4; }
+        }        .hero-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 6rem;
             align-items: center;
+            position: relative;
+            z-index: 10;
         }
 
+        /* Enhanced Background Animation Elements */
+        .hero-bg-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Floating Geometric Shapes */
+        .floating-shape {
+            position: absolute;
+            opacity: 0.3;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        .shape-circle-1 {
+            width: 120px;
+            height: 120px;
+            border: 2px solid rgba(255, 107, 71, 0.4);
+            border-radius: 50%;
+            top: 10%;
+            left: 5%;
+            animation: floatShape1 18s infinite;
+        }
+
+        .shape-circle-2 {
+            width: 80px;
+            height: 80px;
+            border: 1px solid rgba(255, 163, 102, 0.5);
+            border-radius: 50%;
+            bottom: 15%;
+            right: 8%;
+            animation: floatShape2 22s infinite;
+        }
+
+        .shape-triangle-1 {
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 60px solid rgba(255, 138, 101, 0.3);
+            top: 25%;
+            right: 15%;
+            animation: rotateFloat1 16s infinite;
+        }
+
+        .shape-triangle-2 {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 35px solid rgba(255, 171, 120, 0.4);
+            bottom: 30%;
+            left: 12%;
+            animation: rotateFloat2 20s infinite;
+        }
+
+        .shape-square-1 {
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(255, 107, 71, 0.3);
+            top: 60%;
+            left: 8%;
+            transform: rotate(45deg);
+            animation: squareFloat1 14s infinite;
+        }
+
+        .shape-square-2 {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 163, 102, 0.2);
+            top: 15%;
+            right: 25%;
+            transform: rotate(45deg);
+            animation: squareFloat2 19s infinite;
+        }
+
+        /* Energy Waves */
+        .energy-wave {
+            position: absolute;
+            border: 1px solid rgba(255, 107, 71, 0.1);
+            border-radius: 50%;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        .wave-1 {
+            width: 300px;
+            height: 300px;
+            top: 20%;
+            left: 20%;
+            animation: energyPulse1 8s infinite;
+        }
+
+        .wave-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 25%;
+            right: 20%;
+            animation: energyPulse2 10s infinite;
+        }
+
+        .wave-3 {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            left: 10%;
+            animation: energyPulse3 12s infinite;
+        }
+
+        /* Animation Keyframes for Background Elements */
+        @keyframes floatShape1 {
+            0%, 100% { 
+                transform: translate(0, 0) rotate(0deg) scale(1);
+                opacity: 0.3;
+            }
+            25% { 
+                transform: translate(30px, -40px) rotate(90deg) scale(1.1);
+                opacity: 0.5;
+            }
+            50% { 
+                transform: translate(-20px, -80px) rotate(180deg) scale(0.9);
+                opacity: 0.7;
+            }
+            75% { 
+                transform: translate(40px, -40px) rotate(270deg) scale(1.05);
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes floatShape2 {
+            0%, 100% { 
+                transform: translate(0, 0) scale(1);
+                opacity: 0.4;
+            }
+            33% { 
+                transform: translate(-50px, 30px) scale(1.2);
+                opacity: 0.6;
+            }
+            66% { 
+                transform: translate(25px, -40px) scale(0.8);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes rotateFloat1 {
+            0%, 100% { 
+                transform: rotate(0deg) translate(0, 0);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: rotate(180deg) translate(-30px, 50px);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes rotateFloat2 {
+            0%, 100% { 
+                transform: rotate(0deg) translate(0, 0);
+                opacity: 0.4;
+            }
+            50% { 
+                transform: rotate(-180deg) translate(40px, -30px);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes squareFloat1 {
+            0%, 100% { 
+                transform: rotate(45deg) translate(0, 0) scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: rotate(225deg) translate(25px, 25px) scale(1.3);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes squareFloat2 {
+            0%, 100% { 
+                transform: rotate(45deg) translate(0, 0);
+                opacity: 0.2;
+            }
+            50% { 
+                transform: rotate(405deg) translate(-20px, 30px);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes energyPulse1 {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.1;
+                border-width: 1px;
+            }
+            50% { 
+                transform: scale(1.5);
+                opacity: 0.3;
+                border-width: 2px;
+            }
+        }
+
+        @keyframes energyPulse2 {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg);
+                opacity: 0.15;
+            }
+            50% { 
+                transform: scale(1.8) rotate(180deg);
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes energyPulse3 {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.2;
+            }
+            33% { 
+                transform: scale(1.3);
+                opacity: 0.4;
+            }
+            66% { 
+                transform: scale(0.7);
+                opacity: 0.6;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 11;
+        }        /* 🎨 HOLOGRAPHIC TEXT EFFECT */
         .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-
-        .hero-content .subtitle {
-            font-size: 1.25rem;
-            color: #666;
+            font-size: 4.2rem;
+            font-weight: 900;
+            line-height: 1.05;
             margin-bottom: 2rem;
-            line-height: 1.5;
+            position: relative;
+            background: linear-gradient(135deg, 
+                #ff6b47 0%, 
+                #ffa366 25%, 
+                #ff8a65 50%, 
+                #ffab78 75%, 
+                #ff6b47 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: holographicShift 4s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(255, 107, 71, 0.3);
         }
 
-        .hero-content .subtitle .emoji {
-            font-size: 1.5rem;
-            margin-left: 0.5rem;
+        @keyframes holographicShift {
+            0%, 100% { background-position: 0% 50%; filter: hue-rotate(0deg); }
+            25% { background-position: 100% 0%; filter: hue-rotate(15deg); }
+            50% { background-position: 100% 100%; filter: hue-rotate(30deg); }
+            75% { background-position: 0% 100%; filter: hue-rotate(15deg); }
+        }        /* Glitch Effect Overlay */
+        .hero-content h1::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff6b47, transparent, #ffa366);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glitchEffect 3s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        @keyframes glitchEffect {
+            0%, 90%, 100% { opacity: 0; transform: translate(0); }
+            92% { opacity: 0.8; transform: translate(2px, 0); }
+            94% { opacity: 0.6; transform: translate(-2px, 0); }
+            96% { opacity: 0.4; transform: translate(1px, 0); }
+        }
+
+        /* Enhanced Subtitle */
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            position: relative;
+            opacity: 0;
+            animation: slideInText 1.2s ease-out 0.3s forwards;
+        }
+
+        @keyframes slideInText {
+            0% { opacity: 0; transform: translateY(30px) translateX(-20px); }
+            100% { opacity: 1; transform: translateY(0) translateX(0); }
+        }
+
+        /* 🎯 QUANTUM BUTTON DESIGN */
+        .cta-button {
+            display: inline-block;
+            position: relative;
+            padding: 1.4rem 3.5rem;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+            background: transparent;
+            border: 2px solid transparent;
+            border-radius: 50px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: slideInText 1.2s ease-out 0.6s forwards;
+            opacity: 0;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff6b47, #ffa366, #ff8a65);
+            z-index: -2;
+            border-radius: 50px;
+            animation: buttonPulse 2s ease-in-out infinite;
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            background: linear-gradient(135deg, #ff6b47, #ffa366);
+            border-radius: 50px;
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 71, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(255, 107, 71, 0.8), 0 0 60px rgba(255, 163, 102, 0.4); }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 71, 0.5);
+        }
+
+        .cta-button:hover::after {
+            background: linear-gradient(135deg, #ffa366, #ff6b47, #ff8a65);
+        }
+
+        /* 🌟 LEVITATING AVATAR DESIGN */
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 11;
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: levitate 6s ease-in-out infinite;
+        }
+
+        @keyframes levitate {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(2deg); }
+            50% { transform: translateY(-25px) rotate(0deg); }
+            75% { transform: translateY(-15px) rotate(-2deg); }
+        }
+
+        /* Quantum Rings */
+        .quantum-ring {
+            position: absolute;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            animation: spinRing 15s linear infinite;
+        }
+
+        .quantum-ring:nth-child(1) {
+            width: 480px;
+            height: 480px;
+            border-image: linear-gradient(45deg, #ff6b47, transparent, #ffa366, transparent) 1;
+            animation-direction: normal;
+        }
+
+        .quantum-ring:nth-child(2) {
+            width: 420px;
+            height: 420px;
+            border-image: linear-gradient(-45deg, #ffa366, transparent, #ff8a65, transparent) 1;
+            animation-direction: reverse;
+            animation-duration: 20s;
+        }
+
+        .quantum-ring:nth-child(3) {
+            width: 360px;
+            height: 360px;
+            border-image: linear-gradient(90deg, #ff8a65, transparent, #ffab78, transparent) 1;
+            animation-duration: 25s;
+        }
+
+        @keyframes spinRing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Avatar Frame */        .avatar-frame {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: 
+                linear-gradient(135deg, rgba(1, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 100%);
+            backdrop-filter: blur(20px);
+            padding: 15px;
+            box-shadow: 
+                0 20px 60px rgba(255, 107, 71, 0.2),
+                inset 0 1px 20px rgba(255, 255, 255, 0.8),
+                0 0 50px rgba(255, 107, 71, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            z-index: 15;
+        }
+
+        .avatar {
+            width: 290px;
+            height: 290px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 16;
+            filter: brightness(1.05) contrast(1.1);
+        }
+
+        .avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 107, 71, 0.3);
+            filter: brightness(1.1) contrast(1.15);
+        }
+
+        /* Fallback for when image doesn't load */
+        .avatar-fallback {
+            width: 290px;
+            height: 290px;
+            background: linear-gradient(135deg, #ff6b47, #ffa366);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 8rem;
+            color: white;
+            font-weight: 900;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.6);
+        }
+
+        /* Holographic Particles */
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .holo-particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(45deg, #ff6b47, #ffa366);
+            border-radius: 50%;
+            animation: floatHoloParticle 12s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(255, 107, 71, 0.6);
+        }
+
+        .holo-particle:nth-child(1) { top: 15%; left: 20%; animation-delay: 0s; }
+        .holo-particle:nth-child(2) { top: 25%; left: 80%; animation-delay: 2s; }
+        .holo-particle:nth-child(3) { top: 60%; left: 15%; animation-delay: 4s; }
+        .holo-particle:nth-child(4) { top: 80%; left: 75%; animation-delay: 6s; }
+        .holo-particle:nth-child(5) { top: 40%; left: 90%; animation-delay: 8s; }
+        .holo-particle:nth-child(6) { top: 70%; left: 5%; animation-delay: 10s; }
+
+        @keyframes floatHoloParticle {
+            0%, 100% { 
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0.6;
+            }
+            20% { 
+                transform: translateY(-30px) translateX(20px) scale(1.3);
+                opacity: 1;
+            }
+            40% { 
+                transform: translateY(-60px) translateX(-15px) scale(0.8);
+                opacity: 0.7;
+            }            60% { 
+                transform: translateY(-40px) translateX(25px) scale(1.1);
+                opacity: 0.9;
+            }
+            80% { 
+                transform: translateY(-20px) translateX(-10px) scale(1.2);
+                opacity: 0.8;
+            }
         }
 
         .cta-button {
@@ -493,43 +1054,7 @@
         .hero-image {
             display: flex;
             justify-content: center;
-            align-items: center;
-        }        .image-container {
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, #ff6b47, #ffa366);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding: 20px;
-        }
-
-        .avatar {
-            width: 360px;
-            height: 360px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 8px solid white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Fallback for when image doesn't load */
-        .avatar-fallback {
-            width: 360px;
-            height: 360px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 6rem;
-            color: #ff6b47;
-            font-weight: bold;
-            border: 8px solid white;
-        }
+            align-items: center;        }        
 
         /* Content Sections */
         .content-section {
@@ -566,34 +1091,72 @@
             border-radius: 8px;
             margin-bottom: 1rem;
             border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .contact-info {
+        }        .contact-info {
             background: white;
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }        /* Mobile Responsive - Spectacular Edition */
+        }
+
+        /* Medium Screen Responsive Design */
+        @media (max-width: 1200px) {
+            .nav-menu {
+                gap: 0.2rem;
+                padding: 0.4rem;
+            }
+
+            .nav-menu a {
+                font-size: 0.75rem;
+                padding: 0.6rem 1rem;
+                letter-spacing: 0.2px;
+            }
+
+            .nav-menu a[href="#resume"],
+            .nav-menu a[href="#certifications"], 
+            .nav-menu a[href="#accomplishments"] {
+                font-size: 0.7rem;
+                padding: 0.6rem 0.8rem;
+                letter-spacing: 0px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                gap: 0.1rem;
+                padding: 0.3rem;
+            }
+
+            .nav-menu a {
+                font-size: 0.7rem;
+                padding: 0.5rem 0.8rem;
+            }
+
+            .nav-menu a[href="#resume"],
+            .nav-menu a[href="#certifications"], 
+            .nav-menu a[href="#accomplishments"] {
+                font-size: 0.65rem;
+                padding: 0.5rem 0.6rem;
+            }
+        }/* Mobile Responsive - Spectacular Edition */
         @media (max-width: 768px) {
             .header {
                 padding: 0;
-            }
-
-            .nav-container {
+            }            .nav-container {
                 padding: 1rem 1.5rem;
-            }
-
-            .menu-toggle {
+                justify-content: space-between;
+                position: relative;
+            }            .menu-toggle {
                 display: flex;
-            }
-
-            .nav-menu {
+                position: relative;
+                z-index: 1001;
+                margin-left: auto;
+            }            .nav-menu {
                 position: fixed;
-                top: 90px;
+                top: 100px;
                 right: -100%;
-                width: 320px;
+                width: 340px;
                 height: auto;
-                max-height: calc(100vh - 110px);
+                max-height: calc(100vh - 120px);
                 background: linear-gradient(135deg, 
                     rgba(255, 255, 255, 0.95) 0%, 
                     rgba(255, 249, 246, 0.95) 100%);
@@ -601,8 +1164,8 @@
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: stretch;
-                padding: 2rem 1.5rem;
-                gap: 1.2rem;
+                padding: 1.5rem 1.2rem;
+                gap: 0.8rem;
                 transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
                 border-radius: 25px 0 0 25px;
                 box-shadow: 
@@ -610,7 +1173,9 @@
                     inset 2px 0 10px rgba(255, 255, 255, 0.3);
                 border: 1px solid rgba(255, 107, 71, 0.15);
                 border-right: none;
-                overflow: hidden;
+                overflow-y: auto;
+                overflow-x: hidden;
+                z-index: 1000;
             }
 
             .nav-menu::before {
@@ -656,36 +1221,49 @@
 
             .nav-menu.active li {
                 animation: mobileItemSlide 0.4s ease-out forwards;
-            }
-
-            .nav-menu.active li:nth-child(1) { animation-delay: 0.1s; }
+            }            .nav-menu.active li:nth-child(1) { animation-delay: 0.1s; }
             .nav-menu.active li:nth-child(2) { animation-delay: 0.15s; }
             .nav-menu.active li:nth-child(3) { animation-delay: 0.2s; }
             .nav-menu.active li:nth-child(4) { animation-delay: 0.25s; }
             .nav-menu.active li:nth-child(5) { animation-delay: 0.3s; }
             .nav-menu.active li:nth-child(6) { animation-delay: 0.35s; }
+            .nav-menu.active li:nth-child(7) { animation-delay: 0.4s; }
+            .nav-menu.active li:nth-child(8) { animation-delay: 0.45s; }
+            .nav-menu.active li:nth-child(9) { animation-delay: 0.5s; }
+            .nav-menu.active li:nth-child(10) { animation-delay: 0.55s; }
+            .nav-menu.active li:nth-child(11) { animation-delay: 0.6s; }
 
             @keyframes mobileItemSlide {
                 to {
                     transform: translateX(0);
                     opacity: 1;
                 }
-            }
-
-            .nav-menu a {
+            }            .nav-menu a {
                 display: block;
                 text-align: center;
-                font-size: 1.1rem;
-                padding: 1.2rem 1.5rem;
-                border-radius: 20px;
+                font-size: 1rem;
+                padding: 1rem 1.5rem;
+                border-radius: 50px;
                 width: 100%;
                 background: rgba(255, 255, 255, 0.6);
                 border: 2px solid rgba(255, 107, 71, 0.1);
                 margin: 0;
                 font-weight: 700;
-                letter-spacing: 1px;
+                letter-spacing: 0.8px;
                 position: relative;
                 overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                
+            }
+
+            /* Special styling for longer navigation labels */
+            .nav-menu a[href="#resume"],
+            .nav-menu a[href="#certifications"],
+            .nav-menu a[href="#accomplishments"] {
+                font-size: 0.9rem;
+                padding: 1rem 0.8rem;
+                letter-spacing: 0.5px;
             }
 
             .nav-menu a::before {
@@ -703,6 +1281,12 @@
 
             .nav-menu a:hover::before {
                 transform: scale(1);
+            }            .logo {
+                position: relative;
+                z-index: 1001;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
             }
 
             .logo-icon {
@@ -716,32 +1300,111 @@
 
             .logo-text {
                 font-size: 1.6rem;
-            }
-
-            .hero-container {
+            }            .hero-container {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 2rem;
-                margin-top: 1rem;
+                gap: 3rem;
+                margin-top: 2rem;
             }
 
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+                margin-bottom: 1.5rem;
             }
 
-            .image-container {
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+
+            .avatar-container {
+                width: 350px;
+                height: 350px;
+            }
+
+            .quantum-ring:nth-child(1) {
+                width: 340px;
+                height: 340px;
+            }
+
+            .quantum-ring:nth-child(2) {
                 width: 300px;
                 height: 300px;
             }
 
-            .avatar {
-                width: 220px;
-                height: 220px;
-                font-size: 4rem;
+            .quantum-ring:nth-child(3) {
+                width: 260px;
+                height: 260px;
             }
 
-            .hero {
+            .avatar-frame {
+                width: 240px;
+                height: 240px;
+            }
+
+            .avatar, .avatar-fallback {
+                width: 210px;
+                height: 210px;
+                font-size: 6rem;
+            }            .hero {
                 margin-top: 90px;
+            }
+
+            /* Adjust background animations for mobile */
+            .floating-shape {
+                opacity: 0.2;
+                animation-duration: 8s;
+            }
+
+            .shape-circle-1 {
+                width: 60px;
+                height: 60px;
+            }
+
+            .shape-circle-2 {
+                width: 40px;
+                height: 40px;
+            }
+
+            .shape-triangle-1 {
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-bottom: 30px solid rgba(255, 138, 101, 0.2);
+            }
+
+            .shape-triangle-2 {
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-bottom: 20px solid rgba(255, 171, 120, 0.3);
+            }
+
+            .shape-square-1 {
+                width: 30px;
+                height: 30px;
+            }
+
+            .shape-square-2 {
+                width: 25px;
+                height: 25px;
+            }
+
+            .energy-wave {
+                opacity: 0.1;
+            }
+
+            .wave-1 {
+                width: 150px;
+                height: 150px;
+            }
+
+            .wave-2 {
+                width: 100px;
+                height: 100px;
+            }
+
+            .wave-3 {
+                width: 80px;
+                height: 80px;
             }
         }
     </style>
@@ -764,21 +1427,54 @@
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#resume" class="nav-link">Software Proficiency</a></li>
+                <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
+                <li><a href="#languages" class="nav-link">Languages</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#accomplishments" class="nav-link">Accomplishments</a></li>
             </ul>
         </nav>
-    </header>
-
-    <!-- Hero Section -->
+    </header>    <!-- Hero Section -->
     <section id="hero" class="hero">
+        <!-- Enhanced Background Animation Elements -->
+        <div class="hero-bg-elements">
+            <div class="floating-shape shape-circle-1"></div>
+            <div class="floating-shape shape-circle-2"></div>
+            <div class="floating-shape shape-triangle-1"></div>
+            <div class="floating-shape shape-triangle-2"></div>
+            <div class="floating-shape shape-square-1"></div>
+            <div class="floating-shape shape-square-2"></div>
+            <div class="energy-wave wave-1"></div>
+            <div class="energy-wave wave-2"></div>
+            <div class="energy-wave wave-3"></div>
+        </div>
+        
+        <!-- Holographic Particles -->
+        <div class="hero-particles">
+            <div class="holo-particle"></div>
+            <div class="holo-particle"></div>
+            <div class="holo-particle"></div>
+            <div class="holo-particle"></div>
+            <div class="holo-particle"></div>
+            <div class="holo-particle"></div>
+        </div>
+        
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Hi there. I'm Jodeo, a<br>Web Developer.</h1>               
+                <h1 data-text="Hi there. I'm Jodeo, a Information Technology.">Hi there. I'm Jodeo, a<br>Information Technology</h1>
+                <p class="hero-subtitle">Fresh graduate passionate about cloud infrastructure, web development, and cutting-edge technologies. Ready to innovate and create exceptional digital experiences that push the boundaries of what's possible.</p>
                 <a href="#contact" class="cta-button">Get in Touch</a>
+                <a href="https://drive.google.com/file/d/1J0b2Z5k8Y4a9X3f7j0b2Z5k8Y4a9X3f7/view?usp=sharing" class="cta-button" target="_blank">Download Resume</a>
             </div>
             <div class="hero-image">
-                <div class="image-container">
-                    <img src="avatar.png" alt="Jodeo Joson" class="avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="avatar-fallback" style="display: none;">JJ</div>
+                <div class="avatar-container">
+                    <div class="quantum-ring"></div>
+                    <div class="quantum-ring"></div>
+                    <div class="quantum-ring"></div>
+                    <div class="avatar-frame">
+                        <img src="avatar.png" alt="Jodeo Joson" class="avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="avatar-fallback" style="display: none;">JJ</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -788,7 +1484,7 @@
         <!-- ...existing code... -->        <section id="about">
             <div class="content-section">
                 <h2>About Me</h2>
-                <p>Passionate IT professional specializing in web development and cloud infrastructure with hands-on experience in modern technologies.</p>
+                <p> I am a Fresh Graduate with a degree in Information Technology, eager to start my career in IT Industry.</p>
             </div>
         </section>
 
