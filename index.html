@@ -40,7 +40,7 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #eae6e3;
             background-color: #eae6e3;
         }        /* Incredible Morphing Header Design */
         .header {
@@ -1415,6 +1415,241 @@
                 width: 80px;
                 height: 80px;
             }
+        }/* 🌟 SPECTACULAR ABOUT SECTION - UNIQUE INSPIRING DESIGN */
+        #about {
+            position: relative;
+            min-height: 100vh; /* Ensure it takes up significant space */
+            display: flex;
+            align-items: center; /* Vertically center the content */
+            justify-content: center; /* Horizontally center the content */
+            overflow: hidden; /* Prevent animations from spilling out */
+            background: 
+                radial-gradient(ellipse at top left, rgba(255, 107, 71, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(255, 163, 102, 0.06) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(250, 251, 252, 1) 0%, rgba(255, 253, 251, 1) 100%); /* Subtle gradient background */
+            padding: 6rem 2rem; /* Add padding */
+        }
+
+        /* Animated Background Grid for About Section */
+        #about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.04; /* Subtle grid */
+            background-image: 
+                linear-gradient(rgba(255, 107, 71, 0.2) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 107, 71, 0.2) 1px, transparent 1px);
+            background-size: 50px 50px; /* Grid size */
+            animation: aboutGridMove 30s linear infinite;
+            z-index: 1; /* Behind content */
+        }
+
+        @keyframes aboutGridMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; } /* Adjust for desired speed/effect */
+        }
+
+        /* Container for About Section Content */
+        .about-container {
+            position: relative;
+            z-index: 10; /* Above background elements */
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr; /* Asymmetrical layout: visual on left, text on right */
+            gap: 4rem; /* Space between columns */
+            align-items: center;
+        }
+
+        /* Column for Visual Element */
+        .about-visual-column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Inspiring Visual Element Container */
+        .inspiring-visual-element {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: inspiringElementLevitate 10s ease-in-out infinite;
+        }
+
+        @keyframes inspiringElementLevitate {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(-2deg); }
+            50% { transform: translateY(0px) rotate(0deg); }
+            75% { transform: translateY(-10px) rotate(2deg); }
+        }
+
+        /* Animated Rings for Visual Element */
+        .inspiring-ring-visual {
+            position: absolute;
+            border-radius: 50%;
+            border-style: solid;
+            animation: spinInspiringRingVisual 20s linear infinite;
+        }
+
+        .inspiring-ring-visual.outer {
+            width: 100%;
+            height: 100%;
+            border-width: 2px;
+            border-color: rgba(255, 107, 71, 0.3) transparent rgba(255, 163, 102, 0.3) transparent;
+            animation-duration: 18s;
+        }
+
+        .inspiring-ring-visual.middle {
+            width: 80%;
+            height: 80%;
+            border-width: 3px;
+            border-color: transparent rgba(255, 138, 101, 0.5) transparent rgba(255, 107, 71, 0.5);
+            animation-direction: reverse;
+            animation-duration: 22s;
+        }
+
+        .inspiring-ring-visual.inner {
+            width: 60%;
+            height: 60%;
+            border-width: 2px;
+            border-color: rgba(255, 163, 102, 0.4) rgba(255, 107, 71, 0.4) transparent transparent;
+            animation-duration: 25s;
+        }
+        
+        @keyframes spinInspiringRingVisual {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Central Icon for Visual Element */
+        .inspiring-central-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #ff6b47, #ffa366);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem; /* Adjust as needed */
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(255, 107, 71, 0.3);
+            animation: inspiringIconPulseVisual 4s ease-in-out infinite;
+        }
+
+        @keyframes inspiringIconPulseVisual {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 107, 71, 0.3); }
+            50% { transform: scale(1.1); box-shadow: 0 15px 40px rgba(255, 107, 71, 0.5); }
+        }
+
+        /* Column for Text Content */
+        .about-text-column {
+            position: relative;
+            z-index: 11; /* Ensure text is above any overlapping visuals if any */
+        }
+
+        /* Styling for H2 in About Section */
+        .about-text-column h2 {
+            font-size: 3.5rem; /* Adjust size as needed */
+            font-weight: 800;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block; /* Important for pseudo-elements */
+            background: linear-gradient(135deg, #ff6b47 0%, #ffa366 40%, #ff8a65 70%, #ffab78 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-bottom: 0.5rem; /* Space for underline effect */
+            animation: titleReveal 1s ease-out 0.3s forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        @keyframes titleReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-text-column h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 70%; /* Width of the underline */
+            height: 3px; /* Thickness of the underline */
+            background: linear-gradient(90deg, #ff6b47, #ffa366);
+            border-radius: 2px;
+            animation: underlineGrow 1s ease-out 0.8s forwards;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+
+        @keyframes underlineGrow {
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        /* Styling for P in About Section */
+        .about-text-column p {
+            font-size: 1.2rem; /* Adjust size */
+            color: #4A5568; /* Darker gray for better readability */
+            line-height: 1.7;
+            margin-bottom: 1.5rem; /* Consistent spacing */
+            animation: paragraphFadeIn 1s ease-out 0.6s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes paragraphFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating decorative shapes for background */
+        .about-floating-shape-bg {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+            z-index: 2; /* Above grid, below content container */
+            animation: floatShape 20s ease-in-out infinite alternate;
+        }
+        .shape-1 {
+            width: 200px; height: 200px;
+            background: #ff6b47;
+            top: 15%; left: 10%;
+            animation-duration: 22s;
+        }
+        .shape-2 {
+            width: 150px; height: 150px;
+            background: #ffa366;
+            bottom: 20%; right: 12%;
+            animation-duration: 18s;
+            animation-delay: -5s; /* Offset animation */
+        }
+         .shape-3 { /* Smaller, faster shape */
+            width: 80px; height: 80px;
+            background: #ff8a65;
+            top: 50%; left: 40%;
+            animation-duration: 15s;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatShape {
+            0% { transform: translateY(0px) translateX(0px) scale(1) rotate(0deg); }
+            50% { transform: translateY(-30px) translateX(20px) scale(1.1) rotate(180deg); }
+            100% { transform: translateY(0px) translateX(0px) scale(1) rotate(360deg); }
         }
     </style>
 </head>
