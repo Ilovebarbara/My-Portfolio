@@ -752,7 +752,7 @@
         .hero-content h1 {
             font-size: 4.2rem;
             font-weight: 900;
-            line-height: 1.05;
+            line-height: 1.5;
             margin-bottom: 2rem;
             position: relative;
             background: linear-gradient(135deg, 
@@ -1418,19 +1418,18 @@
         }/* 🌟 SPECTACULAR ABOUT SECTION - UNIQUE INSPIRING DESIGN */
         #about {
             position: relative;
-            min-height: 100vh; /* Ensure it takes up significant space */
+            min-height: 100vh;
             display: flex;
-            align-items: center; /* Vertically center the content */
-            justify-content: center; /* Horizontally center the content */
-            overflow: hidden; /* Prevent animations from spilling out */
+            align-items: center;
+            overflow: hidden;
             background: 
-                radial-gradient(ellipse at top left, rgba(255, 107, 71, 0.05) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom right, rgba(255, 163, 102, 0.06) 0%, transparent 50%),
-                linear-gradient(135deg, rgba(250, 251, 252, 1) 0%, rgba(255, 253, 251, 1) 100%); /* Subtle gradient background */
-            padding: 6rem 2rem; /* Add padding */
+                radial-gradient(ellipse at top left, rgba(255, 107, 71, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(255, 163, 102, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at center, rgba(255, 138, 101, 0.02) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(252, 252, 252, 1) 0%, rgba(255, 253, 251, 1) 100%);
         }
 
-        /* Animated Background Grid for About Section */
+        /* Enhanced Animated Background Grid for About Section */
         #about::before {
             content: '';
             position: absolute;
@@ -1438,218 +1437,476 @@
             left: 0;
             width: 100%;
             height: 100%;
-            opacity: 0.04; /* Subtle grid */
+            opacity: 0.04;
             background-image: 
-                linear-gradient(rgba(255, 107, 71, 0.2) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 107, 71, 0.2) 1px, transparent 1px);
-            background-size: 50px 50px; /* Grid size */
-            animation: aboutGridMove 30s linear infinite;
-            z-index: 1; /* Behind content */
+                linear-gradient(rgba(255, 107, 71, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 107, 71, 0.15) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: aboutGridMove 25s ease-in-out infinite;
+            z-index: 1;
         }
 
         @keyframes aboutGridMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 100px 100px; } /* Adjust for desired speed/effect */
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(15px, -10px) rotate(2deg); }
+            50% { transform: translate(-10px, 15px) rotate(-1deg); }
+            75% { transform: translate(20px, 5px) rotate(3deg); }
         }
 
-        /* Container for About Section Content */
+        /* Floating Inspiration Orbs */
+        #about::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 107, 71, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 20%;
+            right: 10%;
+            animation: floatOrb 8s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+            33% { transform: translate(30px, -30px) scale(1.1); opacity: 0.5; }
+            66% { transform: translate(-20px, 20px) scale(0.9); opacity: 0.4; }
+        }
+
+        /* About Background Animation Elements */
+        .about-bg-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Inspiring Floating Shapes for About Section */
+        .about-floating-shape {
+            position: absolute;
+            opacity: 0.25;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        .about-shape-diamond-1 {
+            width: 0;
+            height: 0;
+            border: 30px solid transparent;
+            border-bottom: 50px solid rgba(255, 107, 71, 0.3);
+            transform: rotate(45deg);
+            top: 20%;
+            left: 10%;
+            animation: aboutDiamondFloat1 20s infinite;
+        }
+
+        .about-shape-diamond-2 {
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-bottom: 35px solid rgba(255, 163, 102, 0.4);
+            transform: rotate(45deg);
+            bottom: 25%;
+            right: 15%;
+            animation: aboutDiamondFloat2 24s infinite;
+        }
+
+        .about-shape-hexagon-1 {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 138, 101, 0.2);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            top: 60%;
+            left: 8%;
+            animation: aboutHexFloat1 18s infinite;
+        }
+
+        .about-shape-star-1 {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 171, 120, 0.3);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            top: 30%;
+            right: 20%;
+            animation: aboutStarFloat1 16s infinite;
+        }
+
+        /* Inspiring Energy Waves for About */
+        .about-energy-wave {
+            position: absolute;
+            border: 1px solid rgba(255, 107, 71, 0.12);
+            border-radius: 50%;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        .about-wave-1 {
+            width: 200px;
+            height: 200px;
+            top: 25%;
+            left: 25%;
+            animation: aboutEnergyPulse1 10s infinite;
+        }
+
+        .about-wave-2 {
+            width: 150px;
+            height: 150px;
+            bottom: 30%;
+            right: 30%;
+            animation: aboutEnergyPulse2 14s infinite;
+        }
+
+        /* Animation Keyframes for About Section */
+        @keyframes aboutDiamondFloat1 {
+            0%, 100% { 
+                transform: rotate(45deg) translate(0, 0) scale(1);
+                opacity: 0.3;
+            }
+            25% { 
+                transform: rotate(90deg) translate(20px, -30px) scale(1.2);
+                opacity: 0.5;
+            }
+            50% { 
+                transform: rotate(135deg) translate(-15px, -50px) scale(0.8);
+                opacity: 0.7;
+            }
+            75% { 
+                transform: rotate(180deg) translate(25px, -20px) scale(1.1);
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes aboutDiamondFloat2 {
+            0%, 100% { 
+                transform: rotate(45deg) translate(0, 0);
+                opacity: 0.4;
+            }
+            50% { 
+                transform: rotate(225deg) translate(-30px, 25px);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes aboutHexFloat1 {
+            0%, 100% { 
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0.2;
+            }
+            33% { 
+                transform: translate(25px, -40px) rotate(120deg);
+                opacity: 0.5;
+            }
+            66% { 
+                transform: translate(-20px, -60px) rotate(240deg);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes aboutStarFloat1 {
+            0%, 100% { 
+                transform: translate(0, 0) rotate(0deg) scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translate(-35px, 30px) rotate(180deg) scale(1.3);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes aboutEnergyPulse1 {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg);
+                opacity: 0.12;
+                border-width: 1px;
+            }
+            50% { 
+                transform: scale(1.6) rotate(180deg);
+                opacity: 0.25;
+                border-width: 2px;
+            }
+        }
+
+        @keyframes aboutEnergyPulse2 {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.15;
+            }
+            33% { 
+                transform: scale(1.4);
+                opacity: 0.3;
+            }
+            66% { 
+                transform: scale(0.8);
+                opacity: 0.4;
+            }
+        }
+
+        /* About Content Container */
         .about-container {
             position: relative;
-            z-index: 10; /* Above background elements */
+            z-index: 10;
             max-width: 1200px;
-            width: 100%;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1.2fr; /* Asymmetrical layout: visual on left, text on right */
-            gap: 4rem; /* Space between columns */
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
             align-items: center;
+            padding: 0 2rem;
         }
 
-        /* Column for Visual Element */
+        /* About Visual Column */
         .about-visual-column {
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+            z-index: 11;
         }
 
-        /* Inspiring Visual Element Container */
-        .inspiring-visual-element {
+        /* 🌟 LEVITATING VISUAL CONTAINER */
+        .inspiring-visual-container {
             position: relative;
-            width: 350px;
-            height: 350px;
+            width: 400px;
+            height: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
-            animation: inspiringElementLevitate 10s ease-in-out infinite;
+            animation: inspiringLevitate 6s ease-in-out infinite;
         }
 
-        @keyframes inspiringElementLevitate {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            25% { transform: translateY(-15px) rotate(-2deg); }
-            50% { transform: translateY(0px) rotate(0deg); }
-            75% { transform: translateY(-10px) rotate(2deg); }
+        @keyframes inspiringLevitate {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(2deg); }
+            50% { transform: translateY(-25px) rotate(0deg); }
+            75% { transform: translateY(-15px) rotate(-2deg); }
         }
 
-        /* Animated Rings for Visual Element */
-        .inspiring-ring-visual {
+        /* Inspiring Rings */
+        .inspiring-ring {
             position: absolute;
+            border: 2px solid transparent;
             border-radius: 50%;
-            border-style: solid;
-            animation: spinInspiringRingVisual 20s linear infinite;
+            animation: spinInspiringRing 15s linear infinite;
         }
 
-        .inspiring-ring-visual.outer {
-            width: 100%;
-            height: 100%;
-            border-width: 2px;
-            border-color: rgba(255, 107, 71, 0.3) transparent rgba(255, 163, 102, 0.3) transparent;
-            animation-duration: 18s;
+        .inspiring-ring:nth-child(1) {
+            width: 380px;
+            height: 380px;
+            border-image: linear-gradient(45deg, #ff6b47, transparent, #ffa366, transparent) 1;
+            animation-direction: normal;
         }
 
-        .inspiring-ring-visual.middle {
-            width: 80%;
-            height: 80%;
-            border-width: 3px;
-            border-color: transparent rgba(255, 138, 101, 0.5) transparent rgba(255, 107, 71, 0.5);
+        .inspiring-ring:nth-child(2) {
+            width: 320px;
+            height: 320px;
+            border-image: linear-gradient(-45deg, #ffa366, transparent, #ff8a65, transparent) 1;
             animation-direction: reverse;
-            animation-duration: 22s;
+            animation-duration: 20s;
         }
 
-        .inspiring-ring-visual.inner {
-            width: 60%;
-            height: 60%;
-            border-width: 2px;
-            border-color: rgba(255, 163, 102, 0.4) rgba(255, 107, 71, 0.4) transparent transparent;
+        .inspiring-ring:nth-child(3) {
+            width: 260px;
+            height: 260px;
+            border-image: linear-gradient(90deg, #ff8a65, transparent, #ffab78, transparent) 1;
             animation-duration: 25s;
         }
-        
-        @keyframes spinInspiringRingVisual {
+
+        @keyframes spinInspiringRing {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
 
-        /* Central Icon for Visual Element */
-        .inspiring-central-icon {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #ff6b47, #ffa366);
+        /* Central Inspiring Icon */
+        .inspiring-icon {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #040404, #1f1e1e);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 3rem; /* Adjust as needed */
+            font-size: 5rem;
             color: white;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            box-shadow: 0 10px 30px rgba(255, 107, 71, 0.3);
-            animation: inspiringIconPulseVisual 4s ease-in-out infinite;
+            z-index: 15;
+            box-shadow: 
+                0 20px 60px rgba(255, 107, 71, 0.3),
+                inset 0 5px 20px rgba(255, 255, 255, 0.3);
+            animation: inspiringIconPulse 3s ease-in-out infinite;
         }
 
-        @keyframes inspiringIconPulseVisual {
-            0%, 100% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 107, 71, 0.3); }
-            50% { transform: scale(1.1); box-shadow: 0 15px 40px rgba(255, 107, 71, 0.5); }
+        @keyframes inspiringIconPulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 20px 60px rgba(255, 107, 71, 0.3), inset 0 5px 20px rgba(255, 255, 255, 0.3);
+            }
+            50% { 
+                transform: scale(1.1);
+                box-shadow: 0 30px 80px rgba(255, 107, 71, 0.5), inset 0 8px 25px rgba(255, 255, 255, 0.5);
+            }
         }
 
-        /* Column for Text Content */
+        /* About Text Column */
         .about-text-column {
             position: relative;
-            z-index: 11; /* Ensure text is above any overlapping visuals if any */
+            z-index: 11;
         }
 
-        /* Styling for H2 in About Section */
+        /* 🎨 HOLOGRAPHIC TEXT EFFECT */
         .about-text-column h2 {
-            font-size: 3.5rem; /* Adjust size as needed */
-            font-weight: 800;
+            font-size: 4.2rem;
+            font-weight: 900;
+            line-height: 1.05;
             margin-bottom: 2rem;
             position: relative;
-            display: inline-block; /* Important for pseudo-elements */
-            background: linear-gradient(135deg, #ff6b47 0%, #ffa366 40%, #ff8a65 70%, #ffab78 100%);
+            background: linear-gradient(135deg, 
+                #ff6b47 0%, 
+                #ffa366 25%, 
+                #ff8a65 50%, 
+                #ffab78 75%, 
+                #ff6b47 100%);
+            background-size: 300% 300%;
             -webkit-background-clip: text;
-            background-clip: text;
             -webkit-text-fill-color: transparent;
-            padding-bottom: 0.5rem; /* Space for underline effect */
-            animation: titleReveal 1s ease-out 0.3s forwards;
+            background-clip: text;
+            animation: holographicShift 4s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(255, 107, 71, 0.3);
+            opacity: 0;
+            transform: translateY(50px);
+            animation: aboutTitleReveal 1.2s ease-out 0.3s forwards, holographicShift 4s ease-in-out infinite;
+        }
+
+        @keyframes aboutTitleReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Glitch Effect Overlay */
+        .about-text-column h2::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff6b47, transparent, #ffa366);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glitchEffect 3s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        /* Enhanced Text */
+        .about-text-column p {
+            font-size: 1.3rem;
+            color: #555;
+            line-height: 1.8;
             opacity: 0;
             transform: translateY(30px);
+            animation: aboutTextReveal 1.2s ease-out 0.6s forwards;
         }
-        
-        @keyframes titleReveal {
+
+        @keyframes aboutTextReveal {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        .about-text-column h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 70%; /* Width of the underline */
-            height: 3px; /* Thickness of the underline */
-            background: linear-gradient(90deg, #ff6b47, #ffa366);
-            border-radius: 2px;
-            animation: underlineGrow 1s ease-out 0.8s forwards;
-            transform: scaleX(0);
-            transform-origin: left;
-        }
-
-        @keyframes underlineGrow {
-            to {
-                transform: scaleX(1);
+        /* 📱 MOBILE RESPONSIVE STYLES FOR ABOUT SECTION */
+        @media (max-width: 768px) {
+            #about {
+                min-height: auto;
+                padding: 4rem 0;
             }
-        }
 
-        /* Styling for P in About Section */
-        .about-text-column p {
-            font-size: 1.2rem; /* Adjust size */
-            color: #4A5568; /* Darker gray for better readability */
-            line-height: 1.7;
-            margin-bottom: 1.5rem; /* Consistent spacing */
-            animation: paragraphFadeIn 1s ease-out 0.6s forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        @keyframes paragraphFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
             }
-        }
 
-        /* Floating decorative shapes for background */
-        .about-floating-shape-bg {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.08;
-            z-index: 2; /* Above grid, below content container */
-            animation: floatShape 20s ease-in-out infinite alternate;
-        }
-        .shape-1 {
-            width: 200px; height: 200px;
-            background: #ff6b47;
-            top: 15%; left: 10%;
-            animation-duration: 22s;
-        }
-        .shape-2 {
-            width: 150px; height: 150px;
-            background: #ffa366;
-            bottom: 20%; right: 12%;
-            animation-duration: 18s;
-            animation-delay: -5s; /* Offset animation */
-        }
-         .shape-3 { /* Smaller, faster shape */
-            width: 80px; height: 80px;
-            background: #ff8a65;
-            top: 50%; left: 40%;
-            animation-duration: 15s;
-            animation-delay: -10s;
-        }
+            .about-text-column h2 {
+                font-size: 2.8rem;
+                text-align: center;
+            }
 
-        @keyframes floatShape {
-            0% { transform: translateY(0px) translateX(0px) scale(1) rotate(0deg); }
-            50% { transform: translateY(-30px) translateX(20px) scale(1.1) rotate(180deg); }
-            100% { transform: translateY(0px) translateX(0px) scale(1) rotate(360deg); }
+            .about-text-column p {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+
+            .inspiring-visual-container {
+                width: 300px;
+                height: 300px;
+            }
+
+            .inspiring-ring:nth-child(1) {
+                width: 280px;
+                height: 280px;
+            }
+
+            .inspiring-ring:nth-child(2) {
+                width: 240px;
+                height: 240px;
+            }
+
+            .inspiring-ring:nth-child(3) {
+                width: 200px;
+                height: 200px;
+            }
+
+            .inspiring-icon {
+                width: 150px;
+                height: 150px;
+                font-size: 4rem;
+            }
+
+            /* Adjust floating shapes for mobile */
+            .about-floating-shape {
+                opacity: 0.15;
+                animation-duration: 12s;
+            }
+
+            .about-shape-diamond-1 {
+                border: 20px solid transparent;
+                border-bottom: 35px solid rgba(255, 107, 71, 0.2);
+            }
+
+            .about-shape-diamond-2 {
+                border: 15px solid transparent;
+                border-bottom: 25px solid rgba(255, 163, 102, 0.3);
+            }
+
+            .about-shape-hexagon-1 {
+                width: 35px;
+                height: 35px;
+            }
+
+            .about-shape-star-1 {
+                width: 30px;
+                height: 30px;
+            }
+
+            .about-energy-wave {
+                opacity: 0.08;
+            }
+
+            .about-wave-1 {
+                width: 120px;
+                height: 120px;
+            }
+
+            .about-wave-2 {
+                width: 100px;
+                height: 100px;
+            }
         }
     </style>
 </head>
@@ -1705,7 +1962,7 @@
         
         <div class="hero-container">
             <div class="hero-content">
-                <h1 data-text="Hi there. I'm Jodeo, a Information Technology.">Hi there. I'm Jodeo, a<br>Information Technology</h1>
+                <h1 data-text="Hi there. I'm Jodeo, a Information Technology.">Hi there. I'm Jodeo, a Information Technology</h1>
                 <p class="hero-subtitle">Fresh graduate passionate about cloud infrastructure, web development, and cutting-edge technologies. Ready to innovate and create exceptional digital experiences that push the boundaries of what's possible.</p>
                 <a href="#contact" class="cta-button">Get in Touch</a>
                 <a href="https://drive.google.com/file/d/1J0b2Z5k8Y4a9X3f7j0b2Z5k8Y4a9X3f7/view?usp=sharing" class="cta-button" target="_blank">Download Resume</a>
@@ -1726,9 +1983,29 @@
 
     <main>
         <!-- ...existing code... -->        <section id="about">
-            <div class="content-section">
-                <h2>About Me</h2>
-                <p> I am a Fresh Graduate with a degree in Information Technology, eager to start my career in IT Industry.</p>
+            <!-- About Background Animation Elements -->
+            <div class="about-bg-elements">
+                <div class="about-floating-shape about-shape-diamond-1"></div>
+                <div class="about-floating-shape about-shape-diamond-2"></div>
+                <div class="about-floating-shape about-shape-hexagon-1"></div>
+                <div class="about-floating-shape about-shape-star-1"></div>
+                <div class="about-energy-wave about-wave-1"></div>
+                <div class="about-energy-wave about-wave-2"></div>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-visual-column">
+                    <div class="inspiring-visual-container">
+                        <div class="inspiring-ring"></div>
+                        <div class="inspiring-ring"></div>
+                       
+                    </div>
+                </div>
+                
+                <div class="about-text-column">
+                    <h2 data-text="About Me">About Me</h2>
+                    <p>I am a Fresh Graduate with a degree in Information Technology, eager to start my career in IT Industry.</p>
+                </div>
             </div>
         </section>
 
