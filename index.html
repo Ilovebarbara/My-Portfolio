@@ -1684,16 +1684,17 @@
         const menuToggle = document.getElementById('menu-toggle');
         const navMenu = document.getElementById('nav-menu');
         const header = document.querySelector('.header');
-        const logo = document.querySelector('.logo');        // Enhanced mobile menu toggle with magical effects
+        const logo = document.querySelector('.logo');
+
+        // Enhanced mobile menu toggle with magical effects
         if (menuToggle && navMenu) {
             console.log('Adding click event listener to menu toggle');
             
-            // Add both click and touchstart events for better mobile support
-            function toggleMenu(e) {
+            menuToggle.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
                 
-                console.log('Menu toggle activated!');
+                console.log('Menu toggle clicked!');
                 
                 menuToggle.classList.toggle('active');
                 navMenu.classList.toggle('active');
@@ -1710,10 +1711,7 @@
                 } else {
                     document.body.style.overflow = '';
                 }
-            }
-            
-            menuToggle.addEventListener('click', toggleMenu);
-            menuToggle.addEventListener('touchstart', toggleMenu, { passive: false });
+            });
         } else {
             console.error('Menu toggle or navigation menu not found!');
             console.error('Menu toggle:', menuToggle);
