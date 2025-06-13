@@ -238,9 +238,7 @@
 
         .logo:hover .logo-text::after {
             opacity: 0.6;
-        }
-
-        /* Futuristic Navigation Capsules */
+        }        /* Futuristic Navigation Capsules */
         .nav-menu {
             display: flex;
             list-style: none;
@@ -256,6 +254,11 @@
                 0 8px 30px rgba(255, 107, 71, 0.15);
             position: relative;
             overflow: hidden;
+        }
+
+        /* Hide menu toggle on desktop */
+        .menu-toggle {
+            display: none;
         }
 
         .nav-menu::before {
@@ -372,9 +375,7 @@
             background: linear-gradient(135deg, #ff6b47, #ffa366);
             box-shadow: 0 6px 20px rgba(255, 107, 71, 0.4);
             transform: translateY(-2px);
-        }
-
-        /* Spectacular Mobile Toggle */
+        }        /* Spectacular Mobile Toggle */
         .menu-toggle {
             display: none;
             width: 60px;
@@ -390,6 +391,10 @@
             flex-direction: column;
             gap: 4px;
             overflow: hidden;
+            border: none;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
 
         .menu-toggle::before {
@@ -1146,11 +1151,15 @@
                 justify-content: space-between;
                 position: relative;
             }            .menu-toggle {
-                display: flex;
+                display: flex !important;
                 position: relative;
                 z-index: 1001;
                 margin-left: auto;
-            }            .nav-menu {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .nav-menu {
                 position: fixed;
                 top: 100px;
                 right: -100%;
@@ -1667,35 +1676,68 @@
     </main>    <footer>
         <p>&copy; 2025 Jodeo Ira Luis D. Joson. All rights reserved.</p>
     </footer>    <script>
+        // Debug: Check if elements exist on page load
+        console.log('Menu toggle element:', document.getElementById('menu-toggle'));
+        console.log('Nav menu element:', document.getElementById('nav-menu'));
+        
         // Spectacular Header Interactions
         const menuToggle = document.getElementById('menu-toggle');
         const navMenu = document.getElementById('nav-menu');
         const header = document.querySelector('.header');
-        const logo = document.querySelector('.logo');
-
-        // Enhanced mobile menu toggle with magical effects
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
+        const logo = document.querySelector('.logo');        // Enhanced mobile menu toggle with magical effects
+        if (menuToggle && navMenu) {
+            console.log('Adding click event listener to menu toggle');
             
-            // Add particle effect
-            createParticleExplosion(menuToggle);
-            
-            // Prevent body scroll when menu is open
-            if (navMenu.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
+            // Add both click and touchstart events for better mobile support
+            function toggleMenu(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                console.log('Menu toggle activated!');
+                
+                menuToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                
+                console.log('Menu toggle active:', menuToggle.classList.contains('active'));
+                console.log('Nav menu active:', navMenu.classList.contains('active'));
+                
+                // Add particle effect
+                createParticleExplosion(menuToggle);
+                
+                // Prevent body scroll when menu is open
+                if (navMenu.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
             }
-        });
-
-        // Close mobile menu when clicking on a link
+            
+            menuToggle.addEventListener('click', toggleMenu);
+            menuToggle.addEventListener('touchstart', toggleMenu, { passive: false });
+        } else {
+            console.error('Menu toggle or navigation menu not found!');
+            console.error('Menu toggle:', menuToggle);
+            console.error('Nav menu:', navMenu);
+        }// Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                menuToggle.classList.remove('active');
-                document.body.style.overflow = '';
+                if (navMenu && menuToggle) {
+                    navMenu.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
             });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navMenu && menuToggle && navMenu.classList.contains('active')) {
+                if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
         });
 
         // Spectacular scroll effects
