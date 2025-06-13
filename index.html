@@ -1907,6 +1907,653 @@
                 width: 100px;
                 height: 100px;
             }
+        }/* 🌟 SPECTACULAR CONTACT SECTION - UNIQUE INSPIRING DESIGN */
+        #contact {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: 
+                radial-gradient(ellipse at top right, rgba(255, 107, 71, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom left, rgba(255, 163, 102, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at center, rgba(255, 138, 101, 0.03) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(248, 251, 253, 1) 0%, rgba(255, 253, 251, 1) 100%);
+        }
+
+        /* Enhanced Animated Background Grid for Contact Section */
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                linear-gradient(rgba(255, 107, 71, 0.2) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 107, 71, 0.2) 1px, transparent 1px);
+            background-size: 80px 80px;
+            animation: contactGridMove 35s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes contactGridMove {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-15px, 10px) rotate(-1deg); }
+            50% { transform: translate(10px, -15px) rotate(1deg); }
+            75% { transform: translate(-20px, -5px) rotate(-2deg); }
+        }
+
+        /* Contact Background Animation Elements */
+        .contact-bg-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Inspiring Floating Shapes for Contact Section */
+        .contact-floating-shape {
+            position: absolute;
+            opacity: 0.2;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        .contact-shape-circle-1 {
+            width: 150px;
+            height: 150px;
+            border: 3px solid rgba(255, 107, 71, 0.3);
+            border-radius: 50%;
+            top: 15%;
+            left: 8%;
+            animation: contactCircleFloat1 22s infinite;
+        }
+
+        .contact-shape-circle-2 {
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgba(255, 163, 102, 0.4);
+            border-radius: 50%;
+            bottom: 20%;
+            right: 10%;
+            animation: contactCircleFloat2 18s infinite;
+        }
+
+        .contact-shape-triangle-1 {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 40px solid rgba(255, 138, 101, 0.3);
+            top: 50%;
+            left: 5%;
+            animation: contactTriangleFloat1 20s infinite;
+        }
+
+        .contact-shape-square-1 {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 171, 120, 0.2);
+            transform: rotate(45deg);
+            top: 25%;
+            right: 15%;
+            animation: contactSquareFloat1 16s infinite;
+        }
+
+        /* Contact Energy Waves */
+        .contact-energy-wave {
+            position: absolute;
+            border: 1px solid rgba(255, 107, 71, 0.1);
+            border-radius: 50%;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        .contact-wave-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            right: 20%;
+            animation: contactEnergyPulse1 12s infinite;
+        }
+
+        .contact-wave-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 15%;
+            left: 15%;
+            animation: contactEnergyPulse2 15s infinite;
+        }
+
+        .contact-wave-3 {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 30%;
+            animation: contactEnergyPulse3 10s infinite;
+        }
+
+        /* Animation Keyframes for Contact Section */
+        @keyframes contactCircleFloat1 {
+            0%, 100% { 
+                transform: translate(0, 0) scale(1);
+                opacity: 0.3;
+            }
+            33% { 
+                transform: translate(20px, -25px) scale(1.1);
+                opacity: 0.5;
+            }
+            66% { 
+                transform: translate(-15px, -40px) scale(0.9);
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes contactCircleFloat2 {
+            0%, 100% { 
+                transform: translate(0, 0);
+                opacity: 0.4;
+            }
+            50% { 
+                transform: translate(-25px, 20px);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes contactTriangleFloat1 {
+            0%, 100% { 
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translate(30px, -20px) rotate(180deg);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes contactSquareFloat1 {
+            0%, 100% { 
+                transform: rotate(45deg) translate(0, 0);
+                opacity: 0.2;
+            }
+            50% { 
+                transform: rotate(225deg) translate(-20px, 30px);
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes contactEnergyPulse1 {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.1;
+            }
+            50% { 
+                transform: scale(1.3);
+                opacity: 0.2;
+            }
+        }
+
+        @keyframes contactEnergyPulse2 {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg);
+                opacity: 0.12;
+            }
+            50% { 
+                transform: scale(1.5) rotate(180deg);
+                opacity: 0.25;
+            }
+        }
+
+        @keyframes contactEnergyPulse3 {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.15;
+            }
+            33% { 
+                transform: scale(1.2);
+                opacity: 0.3;
+            }
+            66% { 
+                transform: scale(0.8);
+                opacity: 0.2;
+            }
+        }
+
+        /* Contact Content Container */
+        .contact-container {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        /* Contact Text Column */
+        .contact-text-column {
+            position: relative;
+            z-index: 11;
+        }
+
+        /* 🎨 HOLOGRAPHIC TEXT EFFECT FOR CONTACT */
+        .contact-text-column h2 {
+            font-size: 4.2rem;
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 3rem;
+            position: relative;
+            background: linear-gradient(135deg, 
+                #ff6b47 0%, 
+                #ffa366 25%, 
+                #ff8a65 50%, 
+                #ffab78 75%, 
+                #ff6b47 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: holographicShift 4s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(255, 107, 71, 0.3);
+            opacity: 0;
+            transform: translateY(50px);
+            animation: contactTitleReveal 1.2s ease-out 0.3s forwards, holographicShift 4s ease-in-out infinite;
+        }
+
+        @keyframes contactTitleReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Glitch Effect Overlay for Contact */
+        .contact-text-column h2::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff6b47, transparent, #ffa366);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glitchEffect 3s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        /* Contact Info Grid */
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        /* Contact Cards */
+        .contact-card {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.9) 0%, 
+                rgba(255, 252, 250, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 107, 71, 0.1);
+            box-shadow: 
+                0 15px 40px rgba(255, 107, 71, 0.1),
+                inset 0 2px 10px rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: contactCardReveal 0.8s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card:nth-child(1) { animation-delay: 0.5s; }
+        .contact-card:nth-child(2) { animation-delay: 0.7s; }
+        .contact-card:nth-child(3) { animation-delay: 0.9s; }
+        .contact-card:nth-child(4) { animation-delay: 1.1s; }
+        .contact-card:nth-child(5) { animation-delay: 1.3s; }
+        .contact-card:nth-child(6) { animation-delay: 1.5s; }
+
+        @keyframes contactCardReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(255, 107, 71, 0.1) 50%, 
+                transparent 70%);
+            transition: left 0.6s ease;
+        }
+
+        .contact-card:hover::before {
+            left: 100%;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 25px 60px rgba(255, 107, 71, 0.2),
+                inset 0 3px 15px rgba(255, 255, 255, 0.9);
+        }
+
+        /* Contact Card Icon */
+        .contact-card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff6b47, #ffa366);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            color: white;
+            box-shadow: 0 10px 25px rgba(255, 107, 71, 0.3);
+            animation: contactIconPulse 3s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes contactIconPulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 10px 25px rgba(255, 107, 71, 0.3);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 15px 35px rgba(255, 107, 71, 0.4);
+            }
+        }
+
+        /* Contact Card Content */
+        .contact-card-content h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card-content p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        /* Contact Visual Column */
+        .contact-visual-column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 11;
+        }
+
+        /* 🌟 CONTACT VISUAL CONTAINER */
+        .contact-visual-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: contactVisualLevitate 8s ease-in-out infinite;
+        }
+
+        @keyframes contactVisualLevitate {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(3deg); }
+            50% { transform: translateY(-30px) rotate(0deg); }
+            75% { transform: translateY(-20px) rotate(-3deg); }
+        }
+
+        /* Contact Quantum Rings */
+        .contact-quantum-ring {
+            position: absolute;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            animation: spinContactRing 18s linear infinite;
+        }
+
+        .contact-quantum-ring:nth-child(1) {
+            width: 380px;
+            height: 380px;
+            border-image: linear-gradient(60deg, #ff6b47, transparent, #ffa366, transparent) 1;
+            animation-direction: normal;
+        }
+
+        .contact-quantum-ring:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            border-image: linear-gradient(-60deg, #ffa366, transparent, #ff8a65, transparent) 1;
+            animation-direction: reverse;
+            animation-duration: 24s;
+        }
+
+        .contact-quantum-ring:nth-child(3) {
+            width: 220px;
+            height: 220px;
+            border-image: linear-gradient(120deg, #ff8a65, transparent, #ffab78, transparent) 1;
+            animation-duration: 30s;
+        }
+
+        @keyframes spinContactRing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Contact Central Element */
+        .contact-central-element {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, #ff6b47, #ffa366);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 15;
+            box-shadow: 
+                0 25px 70px rgba(255, 107, 71, 0.4),
+                inset 0 5px 20px rgba(255, 255, 255, 0.3);
+            animation: contactCentralPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes contactCentralPulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 25px 70px rgba(255, 107, 71, 0.4), inset 0 5px 20px rgba(255, 255, 255, 0.3);
+            }
+            50% { 
+                transform: scale(1.08);
+                box-shadow: 0 35px 90px rgba(255, 107, 71, 0.6), inset 0 8px 25px rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        /* Contact Icon */
+        .contact-icon {
+            font-size: 4rem;
+            color: white;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: contactIconBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes contactIconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Contact Pulse Dots */
+        .contact-pulse-dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: contactPulseDot 2s ease-in-out infinite;
+        }
+
+        .contact-pulse-dot:nth-child(2) {
+            top: 20%;
+            right: 30%;
+            animation-delay: 0s;
+        }
+
+        .contact-pulse-dot:nth-child(3) {
+            bottom: 25%;
+            left: 25%;
+            animation-delay: 0.7s;
+        }
+
+        .contact-pulse-dot:nth-child(4) {
+            top: 50%;
+            right: 15%;
+            animation-delay: 1.4s;
+        }
+
+        @keyframes contactPulseDot {
+            0%, 100% { 
+                opacity: 0.4;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        /* 📱 MOBILE RESPONSIVE STYLES FOR CONTACT SECTION */
+        @media (max-width: 768px) {
+            #contact {
+                min-height: auto;
+                padding: 4rem 0;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+                text-align: center;
+            }
+
+            .contact-text-column h2 {
+                font-size: 2.8rem;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .contact-card {
+                padding: 1.5rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .contact-card-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .contact-visual-container {
+                width: 300px;
+                height: 300px;
+            }
+
+            .contact-quantum-ring:nth-child(1) {
+                width: 280px;
+                height: 280px;
+            }
+
+            .contact-quantum-ring:nth-child(2) {
+                width: 220px;
+                height: 220px;
+            }
+
+            .contact-quantum-ring:nth-child(3) {
+                width: 160px;
+                height: 160px;
+            }
+
+            .contact-central-element {
+                width: 140px;
+                height: 140px;
+            }
+
+            .contact-icon {
+                font-size: 3rem;
+            }
+
+            /* Adjust floating shapes for mobile */
+            .contact-floating-shape {
+                opacity: 0.1;
+                animation-duration: 15s;
+            }
+
+            .contact-shape-circle-1 {
+                width: 100px;
+                height: 100px;
+            }
+
+            .contact-shape-circle-2 {
+                width: 70px;
+                height: 70px;
+            }
+
+            .contact-shape-triangle-1 {
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-bottom: 25px solid rgba(255, 138, 101, 0.2);
+            }
+
+            .contact-shape-square-1 {
+                width: 40px;
+                height: 40px;
+            }
+
+            .contact-energy-wave {
+                opacity: 0.05;
+            }
+
+            .contact-wave-1 {
+                width: 150px;
+                height: 150px;
+            }
+
+            .contact-wave-2 {
+                width: 100px;
+                height: 100px;
+            }
+
+            .contact-wave-3 {
+                width: 80px;
+                height: 80px;
+            }
         }
     </style>
 </head>
@@ -2007,18 +2654,62 @@
                     <p>I am a Fresh Graduate with a degree in Information Technology, eager to start my career in IT Industry.</p>
                 </div>
             </div>
-        </section>
-
-        <section id="contact">
-            <div class="content-section">
-                <h2>Contact</h2>
-                <div class="contact-info">
-                    <p><strong>Email:</strong> jodeoiraluisjoson@gmail.com</p>
-                    <p><strong>Phone:</strong> +639917638759</p>
-                    <p><strong>GitHub:</strong> jodeoiraluisjoson</p>
-                    <p><strong>LinkedIn:</strong> jodeoiraluisjoson</p>
-                    <p><strong>Salesforce:</strong> Salesforce</p>
-                    <p><strong>Address:</strong> 9863, Maunlad Homes Sta Rita Guiguinto Bulacan</p>
+        </section>       
+            <!-- Contact Background Animation Elements -->
+            <div class="contact-bg-elements">
+                <div class="contact-floating-shape contact-shape-circle-1"></div>
+                <div class="contact-floating-shape contact-shape-circle-2"></div>
+                <div class="contact-floating-shape contact-shape-triangle-1"></div>
+                <div class="contact-floating-shape contact-shape-square-1"></div>
+                <div class="contact-energy-wave contact-wave-1"></div>
+                <div class="contact-energy-wave contact-wave-2"></div>
+                <div class="contact-energy-wave contact-wave-3"></div>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-text-column">
+                    <h2 data-text="Contact">Contact</h2>
+                    <div class="contact-info-grid">
+                        <div class="contact-card">
+                            <div class="contact-card-icon">📧</div>
+                            <div class="contact-card-content">
+                                <h4>Email</h4>
+                                <p>jodeoiraluisjoson@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-icon">🔗</div>
+                            <div class="contact-card-content">
+                                <h4>GitHub</h4>
+                                <p>jodeoiraluisjoson</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-icon">💼</div>
+                            <div class="contact-card-content">
+                                <h4>LinkedIn</h4>
+                                <p>jodeoiraluisjoson</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-icon">☁️</div>
+                            <div class="contact-card-content">
+                                <h4>Salesforce</h4>
+                                <p>Salesforce</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-visual-column">
+                    <div class="contact-visual-container">
+                        <div class="contact-quantum-ring"></div>
+                        <div class="contact-quantum-ring"></div>             
+                            <div class="contact-pulse-dot"></div>
+                            <div class="contact-pulse-dot"></div>
+                            <div class="contact-pulse-dot"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
