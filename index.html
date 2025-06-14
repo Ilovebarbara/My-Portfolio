@@ -634,7 +634,7 @@
                 opacity: 0.3;
             }
             25% { 
-                transform: translate(30px, -40px) rotate(90deg) scale(1.1);
+                transform: translate(30px, -40px) rotate(90deg) scale(1.2);
                 opacity: 0.5;
             }
             50% { 
@@ -642,7 +642,7 @@
                 opacity: 0.7;
             }
             75% { 
-                transform: translate(40px, -40px) rotate(270deg) scale(1.05);
+                transform: translate(40px, -40px) rotate(270deg) scale(1.1);
                 opacity: 0.4;
             }
         }
@@ -2201,14 +2201,15 @@
         .contact-card {
             background: linear-gradient(135deg, 
                 rgba(255, 255, 255, 0.9) 0%, 
-                rgba(255, 252, 250, 0.95) 100%);
+                rgba(255, 252, 250, 0.95) 50%,
+                rgba(255, 255, 255, 0.9) 100%);
             backdrop-filter: blur(20px);
             padding: 2rem;
             border-radius: 20px;
-            border: 1px solid rgba(255, 107, 71, 0.1);
             box-shadow: 
-                0 15px 40px rgba(255, 107, 71, 0.1),
-                inset 0 2px 10px rgba(255, 255, 255, 0.8);
+                0 20px 60px rgba(255, 107, 71, 0.1),
+                inset 0 1px 15px rgba(255, 255, 255, 0.8),
+                0 0 0 1px rgba(255, 107, 71, 0.1);
             display: flex;
             align-items: center;
             gap: 1.5rem;
@@ -2238,25 +2239,27 @@
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, 
-                transparent 30%, 
-                rgba(255, 107, 71, 0.1) 50%, 
-                transparent 70%);
-            transition: left 0.6s ease;
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 71, 0.05) 0%, 
+                transparent 50%, 
+                rgba(255, 163, 102, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
         .contact-card:hover::before {
-            left: 100%;
+            opacity: 1;
         }
 
         .contact-card:hover {
-            transform: translateY(-8px) scale(1.02);
+            transform: translateY(-10px) scale(1.02);
             box-shadow: 
-                0 25px 60px rgba(255, 107, 71, 0.2),
-                inset 0 3px 15px rgba(255, 255, 255, 0.9);
+                0 30px 80px rgba(255, 107, 71, 0.2),
+                inset 0 2px 20px rgba(255, 255, 255, 0.9),
+                0 0 0 1px rgba(255, 107, 71, 0.2);
         }
 
         /* Contact Card Icon */
@@ -2268,7 +2271,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: white;
             box-shadow: 0 10px 25px rgba(255, 107, 71, 0.3);
             animation: contactIconPulse 3s ease-in-out infinite;
@@ -2443,114 +2446,529 @@
             }
         }
 
-        /* 📱 MOBILE RESPONSIVE STYLES FOR CONTACT SECTION */
+        /* 🚀 SPECTACULAR EXPERIENCE TIMELINE SECTION */
+        #experience {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: 
+                radial-gradient(ellipse at top right, rgba(255, 107, 71, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom left, rgba(255, 163, 102, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at center, rgba(255, 138, 101, 0.02) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(252, 252, 252, 1) 0%, rgba(255, 253, 251, 1) 100%);
+            padding: 6rem 0;
+        }
+
+        /* Animated Background Grid for Experience Section */
+        #experience::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.04;
+            background-image: 
+                linear-gradient(rgba(255, 107, 71, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 107, 71, 0.15) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: experienceGridMove 35s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes experienceGridMove {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-15px, 10px) rotate(-2deg); }
+            50% { transform: translate(10px, -15px) rotate(1deg); }
+            75% { transform: translate(-20px, -5px) rotate(-3deg); }
+        }
+
+        /* Experience Background Animation Elements */
+        .experience-bg-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Floating Shapes for Experience Section */
+        .experience-floating-shape {
+            position: absolute;
+            opacity: 0.25;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        .experience-shape-circle-1 {
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgba(255, 107, 71, 0.3);
+            border-radius: 50%;
+            top: 15%;
+            left: 8%;
+            animation: experienceCircleFloat1 22s infinite;
+        }
+
+        .experience-shape-circle-2 {
+            width: 60px;
+            height: 60px;
+            border: 1px solid rgba(255, 163, 102, 0.4);
+            border-radius: 50%;
+            bottom: 20%;
+            right: 10%;
+            animation: experienceCircleFloat2 18s infinite;
+        }
+
+        .experience-shape-triangle-1 {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 40px solid rgba(255, 138, 101, 0.3);
+            top: 35%;
+            right: 20%;
+            animation: experienceTriangleFloat1 20s infinite;
+        }
+
+        .experience-shape-square-1 {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 171, 120, 0.2);
+            transform: rotate(45deg);
+            bottom: 35%;
+            left: 15%;
+            animation: experienceSquareFloat1 16s infinite;
+        }
+
+        /* Energy Waves for Experience */
+        .experience-energy-wave {
+            position: absolute;
+            border: 1px solid rgba(255, 107, 71, 0.12);
+            border-radius: 50%;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        .experience-wave-1 {
+            width: 180px;
+            height: 180px;
+            top: 30%;
+            left: 30%;
+            animation: experienceEnergyPulse1 12s infinite;
+        }
+
+        .experience-wave-2 {
+            width: 120px;
+            height: 120px;
+            bottom: 35%;
+            right: 35%;
+            animation: experienceEnergyPulse2 16s infinite;
+        }
+
+        /* Animation Keyframes for Experience Section */
+        @keyframes experienceCircleFloat1 {
+            0%, 100% { 
+                transform: translate(0, 0) scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translate(25px, -35px) scale(1.2);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes experienceCircleFloat2 {
+            0%, 100% { 
+                transform: translate(0, 0);
+                opacity: 0.4;
+            }
+            50% { 
+                transform: translate(-30px, 20px);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes experienceTriangleFloat1 {
+            0%, 100% { 
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translate(-20px, 30px) rotate(180deg);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes experienceSquareFloat1 {
+            0%, 100% { 
+                transform: rotate(45deg) translate(0, 0);
+                opacity: 0.2;
+            }
+            50% { 
+                transform: rotate(225deg) translate(15px, -25px);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes experienceEnergyPulse1 {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.12;
+            }
+            50% { 
+                transform: scale(1.5);
+                opacity: 0.25;
+            }
+        }
+
+        @keyframes experienceEnergyPulse2 {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.15;
+            }
+            50% { 
+                transform: scale(1.8);
+                opacity: 0.3;
+            }
+        }
+
+        /* Experience Container */
+        .experience-container {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        /* Experience Header */
+        .experience-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .experience-header h2 {
+            font-size: 4.2rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            position: relative;
+            background: linear-gradient(135deg, 
+                #ff6b47 0%, 
+                #ffa366 25%, 
+                #ff8a65 50%, 
+                #ffab78 75%, 
+                #ff6b47 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: holographicShift 4s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(255, 107, 71, 0.3);
+            opacity: 0;
+            transform: translateY(50px);
+            animation: experienceTitleReveal 1.2s ease-out 0.3s forwards, holographicShift 4s ease-in-out infinite;
+        }
+
+        @keyframes experienceTitleReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Timeline Container */
+        .experience-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        /* Timeline Central Line */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, 
+                #ff6b47 0%, 
+                #ffa366 50%, 
+                #ff8a65 100%);
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(255, 107, 71, 0.3);
+            animation: timelineGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes timelineGlow {
+            0% { box-shadow: 0 0 20px rgba(255, 107, 71, 0.3); }
+            100% { box-shadow: 0 0 40px rgba(255, 107, 71, 0.6); }
+        }
+
+        /* Timeline Items */
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: timelineItemReveal 1s ease-out forwards;
+        }
+
+        .timeline-item:nth-child(2) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(3) { animation-delay: 1.2s; }
+
+        @keyframes timelineItemReveal {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Timeline Markers */
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            transform: translateX(-50%);
+            z-index: 15;
+        }
+
+        .timeline-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff6b47, #ffa366);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 
+                0 15px 40px rgba(255, 107, 71, 0.3),
+                inset 0 3px 15px rgba(255, 255, 255, 0.3);
+            animation: timelineMarkerPulse 3s ease-in-out infinite;
+            border: 4px solid white;
+        }
+
+        @keyframes timelineMarkerPulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 15px 40px rgba(255, 107, 71, 0.3), inset 0 3px 15px rgba(255, 255, 255, 0.3);
+            }
+            50% { 
+                transform: scale(1.1);
+                box-shadow: 0 20px 60px rgba(255, 107, 71, 0.5), inset 0 5px 20px rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        /* Timeline Content - Left Side */
+        .timeline-item-left .timeline-content {
+            width: 45%;
+            margin-right: 55%;
+            text-align: right;
+        }
+
+        /* Timeline Content - Right Side */
+        .timeline-item-right .timeline-content {
+            width: 45%;
+            margin-left: 55%;
+            text-align: left;
+        }
+
+        /* Timeline Cards */
+        .timeline-card {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.95) 0%, 
+                rgba(255, 252, 250, 0.98) 50%,
+                rgba(255, 255, 255, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 60px rgba(255, 107, 71, 0.1),
+                inset 0 1px 15px rgba(255, 255, 255, 0.8),
+                0 0 0 1px rgba(255, 107, 71, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 71, 0.05) 0%, 
+                transparent 50%, 
+                rgba(255, 163, 102, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .timeline-card:hover::before {
+            opacity: 1;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                0 30px 80px rgba(255, 107, 71, 0.2),
+                inset 0 2px 20px rgba(255, 255, 255, 0.9),
+                0 0 0 1px rgba(255, 107, 71, 0.2);
+        }
+
+        /* Timeline Card Content */
+        .timeline-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ff6b47;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .timeline-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, #ff6b47, #ffa366);
+            border-radius: 1px;
+        }
+
+        .timeline-item-right .timeline-card h3::after {
+            left: auto;
+            right: 0;
+        }
+
+        .timeline-card p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .timeline-card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .timeline-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-card li {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .timeline-card li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #ff6b47;
+            font-size: 1rem;
+        }
+
+        /* 📱 MOBILE RESPONSIVE STYLES FOR EXPERIENCE TIMELINE */
         @media (max-width: 768px) {
-            #contact {
+            #experience {
                 min-height: auto;
                 padding: 4rem 0;
             }
 
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-                text-align: center;
-            }
-
-            .contact-text-column h2 {
+            .experience-header h2 {
                 font-size: 2.8rem;
-                text-align: center;
-                margin-bottom: 2rem;
             }
 
-            .contact-info-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+            .timeline-line {
+                left: 2rem;
             }
 
-            .contact-card {
-                padding: 1.5rem;
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
+            .timeline-marker {
+                left: 2rem;
             }
 
-            .contact-card-icon {
-                width: 50px;
-                height: 50px;
+            .timeline-icon {
+                width: 60px;
+                height: 60px;
                 font-size: 1.5rem;
             }
 
-            .contact-visual-container {
-                width: 300px;
-                height: 300px;
+            .timeline-item-left .timeline-content,
+            .timeline-item-right .timeline-content {
+                width: calc(100% - 5rem);
+                margin-left: 5rem;
+                margin-right: 0;
+                text-align: left;
             }
 
-            .contact-quantum-ring:nth-child(1) {
-                width: 280px;
-                height: 280px;
+            .timeline-item-right .timeline-card h3::after {
+                left: 0;
+                right: auto;
             }
 
-            .contact-quantum-ring:nth-child(2) {
-                width: 220px;
-                height: 220px;
-            }
-
-            .contact-quantum-ring:nth-child(3) {
-                width: 160px;
-                height: 160px;
-            }
-
-            .contact-central-element {
-                width: 140px;
-                height: 140px;
-            }
-
-            .contact-icon {
-                font-size: 3rem;
+            .timeline-card {
+                padding: 2rem;
             }
 
             /* Adjust floating shapes for mobile */
-            .contact-floating-shape {
-                opacity: 0.1;
-                animation-duration: 15s;
+            .experience-floating-shape {
+                opacity: 0.15;
+                animation-duration: 12s;
             }
 
-            .contact-shape-circle-1 {
-                width: 100px;
-                height: 100px;
+            .experience-shape-circle-1 {
+                width: 60px;
+                height: 60px;
             }
 
-            .contact-shape-circle-2 {
-                width: 70px;
-                height: 70px;
+            .experience-shape-circle-2 {
+                width: 40px;
+                height: 40px;
             }
 
-            .contact-shape-triangle-1 {
+            .experience-shape-triangle-1 {
                 border-left: 15px solid transparent;
                 border-right: 15px solid transparent;
                 border-bottom: 25px solid rgba(255, 138, 101, 0.2);
             }
 
-            .contact-shape-square-1 {
-                width: 40px;
-                height: 40px;
+            .experience-shape-square-1 {
+                width: 25px;
+                height: 25px;
             }
 
-            .contact-energy-wave {
-                opacity: 0.05;
+            .experience-energy-wave {
+                opacity: 0.08;
             }
 
-            .contact-wave-1 {
-                width: 150px;
-                height: 150px;
-            }
-
-            .contact-wave-2 {
+            .experience-wave-1 {
                 width: 100px;
                 height: 100px;
             }
 
-            .contact-wave-3 {
+            .experience-wave-2 {
                 width: 80px;
                 height: 80px;
             }
@@ -2655,94 +3073,68 @@
                 </div>
             </div>
         </section>       
-            <!-- Contact Background Animation Elements -->
-            <div class="contact-bg-elements">
-                <div class="contact-floating-shape contact-shape-circle-1"></div>
-                <div class="contact-floating-shape contact-shape-circle-2"></div>
-                <div class="contact-floating-shape contact-shape-triangle-1"></div>
-                <div class="contact-floating-shape contact-shape-square-1"></div>
-                <div class="contact-energy-wave contact-wave-1"></div>
-                <div class="contact-energy-wave contact-wave-2"></div>
-                <div class="contact-energy-wave contact-wave-3"></div>
+        <section id="experience">
+            <!-- Experience Background Animation Elements -->
+            <div class="experience-bg-elements">
+                <div class="experience-floating-shape experience-shape-circle-1"></div>
+                <div class="experience-floating-shape experience-shape-circle-2"></div>
+                <div class="experience-floating-shape experience-shape-triangle-1"></div>
+                <div class="experience-floating-shape experience-shape-square-1"></div>
+                <div class="experience-energy-wave experience-wave-1"></div>
+                <div class="experience-energy-wave experience-wave-2"></div>
             </div>
             
-            <div class="contact-container">
-                <div class="contact-text-column">
-                    <h2 data-text="Contact">Contact</h2>
-                    <div class="contact-info-grid">
-                        <div class="contact-card">
-                            <div class="contact-card-icon">📧</div>
-                            <div class="contact-card-content">
-                                <h4>Email</h4>
-                                <p>jodeoiraluisjoson@gmail.com</p>
-                            </div>
+            <div class="experience-container">
+                <div class="experience-header">
+                    <h2 data-text="Professional Experience">Professional Experience</h2>
+                </div>
+                
+                <div class="experience-timeline">
+                    <!-- Timeline Line -->
+                    <div class="timeline-line"></div>
+                    
+                    <!-- Experience Item 1 - Capstone Project -->
+                    <div class="timeline-item timeline-item-left">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">🎓</div>
                         </div>
-                        <div class="contact-card">
-                            <div class="contact-card-icon">🔗</div>
-                            <div class="contact-card-content">
-                                <h4>GitHub</h4>
-                                <p>jodeoiraluisjoson</p>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-card-icon">💼</div>
-                            <div class="contact-card-content">
-                                <h4>LinkedIn</h4>
-                                <p>jodeoiraluisjoson</p>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-card-icon">☁️</div>
-                            <div class="contact-card-content">
-                                <h4>Salesforce</h4>
-                                <p>Salesforce</p>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <h3>Capstone Project Team Member</h3>
+                                <p><strong>Duration:</strong> January 2023 - January 2025</p>
+                                <p><strong>Location:</strong> Bulacan State University, Malolos, Bulacan</p>
+                                <h4>Responsibilities:</h4>
+                                <ul>
+                                    <li>Collaborated with a team of 5 to develop a comprehensive capstone project</li>
+                                    <li>Designed the UI/UX, ensuring an intuitive user interface</li>
+                                    <li>Utilized PHP, JavaScript, CSS, HTML and MySQL for the Project</li>
+                                    <li>Created documentation for a web-based system to monitor and track student performance</li>
+                                    <li>Conducted thorough testing and debugging to ensure the system's functionality and reliability</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="contact-visual-column">
-                    <div class="contact-visual-container">
-                        <div class="contact-quantum-ring"></div>
-                        <div class="contact-quantum-ring"></div>             
-                            <div class="contact-pulse-dot"></div>
-                            <div class="contact-pulse-dot"></div>
-                            <div class="contact-pulse-dot"></div>
+                    
+                    <!-- Experience Item 2 - Accenture Internship -->
+                    <div class="timeline-item timeline-item-right">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">☁️</div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <h3>Cloud Infrastructure Intern (ATA) - Accenture</h3>
+                                <p><strong>Duration:</strong> March 11 - May 2025</p>
+                                <p><strong>Location:</strong> Accenture, Gateway 2, General Roxas Avenue and General Aguina (Remote)</p>
+                                <h4>Responsibilities:</h4>
+                                <ul>
+                                    <li>Performed hands-on tasks involving virtual machines, storage solutions, and network setup to ensure reliable cloud infrastructure</li>
+                                    <li>Collaborated with fellow interns to troubleshoot system issues, apply necessary updates, and monitor cloud performance effectively</li>
+                                    <li>Actively participated in Accenture's online learning platforms, completing technical modules focused on cloud computing and infrastructure management</li>
+                                    <li>Explored various cloud services, including AWS, Azure, and Google Cloud, to deepen my understanding of cross-platform cloud operations</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience">
-            <div class="content-section">
-                <h2>Professional Experience</h2>
-                
-                <div class="job">
-                    <h3>Capstone Project Team Member</h3>
-                    <p><strong>Duration:</strong> January 2023 - January 2025</p>
-                    <p><strong>Location:</strong> Bulacan State University, Malolos, Bulacan</p>
-                    <h4>Responsibilities:</h4>
-                    <ul>
-                        <li>Collaborated with a team of 5 to develop a comprehensive capstone project</li>
-                        <li>Designed the UI/UX, ensuring an intuitive user interface</li>
-                        <li>Utilized PHP, JavaScript, CSS, HTML and MySQL for the Project</li>
-                        <li>Created documentation for a web-based system to monitor and track student performance</li>
-                        <li>Conducted thorough testing and debugging to ensure the system's functionality and reliability</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <h3>Cloud Infrastructure Intern (ATA) - Accenture</h3>
-                    <p><strong>Duration:</strong> March 11 - May 2025</p>
-                    <p><strong>Location:</strong> Accenture, Gateway 2, General Roxas Avenue and General Aguina (Remote)</p>
-                    <h4>Responsibilities:</h4>
-                    <ul>
-                        <li>Performed hands-on tasks involving virtual machines, storage solutions, and network setup to ensure reliable cloud infrastructure</li>
-                        <li>Collaborated with fellow interns to troubleshoot system issues, apply necessary updates, and monitor cloud performance effectively</li>
-                        <li>Actively participated in Accenture's online learning platforms, completing technical modules focused on cloud computing and infrastructure management</li>
-                        <li>Explored various cloud services, including AWS, Azure, and Google Cloud, to deepen my understanding of cross-platform cloud operations</li>
-                    </ul>
                 </div>
             </div>
         </section>
